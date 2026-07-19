@@ -1,6 +1,6 @@
 # KG-RAG-Monarch
 
-Version 2 of the KG-RAG line. Where [`KG-RAG-EDS`](../KG-RAG-EDS) is the hand-built,
+Version 2 of the KG-RAG line. Where [`KG-RAG-EDS`](https://github.com/Monarch-Epistemologies/KG-RAG-EDS) is the hand-built,
 educational setup — one disease (Ehlers-Danlos), every step done slowly by hand to
 build intuition — this repo scales that pipeline **beyond a single seed set toward
 the broader Monarch graph**.
@@ -33,3 +33,17 @@ v2 is shaped the way it is. Written first, before the code.
 ## Build sequence
 
 _(to be defined — see the design notebook)_
+
+## Related
+
+- **Line context (Monarch-Epistemologies).** The positioning that spans the whole
+  KG-RAG line lives in the org
+  [`.github` repo](https://github.com/Monarch-Epistemologies/.github):
+  [retrieval_epistemologies](https://github.com/Monarch-Epistemologies/.github/blob/main/docs/retrieval_epistemologies.md)
+  — the modes of knowing behind each retrieval architecture; v2 sits in the
+  text-embedding mode, at scale.
+  [use_cases](https://github.com/Monarch-Epistemologies/.github/blob/main/docs/use_cases.md) and
+  [related_work_phenomics_assistant](https://github.com/Monarch-Epistemologies/.github/blob/main/docs/related_work_phenomics_assistant.md)
+  round out the line-level docs.
+- **v1:** [KG-RAG-EDS](https://github.com/Monarch-Epistemologies/KG-RAG-EDS) — the
+  hand-built teaching version this scales from.
