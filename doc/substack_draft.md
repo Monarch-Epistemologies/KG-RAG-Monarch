@@ -59,32 +59,52 @@ to what we embed rather than how much of the graph we keep.
 
 The hop-expansion prediction above was wrong, and it is worth leaving in place so
 the correction has something to correct. Running v1's exact mechanics — MONDO name
-substring for the seeds, then every edge incident to that set — over eight diseases
-chosen to span rare monogenic, multi-subtype and common complex:
+substring for the seeds, then expansion by edges — over eight diseases chosen to
+span rare monogenic, multi-subtype and common complex.
 
-| disease | seeds | h1 nodes | h1 edges | h2 nodes | h2 edges | top hub in h1 |
-|---|---|---|---|---|---|---|
-| Ehlers-Danlos syndrome | 57 | 832 | 1,900 | 33,310 | 269,705 | Autosomal recessive inheritance (8,080) |
-| Noonan syndrome | 21 | 565 | 1,275 | 32,353 | 261,158 | Autosomal recessive inheritance (8,080) |
-| amyotrophic lateral sclerosis | 48 | 476 | 935 | 33,440 | 138,260 | Autosomal recessive inheritance (8,080) |
-| Parkinson disease | 45 | 514 | 914 | 31,792 | 110,051 | Autosomal recessive inheritance (8,080) |
-| Marfan syndrome | 5 | 329 | 465 | 21,322 | 86,654 | Autosomal dominant inheritance (6,341) |
-| Rett syndrome | 4 | 232 | 308 | 19,975 | 77,333 | Global developmental delay (7,276) |
-| cystic fibrosis | 9 | 545 | 565 | 24,104 | 59,533 | Autosomal recessive inheritance (8,080) |
-| type 2 diabetes mellitus | 6 | 224 | 240 | 14,709 | 24,988 | Autosomal dominant inheritance (6,341) |
+Before the numbers, one distinction that matters more than it sounds. An edge is
+**incident** to a node set if at least one endpoint is inside it; **induced** if both
+endpoints are. Incident edges are the discovery mechanism — following every edge
+incident to the hop-1 nodes is what finds the hop-2 nodes — so they describe how far
+a set reaches. Induced edges describe what a set contains. For a triple corpus the
+induced count is the one that matters: if both endpoints are documents, the edge
+between them is a fact the system can retrieve, and leaving it out means discarding
+a fact between two things already kept. An incident edge whose far endpoint was not
+kept is the opposite, a triple pointing at something the corpus cannot describe.
+
+The two diverge sharply here, because a hop-2 frontier of thirty thousand phenotypes,
+genes and variants is densely connected sideways for reasons unrelated to the seed
+disease — subclass links between phenotypes, interactions between genes. Those edges
+were never on the path outward, but they sit inside the set that was kept.
+
+| disease | seeds | h1 nodes | h1 induced | h2 nodes | h2 induced | h2 incident | top hub in h1 |
+|---|---|---|---|---|---|---|---|
+| Ehlers-Danlos syndrome | 57 | 832 | 4,564 | 33,310 | 978,579 | 269,705 | Autosomal recessive inheritance (8,080) |
+| Noonan syndrome | 21 | 565 | 5,991 | 32,353 | 1,533,957 | 261,158 | Autosomal recessive inheritance (8,080) |
+| amyotrophic lateral sclerosis | 48 | 476 | 2,537 | 33,440 | 1,768,143 | 138,260 | Autosomal recessive inheritance (8,080) |
+| Parkinson disease | 45 | 514 | 2,288 | 31,792 | 1,507,960 | 110,051 | Autosomal recessive inheritance (8,080) |
+| cystic fibrosis | 9 | 545 | 1,045 | 24,104 | 810,762 | 59,533 | Autosomal recessive inheritance (8,080) |
+| type 2 diabetes mellitus | 6 | 224 | 410 | 14,709 | 706,830 | 24,988 | Autosomal dominant inheritance (6,341) |
+| Rett syndrome | 4 | 232 | 672 | 19,975 | 610,000 | 77,333 | Global developmental delay (7,276) |
+| Marfan syndrome | 5 | 329 | 1,849 | 21,322 | 431,531 | 86,654 | Autosomal dominant inheritance (6,341) |
 
 These eight are a convenience sample, not a survey — there are 29,866 non-deprecated
 MONDO terms with at least one edge in this dump, and these were chosen by hand to
 span shapes that seemed likely to differ. What follows holds for them; the
 distribution over all 29,866 is a separate question.
 
-Two hops does not run away. The worst case here is 270k edges and the range across
-all eight is 25k to 270k — nowhere near a large fraction of a 15.2M-edge graph.
-Taken together as one subgraph they deduplicate hard: the union of all eight at two
-hops is 529,380 edges, roughly half the 1.03M the per-disease rows sum to, because
-these diseases share phenotype and gene neighbours. Half a million triples sits
-inside the budget derived in section 2 with room to spare, even at 768 dimensions.
-The trap I predicted is not there at this radius.
+One hop and two hops bracket the budget rather than both sitting under it. At one hop
+a single disease family yields a few thousand triples — 410 for type 2 diabetes, 5,991
+for Noonan — which is too small to exercise anything. At two hops the same families
+yield between 431,531 and 1,768,143, and amyotrophic lateral sclerosis alone exceeds
+the working budget from section 2. Taken together the eight overlap heavily and still
+come to 2,745,052 induced triples at two hops, against 21,477 at one hop. There is no
+hop radius that lands a handful of diseases in the middle of the budget: the step from
+one to two hops is a factor of a hundred.
+
+That is the opposite of what the incident counts suggested, and the error was mine —
+I measured reach and reasoned about content. The incident column is kept in the table
+because the hub and predicate-cut measurements below were computed on it.
 
 The hub mechanism is real, but the clean fix I expected is not. The highest-degree
 node in each one-hop frontier is an inheritance-mode term for six of the eight —
@@ -101,9 +121,19 @@ no predicate-level cut removes the fan-out without removing content. Excluding
 `interacts_with` as well takes the union to 446,762, a sixteen percent saving, and
 that one costs real protein-interaction data rather than noise.
 
-So hub surgery is a tuning knob to keep in reserve, not a prerequisite. At this
-radius the corpus already fits, and the argument for cutting hubs has to be made on
-retrieval quality rather than on size.
+Those savings are measured on incident counts, so read them as proportions rather
+than as corpus sizes. The proportions are what the argument rests on, and they say
+hub surgery is not a size lever worth reaching for first.
+
+The frequency data underneath makes the same point from the other side. Across all
+29,868 diseases, 11,589 distinct phenotypes are in use and the median one annotates
+four diseases, while the most common — Global developmental delay at 2,255 diseases,
+Seizure at 2,161, Intellectual disability at 2,107 — reach seven percent of them.
+Seven percent is exactly the kind of term a sparse retriever discounts for free
+through inverse document frequency, without anyone deciding it should. Dense
+embedding retrieval has no such mechanism: a near-universal phenotype contributes to
+a disease's vector as much as a discriminative one does. That is a real reason such
+terms might hurt, and it is answerable against v1's gold set rather than by argument.
 
 Seed count is a weak predictor of subgraph size. EDS matches 57 seeds and Marfan 5,
 a factor of eleven, but their one-hop node counts are 832 and 329, a factor of 2.5.
@@ -143,19 +173,20 @@ distribution can be read at face value.
 | p99.9 | 278 | 140,775 |
 | max | 2,683 | 202,295 |
 
-No single disease can blow the budget. The largest two-hop neighbourhood in all of
-MONDO is 202,295 edges — a tenth of the two-million-triple ceiling — and 99.4% of
-diseases stay under 100,000. Not one exceeds half a million. The hop-radius worry
-that opened this section is not merely smaller than predicted; at one seed it cannot
-be the binding constraint at all.
+These are incident counts, and by the argument above that means they measure reach,
+not corpus size. Read as reach, the shape is clear: the median disease touches four
+neighbours, 99.4% stay under 100,000 two-hop edge ends, and the largest in all of
+MONDO is 202,295. Read as a corpus budget they would be badly misleading — the
+eight-disease table shows induced counts running four to seven times higher, which
+puts several single diseases over the ceiling rather than a tenth of the way to it.
+Recomputing the full distribution as induced counts is the obvious follow-up and has
+not been done.
 
-What binds is the number of seeds, and it binds gently because neighbourhoods
-overlap. The eight-disease union came to 529,380 edges against a 1.03M sum of its
-parts, a discount of about half. Applying that discount to p90-sized diseases, a
-two-million-triple budget buys on the order of a hundred diseases at two hops; at
-median sizes it buys thousands. Section 1's question is therefore not which radius to
-choose but how many seeds to take, which was the most tractable of the three moves
-from the start.
+What the distribution does settle is that seed count, not hop radius, is the knob
+with a usable range. Hop radius has two settings and they differ by a factor of a
+hundred. Seed count is continuous, and because neighbourhoods overlap heavily it
+grows sublinearly — the eight-disease union at two hops is 2,745,052 induced triples
+against the 8.3M its rows sum to, a discount of about two thirds.
 
 The distribution also indicts the sample above. The median disease has four
 neighbours and 420 two-hop edges. All eight chosen by hand sit far into the tail,
@@ -164,6 +195,51 @@ skew matters most for the whole-graph option: a 1.46M-node corpus is dominated b
 sparsely annotated terms whose text is little more than a label, and how retrieval
 behaves over a corpus of mostly-bare documents is a quality question that no amount
 of runtime measurement will answer.
+
+### Measured: closure, and the subset that fits
+
+If a handful of diseases is too small at one hop and over budget at two, the next
+instinct is to stop choosing a radius and take the closure — everything reachable
+from the seeds. Growing the EDS neighbourhood hop by hop until it stops growing takes
+four seconds:
+
+| hop | nodes | new | induced edges | % of graph nodes |
+|---|---|---|---|---|
+| 1 | 832 | 832 | 4,564 | 0.1% |
+| 2 | 33,310 | 32,478 | 978,579 | 2.3% |
+| 3 | 474,718 | 441,408 | 11,608,169 | 32.5% |
+| 4 | 894,713 | 419,995 | 14,814,020 | 61.2% |
+| 5 | 1,007,053 | 112,340 | 15,144,560 | 68.9% |
+| 6 | 1,022,202 | 15,149 | 15,183,648 | 69.9% |
+| 12 | 1,028,033 | 44 | 15,194,439 | 70.3% |
+
+By hop three it holds 76% of the graph's edges, and it converges on a component of
+about 1.03M nodes carrying 99.9% of them. Closure is not a knob at all, and not
+because it is merely large: reachability closure is a connected-component property,
+so every disease in that component has the identical closure. The closure of one
+disease and the closure of a hundred are the same object. Only diseases stranded in
+small isolated components would differ, which is a separate question worth asking but
+not a way to size a subset.
+
+What does land inside the budget is dropping the seed choice entirely and keeping the
+radius at one: every disease, one hop out.
+
+```
+all 29,868 diseases, one hop:  89,051 nodes   1,094,548 induced triples
+```
+
+That is the subset this section has been looking for. It fits at 768 dimensions with
+headroom, it needs no defence of why one disease is in and another out, it inherits
+none of the name-match artefacts, and at roughly 1.1M triples over 89k nodes it is
+dense enough to give retrieval something to work with. It is made of 29,868 diseases,
+17,259 variants, 11,557 phenotypes, 9,573 cases, 8,741 genotypes and 6,207 genes,
+joined mostly by `has_phenotype`, `subclass_of`, `causes` and the treatment
+predicates.
+
+Its boundary is the gene side. Only 6,207 genes get in, and no gene-gene or
+gene-phenotype edge that does not pass through a disease. Questions reasoning outward
+from a gene or a phenotype hit that edge of the world, and what it would cost to
+extend the subgraph among the genes already present has not been measured.
 
 ## 2. What we embed — nodes vs. triples
 

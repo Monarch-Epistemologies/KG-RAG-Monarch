@@ -13,10 +13,10 @@ con = sc.connect()
 sc.add_degree_table(con)
 
 print(
-    f"{'disease':32} {'seeds':>6} {'h1 nodes':>9} {'h1 edges':>9} "
-    f"{'h2 nodes':>9} {'h2 edges':>10}  top hub in h1"
+    f"{'disease':32} {'seeds':>6} {'h1 nodes':>9} {'h1 induc':>9} "
+    f"{'h2 nodes':>9} {'h2 induc':>10} {'h2 incid':>10}  top hub in h1"
 )
-print("-" * 110)
+print("-" * 122)
 
 for pattern in sc.config()["diseases"]:
     con.execute(
@@ -59,6 +59,17 @@ for pattern in sc.config()["diseases"]:
 
     count = lambda table: con.execute(f"SELECT count(*) FROM {table}").fetchone()[0]  # noqa: E731
 
+    # Incident counts (above) keep every edge with one end in the frontier; induced
+    # counts keep only edges with both ends inside the node set. A triple corpus is
+    # the induced set — if both endpoints are documents, the edge between them is a
+    # retrievable fact — so the two differ by a lot and are not interchangeable.
+    def induced(node_table):
+        return con.execute(f"""
+            SELECT count(*) FROM edges
+            WHERE subject IN (SELECT id FROM {node_table})
+              AND object IN (SELECT id FROM {node_table})
+        """).fetchone()[0]
+
     hub = con.execute("""
         SELECT n.name, n.id, d.deg
         FROM h1_nodes h
@@ -70,6 +81,6 @@ for pattern in sc.config()["diseases"]:
 
     print(
         f"{pattern:32} {count('seeds'):>6,} {count('h1_nodes'):>9,} "
-        f"{count('h1_edges'):>9,} {count('h2_nodes'):>9,} {count('h2_edges'):>10,}"
-        f"  {hub_text}"
+        f"{induced('h1_nodes'):>9,} {count('h2_nodes'):>9,} "
+        f"{induced('h2_nodes'):>10,} {count('h2_edges'):>10,}  {hub_text}"
     )
