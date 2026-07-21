@@ -1,0 +1,32 @@
+# Hand-tuned inputs for the subgraph-shape measurements in doc/substack_draft.md
+# section 1. These are knobs, not logic — change them here, not in bin/.
+
+# Disease name substrings, matched case-insensitively against the MONDO node's
+# `name` column exactly as KG-RAG-EDS's filter.sh did. Chosen by hand to span
+# rare monogenic, multi-subtype and common complex; a convenience sample, not a
+# survey. The distribution over all MONDO terms is measured separately.
+diseases:
+  - ehlers-danlos syndrome
+  - marfan syndrome
+  - cystic fibrosis
+  - noonan syndrome
+  - rett syndrome
+  - amyotrophic lateral sclerosis
+  - parkinson disease
+  - type 2 diabetes mellitus
+
+# Predicate exclusions tested against the hub fan-out that drives hop-2 growth.
+# Each entry is one measured scenario, applied cumulatively in shape_hubs.py.
+predicate_cuts:
+  - label: none (baseline)
+    drop: []
+  - label: drop has_mode_of_inheritance
+    drop:
+      - biolink:has_mode_of_inheritance
+  - label: drop inheritance + interacts_with
+    drop:
+      - biolink:has_mode_of_inheritance
+      - biolink:interacts_with
+
+# How many top-degree frontier nodes shape_hubs.py lists before measuring cuts.
+hub_list_size: 20
