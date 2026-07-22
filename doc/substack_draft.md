@@ -307,13 +307,12 @@ genotype nodes is the same kind of judgement, made because their text is largely
 identifiers, and it saves only 45k triples because most such nodes were non-human and
 already gone.
 
-Which leaves an honest tension rather than a clean answer. The method-neutral
-boundary — human, everything else kept — is 442,307 nodes and 4,923,997 triples.
-As a node corpus that is comfortable. As a triple corpus it is roughly 15 GB of
-vectors at 768 dimensions, and it does not fit. Capacity comes back, but now as a
-named conflict between a defensible graph and this machine, which is exactly the
-kind of measured wall section 5 is looking for — rather than as the thing that
-silently chose the graph in the first place.
+That leaves the method-neutral boundary — human, everything else kept — at 442,307
+nodes and 4,923,997 triples. The worry was that this does not fit as a triple corpus,
+and measured against this machine the worry turns out to be smaller than it looked;
+section 2 works the numbers, but the short version is that neither runtime nor memory
+makes the human-only graph intractable. The boundary can stand on relevance, which is
+what the whole detour through closure was trying to buy.
 
 ## 2. What we embed — nodes vs. triples
 
@@ -337,39 +336,47 @@ them matter enough to decide the question.
 
 The first is the embedding run itself. Embedding into vectors is a single forward
 pass per document with no gradient, so the cost is linear in document count and the
-useful figure is documents per second on this machine — which is exactly what has
-not been measured yet, because v1's 833 documents finished before the question could
-come up. Whatever that rate turns out to be, the triple corpus takes ten times as
-long as the node corpus, and it takes that long again on every re-embedding. Section
-3 is about swapping the model for a biomedical one, and a model swap means
-re-embedding every row from scratch. So the tenfold factor is not paid once; it is
-paid once per model we want to compare.
+useful figure is documents per second on this machine. Measured on MiniLM over the
+human-only corpus from section 1: node text runs at about 620 documents per second
+and triple text at about 2,000. Triples are faster per document, not slower, because
+a triple is two names and a predicate — around 50 characters — while a node carries
+its synonyms and description, around 200. The counter-tenfold of triple count is
+partly repaid by shorter documents.
 
-The second is memory, and here the arithmetic is unforgiving. At MiniLM's 384
-dimensions and four bytes per float, node-level embedding produces about 2.1 GiB of
-vectors and triple-level about 21.8 GiB. The 2.1 GiB fits in this machine's 16 GB of
-unified memory with room to work. The 21.8 GiB does not fit at all, and unified
-memory means the model, the OS and everything else are drawing on the same pool.
-Storing the vectors is not the problem — DuckDB is perfectly happy to keep them on
-disk. The problem arrives in section 4, when brute-force cosine gives way to an
-approximate-nearest-neighbor index, because building such an index generally wants
-the vectors resident. A corpus that cannot be held in RAM cannot have an in-RAM
-index built over it, and that is a hard wall rather than a slow path.
+The full numbers land nowhere near a wall. The human-only node corpus, 442,307
+documents, embeds in about twelve minutes; the human-only triple corpus, 4,923,997
+documents, in about forty. Even the whole 15.2M-edge graph as triples would be a
+couple of hours. This is measured at 384 dimensions; a 768-dimension biomedical model
+in section 3 is slower per document and re-embeds every row from scratch, so the real
+figure to hold is not one run but one run per model compared — still an overnight job
+at the largest corpus, which is the patience v2 was built to spend.
 
-That makes triple-level embedding over the full graph the clearest candidate for the
-v3 tripwire in section 5 — not because it is slow, but because it does not fit. It
-also means the two forks of this section are not symmetric. Node-level embedding
-over the whole graph is a patience question and the machine can answer it.
-Triple-level embedding over the whole graph is a capacity question and the machine
-cannot, so if we want assertion-level retrieval on this hardware it has to come with
-a subgraph from section 1, which is where the two sections meet.
+The second is memory, and this is where the first draft of this section was wrong. At
+384 dimensions and four bytes per float the human-only triple corpus is about 7.0 GiB
+of vectors, and the whole-graph triple corpus about 21.8 GiB. The instinct was that
+21.8 GiB against 16 GB of unified memory is a hard wall. It is not, because nothing in
+the retrieval path needs every full-precision vector resident at once. Storing them is
+a non-issue — DuckDB keeps them on disk. Building the approximate-nearest-neighbor
+index from section 4 is the step that was supposed to force residency, but ANN indexes
+exist precisely to avoid it: half-precision floats halve the footprint, and product
+quantization takes a 768-dimension vector down to tens of bytes, so a five-million
+vector index is a few hundred megabytes with the exact vectors left on disk for
+rescoring the top candidates. Five million vectors is a mid-sized index, not a large
+one.
 
-A third option is worth naming before committing: embed nodes, and reach facts by
-traversal from retrieved entities, which is what v1 already built in its second
-sub-project. That keeps the corpus at 1.46M and buys assertion-level answers with
-graph walks instead of vectors. Whether it is a substitute for triple embedding or a
-weaker approximation of it is an evaluation question, and it is cheap enough to
-answer that it should be answered before paying the tenfold cost.
+So the earlier conclusion — that triple embedding over a large graph is a capacity
+wall and the clearest v3 tripwire — does not survive measurement. Memory is not the
+binding constraint at these sizes. If a tripwire lives here at all it is runtime under
+repeated re-embedding during model tuning, which is a patience question with a
+measured rate behind it, not a wall. That reopens the human-only triple corpus as a
+real option on this machine rather than a deferred one.
+
+A third option is still worth naming: embed nodes, and reach facts by traversal from
+retrieved entities, which is what v1 already built in its second sub-project. It buys
+assertion-level answers with graph walks instead of a ten-times-larger vector index.
+Whether it is a substitute for triple embedding or a weaker approximation is an
+evaluation question, cheap to answer at v1 scale against the existing gold set before
+committing to the larger build.
 
 ## 3. Which embedding model
 
