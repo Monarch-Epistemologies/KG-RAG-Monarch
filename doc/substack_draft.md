@@ -228,10 +228,10 @@ radius at one: every disease, one hop out.
 all 29,868 diseases, one hop:  89,051 nodes   1,094,548 induced triples
 ```
 
-That is the subset this section has been looking for. It fits at 768 dimensions with
-headroom, it needs no defence of why one disease is in and another out, it inherits
-none of the name-match artefacts, and at roughly 1.1M triples over 89k nodes it is
-dense enough to give retrieval something to work with. It is made of 29,868 diseases,
+That is the first subset that fits without a seed choice to defend. It inherits none
+of the name-match artefacts, and at roughly 1.1M triples over 89k nodes it is dense
+enough to give retrieval something to work with. But it is still a boundary drawn
+where the machine runs out, which the next two subsections take apart. It is made of 29,868 diseases,
 17,259 variants, 11,557 phenotypes, 9,573 cases, 8,741 genotypes and 6,207 genes,
 joined mostly by `has_phenotype`, `subclass_of`, `causes` and the treatment
 predicates.
@@ -240,6 +240,80 @@ Its boundary is the gene side. Only 6,207 genes get in, and no gene-gene or
 gene-phenotype edge that does not pass through a disease. Questions reasoning outward
 from a gene or a phenotype hit that edge of the world, and what it would cost to
 extend the subgraph among the genes already present has not been measured.
+
+### Three kinds of boundary, and what closure actually contains
+
+Every subset above was drawn by distance or by capacity, and both are arbitrary with
+respect to the question being asked. There is a third option — draw the boundary by
+relevance, from what the use cases need — and it is the only one that can be argued
+without reference to hardware. Taking closure first is a way of refusing the capacity
+boundary, which is right. But closure does not supply a relevance boundary; it
+supplies no boundary at all, and then the graph's construction accidents become the
+boundary instead.
+
+What "everything about a disease" contains, measured:
+
+| axis | share |
+|---|---|
+| edges touching a non-human species | 67.6% |
+| nodes that are mouse | 24.9% |
+| nodes that are zebrafish | 11.8% |
+| nodes that are human | 3.8% |
+| `interacts_with` edges | 18.1% |
+| `expressed_in` edges | 16.1% |
+| `has_phenotype` edges | 14.5% |
+| `orthologous_to` edges | 11.4% |
+| largest single source (MGI, mouse genome database) | 15.5% |
+
+So the closure of Ehlers-Danlos is not everything about Ehlers-Danlos. It is
+Ehlers-Danlos plus the entire model-organism molecular substrate, reached through
+gene interaction and orthology edges. Three hops out you are reading zebrafish
+expression data. The completeness is real but it is completeness with respect to what
+Monarch merged, not with respect to the disease.
+
+There is also no operation in a text-embedding pipeline that uses a closure. Retrieval
+embeds the query into a vector and takes the nearest documents; the graph decides
+only which documents exist. Reachability would matter for multi-hop graph reasoning —
+v1's second sub-project — but not here.
+
+### Paring back by relevance
+
+Applying cuts that can each be defended from v2's use cases — human phenotyping,
+cohort discovery, drug repurposing — with capacity given no vote until the end:
+
+| relevance cut | nodes | triples | diseases kept |
+|---|---|---|---|
+| whole graph (= closure) | 1,047,586 | 15,211,571 | 29,866 (100%) |
+| drop edges touching a non-human species | 442,307 | 4,923,997 | 29,866 (100%) |
+| + drop molecular infrastructure predicates | 398,627 | 1,845,318 | 29,866 (100%) |
+| + drop variant and genotype nodes | 381,237 | 1,800,380 | 29,866 (100%) |
+
+Disease coverage never moves: all 29,866 survive every cut. The species cut alone
+removes two thirds of the graph and costs nothing a human-phenotyping question would
+have used.
+
+One constraint governs which of these cuts are legitimate, and it comes from what the
+subset is for. This graph has to outlast the current question — the point of the line
+is to compare retrieval methods, text embedding against graph traversal against
+network embedding, on the *same* substrate. A cut tuned to the method being measured
+would rig the comparison.
+
+By that test the cuts are not equal. Dropping non-human species is method-neutral:
+no method under comparison is trying to answer with zebrafish data. Dropping
+molecular infrastructure is not — `interacts_with` is precisely the structure a
+network embedding would exploit for drug repurposing, and removing it because a text
+retriever has no use for it decides the experiment in advance. Dropping variant and
+genotype nodes is the same kind of judgement, made because their text is largely
+identifiers, and it saves only 45k triples because most such nodes were non-human and
+already gone.
+
+Which leaves an honest tension rather than a clean answer. The method-neutral
+boundary — human, everything else kept — is 442,307 nodes and 4,923,997 triples.
+As a node corpus that is comfortable. As a triple corpus it is roughly 15 GB of
+vectors at 768 dimensions, and it does not fit. Capacity comes back, but now as a
+named conflict between a defensible graph and this machine, which is exactly the
+kind of measured wall section 5 is looking for — rather than as the thing that
+silently chose the graph in the first place.
 
 ## 2. What we embed — nodes vs. triples
 

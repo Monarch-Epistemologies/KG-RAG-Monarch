@@ -30,3 +30,53 @@ predicate_cuts:
 
 # How many top-degree frontier nodes shape_hubs.py lists before measuring cuts.
 hub_list_size: 20
+
+# Relevance-first pare-back, applied cumulatively by shape_relevance.py. The order
+# is the argument: each step has to be defensible from v2's use cases (human
+# phenotyping, cohort discovery, drug repurposing) without appealing to what fits in
+# memory. Capacity only gets a vote once these have been applied.
+relevance_cuts:
+  - label: whole graph (= closure)
+    drop_nonhuman: false
+    drop_predicates: []
+
+  - label: drop edges touching a non-human species
+    drop_nonhuman: true
+    drop_predicates: []
+
+  # Molecular infrastructure: real biology, but it is the substrate under the
+  # disease layer rather than something a phenotyping or repurposing question
+  # traverses. Orthology is included because its purpose is cross-species transfer.
+  - label: + drop molecular infrastructure predicates
+    drop_nonhuman: true
+    drop_predicates:
+      - biolink:interacts_with
+      - biolink:expressed_in
+      - biolink:orthologous_to
+      - biolink:enables
+      - biolink:actively_involved_in
+      - biolink:located_in
+      - biolink:participates_in
+      - biolink:is_active_in
+      - biolink:has_part
+      - biolink:part_of
+
+  # Sequence-level detail: a variant or genotype node's text is largely an
+  # identifier, so it carries little for a text-embedding retriever even though the
+  # structure is sound.
+  - label: + drop variant and genotype nodes
+    drop_nonhuman: true
+    drop_categories:
+      - biolink:SequenceVariant
+      - biolink:Genotype
+    drop_predicates:
+      - biolink:interacts_with
+      - biolink:expressed_in
+      - biolink:orthologous_to
+      - biolink:enables
+      - biolink:actively_involved_in
+      - biolink:located_in
+      - biolink:participates_in
+      - biolink:is_active_in
+      - biolink:has_part
+      - biolink:part_of
