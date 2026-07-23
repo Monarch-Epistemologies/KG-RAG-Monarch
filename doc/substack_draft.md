@@ -569,6 +569,54 @@ the approximate-nearest-neighbor index that replaces it — still to measure)_
 
 ## 5. The v3 tripwire
 
-The measured condition that ends the native-Mac era and justifies Docker + RunPod.
+The original framing had two rungs: v2 runs native on the Mac until some measured cost
+makes it impractical, at which point v3 ships the work to a CUDA GPU in a container on
+RunPod. Embedding the node corpus put a real number on the tripwire and, in doing so,
+revealed a rung the framing skipped.
 
-_(draft here)_
+### What the thermal wall actually costs
+
+The fanless MacBook Air cannot sustain GPU embedding at speed. Cool, SapBERT encodes
+about 400 documents a second; under the Heavy thermal pressure that builds after the
+first ~60,000 documents, the sustained average falls to roughly 110 — a factor of about
+3.5, and up to 4x against the cold peak. The loss is not merely a lower clock: the
+thermal manager parks the GPU in cooling cycles, so clock and duty cycle collapse
+together and multiply. A run of cooling experiments — case off, laptop vertical in a
+clamshell stand, a fan aimed dead at the bare aluminum over the SoC — moved the
+throttled rate around within a band of roughly 60 to 150 documents a second but never
+restored the cool ~400. External cooling nudges the ceiling; it cannot lift a fanless
+chassis past the rate at which it sheds heat. For the 300k node corpus that is ~45
+minutes instead of ~12; for the ~4M triple corpus it is the difference between an
+afternoon and most of a day.
+
+### The rung the framing skipped: a cooled Apple-Silicon desktop
+
+The instinct is to read that as "the Mac era is over, go to CUDA." It is not, because
+the wall is thermal, not architectural. A Mac Mini or Studio is the same Apple Silicon,
+the same Metal/MPS backend, the same code — but actively cooled, so it holds full boost
+under sustained load, and configurable with 24–64 GB of unified memory, which also
+lifts the other native ceiling this project keeps hitting: the 16 GB limit on an in-RAM
+approximate-nearest-neighbor index. One cooled box removes both walls at once, and it
+does so *without* containers — which matters, because the entire reason v3 was deferred
+is that Docker on Apple Silicon cannot reach the GPU. A cooled Mac keeps the native-MPS
+advantage and simply adds a fan.
+
+So the ladder has three rungs, not two:
+
+- **v2** — the fanless laptop. Fine for building, measuring, and one-time runs that can
+  be hand-cooled or left to crawl. Thermally bound on anything sustained.
+- **v2.5** — a cooled Apple-Silicon desktop. Same stack, no containers, no thermal wall,
+  more memory. The right answer to *this* project's measured limits.
+- **v3** — Docker + a datacenter CUDA GPU on RunPod. Justified only by a need a single
+  cooled desktop still cannot meet: re-embedding the full multi-million-triple corpus
+  across many candidate models, where raw parallel throughput, not thermal headroom, is
+  the binding constraint.
+
+The tripwire, then, is not "leave Apple Silicon." It is "leave the *fanless* machine",
+and the measured trigger is the thermal 3.5x — the point at which sustained embedding
+stops being something the laptop can do patiently. The first stop past it is a cooled
+Mac, and only a need for datacenter-scale parallelism justifies the jump all the way to
+a CUDA container.
+
+_(the specific workload that would clear even v2.5 — full triple-corpus re-embedding
+across the model field — is named but not yet costed)_
