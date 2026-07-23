@@ -110,9 +110,28 @@ with open(QUERIES_OUT, "w") as fh:
     for q_text, target_id, ns in queries:
         fh.write(json.dumps({"query": q_text, "target": target_id, "ns": ns}) + "\n")
 
-from sentence_transformers import SentenceTransformer  # noqa: E402
+from sentence_transformers import SentenceTransformer, models  # noqa: E402
 
-model = SentenceTransformer(MODEL, device="mps")
+# SapBERT and other PubMedBERT-family encoders are trained on the [CLS] token, not
+# the mean-pooled output sentence-transformers applies by default; loading them
+# naively would pool the wrong way and understate them. Build those with CLS pooling
+# so the comparison is fair. Native sentence-transformer models bring their own pooling.
+CLS_POOLED = ("sapbert", "pubmedbert", "medcpt")
+
+
+def build_model(name):
+    if any(tag in name.lower() for tag in CLS_POOLED):
+        word = models.Transformer(name)
+        pooling = models.Pooling(
+            word.get_word_embedding_dimension(),
+            pooling_mode_cls_token=True,
+            pooling_mode_mean_tokens=False,
+        )
+        return SentenceTransformer(modules=[word, pooling], device="mps")
+    return SentenceTransformer(name, device="mps")
+
+
+model = build_model(MODEL)
 dim = model.get_sentence_embedding_dimension()
 print(f"{MODEL}, {dim} dim | {len(queries):,} queries, {len(gallery_ids):,} gallery\n")
 

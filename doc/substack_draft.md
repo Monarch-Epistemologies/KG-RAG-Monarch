@@ -412,10 +412,68 @@ committing to the larger build.
 
 ## 3. Which embedding model
 
-Quality through training, not brute-force size: general vs. biomedical
-(MedCPT / BioLORD / SapBERT). The quality/runtime tables as the evidence.
+The embedding model is the thing that turns each node's text into a vector, and
+retrieval is only ever as good as where that model puts things. A general-purpose
+model has seen ordinary web text; a biomedical model has been trained on medical and
+biological language, so the question is whether that training buys placements good
+enough to matter here — quality through training, not through a bigger model.
 
-_(draft here)_
+### Measuring it: synonym retrieval
+
+The graph hands us a free test. Many nodes record their own synonyms — "myocardial
+infarction" also lists "heart attack" — and the graph is thereby asserting those two
+strings mean the same thing. So we can query with one held-out synonym, retrieve
+against a gallery of node names, and check whether the right node comes back near the
+top. The gallery holds names only, so the queried synonym is never in the text being
+matched: a hit needs the model to place the two on meaning, not on shared words. That
+is exactly the skill retrieval depends on, because a real question never uses the
+graph's exact wording. The full instrument, and why the EDS traversal gold cannot do
+this job, is written up in [`eval/`](../eval/README.md).
+
+### The result
+
+Two thousand synonym queries against a twenty-thousand-name gallery, the same sample
+for every model so the scores are comparable. Mean reciprocal rank (MRR) scores each
+query by where the right node ranked — 1 for first, ½ for second — and averages;
+higher is better.
+
+| namespace | MiniLM (general) | BioLORD | MedCPT | SapBERT |
+|---|---|---|---|---|
+| overall | 0.545 | 0.580 | 0.611 | **0.736** |
+| HGNC (genes) | 0.19 | 0.22 | 0.26 | **0.47** |
+| PR (proteins) | 0.14 | 0.16 | 0.32 | **0.46** |
+| MONDO (disease) | 0.41 | 0.48 | 0.46 | **0.68** |
+| CHEBI (chemicals) | 0.42 | 0.47 | 0.45 | **0.62** |
+| HP (phenotype) | 0.67 | 0.84 | 0.75 | **0.89** |
+| GO (gene function) | 0.70 | 0.79 | 0.79 | **0.87** |
+| UBERON (anatomy) | 0.70 | 0.76 | 0.74 | **0.85** |
+| OBA (attributes) | 0.86 | 0.89 | 0.91 | **0.97** |
+| UPHENO (cross-species phenotype) | **0.92** | 0.80 | 0.89 | 0.91 |
+
+The general model is the floor and it fails in a specific place: gene and protein
+symbols, where a synonym is an alias like `PARK2` with no meaning on its surface to
+match. That is precisely where domain training should help, and it does. SapBERT —
+the one model trained directly on concept synonymy, from the UMLS medical vocabulary —
+lifts genes from 0.19 to 0.47 and proteins from 0.14 to 0.46, and wins every namespace
+but one without giving anything back on the descriptive vocabulary the general model
+already handled. The other two biomedical models beat the baseline only modestly; the
+training objective, not the fact of being biomedical, is what separates them.
+
+One honest caveat sits under the MedCPT column. MedCPT is built as an asymmetric
+query-and-document retriever, and this test runs its query encoder on both sides, which
+is not its intended use — its number is a floor, not its best showing. It does not
+change the ranking: SapBERT is the model, decisively, and it earns its place on the
+gene and protein vocabulary that a general model cannot reach.
+
+### Runtime cost of the choice
+
+SapBERT is a 768-dimension model against MiniLM's 384, so its vectors are twice the
+size and it is slower per document. On the built corpus that is minutes, not a wall —
+the throughput measured earlier holds, and the one real recurring cost is that every
+model compared means embedding the corpus again from scratch.
+
+_(retrieval-quality-in-context, as opposed to this proxy, still to measure once the
+corpus is embedded and a real question set exists)_
 
 ## 4. Retrieval at scale
 
