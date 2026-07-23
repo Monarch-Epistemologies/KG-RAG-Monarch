@@ -1,0 +1,2000 @@
+{"query": "HPMRS2", "target": "MONDO:0013882", "ns": "MONDO"}
+{"query": "vitamin K epoxide reductase complex subunit 1 like 1", "target": "HGNC:21492", "ns": "HGNC"}
+{"query": "KIAA0411", "target": "HGNC:19744", "ns": "HGNC"}
+{"query": "Missing endoderm-derived structure in the endocrine system", "target": "UPHENO:0025597", "ns": "UPHENO"}
+{"query": "down regulation of Rho protein signal transduction", "target": "GO:0035024", "ns": "GO"}
+{"query": "DEE4", "target": "MONDO:0012812", "ns": "MONDO"}
+{"query": "PA2G4L1", "target": "HGNC:32217", "ns": "HGNC"}
+{"query": "70S ribosome", "target": "GO:0022626", "ns": "GO"}
+{"query": "S13", "target": "HGNC:10386", "ns": "HGNC"}
+{"query": "activation of retinal ganglion cell axon guidance", "target": "GO:1902336", "ns": "GO"}
+{"query": "cerebrospinal fluid albumin (human) amount", "target": "OBA:2056695", "ns": "OBA"}
+{"query": "regulation of DMP", "target": "GO:2000746", "ns": "GO"}
+{"query": "changed morphology of basal ganglion", "target": "UPHENO:0088139", "ns": "UPHENO"}
+{"query": "SERPINF2/ClvPrd", "target": "PR:000021440", "ns": "PR"}
+{"query": "KIAA0751", "target": "HGNC:17283", "ns": "HGNC"}
+{"query": "2-(acetyloxy)-5-[(1S)-2-cyclopropyl-1-(2-fluorophenyl)-2-oxoethyl]-4,5,6,7-tetrahydrothieno[3,2-c]pyridin-5-ium chloride", "target": "CHEBI:87708", "ns": "CHEBI"}
+{"query": "DNase II activity", "target": "GO:0004531", "ns": "GO"}
+{"query": "Somatomedin C", "target": "CHEBI:80343", "ns": "CHEBI"}
+{"query": "calixaromatics", "target": "CHEBI:51197", "ns": "CHEBI"}
+{"query": "3\\-phosphoadenosine 5\\-{3-[(3R)-3-hydroxy-2,2-dimethyl-4-{[3-({2-[(3-methylbut-2-enoyl)sulfanyl]ethyl}amino)-3-oxopropyl]amino}-4-oxobutyl] dihydrogen diphosphate}", "target": "CHEBI:15486", "ns": "CHEBI"}
+{"query": "(3R,4S,5R)-5-(1-carboxyethenyloxy)-4-hydroxy-3-(phosphonooxy)cyclohex-1-ene-1-carboxylic acid", "target": "CHEBI:16257", "ns": "CHEBI"}
+{"query": "uPA", "target": "MONDO:0004041", "ns": "MONDO"}
+{"query": "(13E,16E,19E)-Docosa-13,16,19-trienoic acid", "target": "CHEBI:80549", "ns": "CHEBI"}
+{"query": "4-O-acetyl-N-acetylneuraminic acid", "target": "CHEBI:32844", "ns": "CHEBI"}
+{"query": "blood serum ubiquilin-4 amount", "target": "OBA:2044014", "ns": "OBA"}
+{"query": "INRF2", "target": "PR:000009277", "ns": "PR"}
+{"query": "HMIC", "target": "HGNC:19080", "ns": "HGNC"}
+{"query": "OR52L2", "target": "HGNC:14788", "ns": "HGNC"}
+{"query": "raw ostrich carcass", "target": "FOODON:02020788", "ns": "FOODON"}
+{"query": "hypoaldosteronism", "target": "MONDO:0015900", "ns": "MONDO"}
+{"query": "rate of glyceraldehyde-3-phosphate dehydrogenase (NAD+) (phosphorylating) activity", "target": "OBA:0005493", "ns": "OBA"}
+{"query": "choroid plexus tectal ventricle", "target": "UBERON:0007299", "ns": "UBERON"}
+{"query": "5-oxovalerate", "target": "CHEBI:16120", "ns": "CHEBI"}
+{"query": "blood serum probable RNA-binding protein 46 amount", "target": "OBA:2044502", "ns": "OBA"}
+{"query": "GDX", "target": "HGNC:12505", "ns": "HGNC"}
+{"query": "morphology of locus ceruleus", "target": "OBA:VT0003661", "ns": "OBA"}
+{"query": "1-acyl-3-sn-phosphatidylglycerol(1-)", "target": "CHEBI:75111", "ns": "CHEBI"}
+{"query": "smooth muscle tissue of gastrointestinal system", "target": "UBERON:0004226", "ns": "UBERON"}
+{"query": "life span duration trait", "target": "OBA:VT0005372", "ns": "OBA"}
+{"query": "4-aminobenzoic acid ethyl ester", "target": "CHEBI:116735", "ns": "CHEBI"}
+{"query": "blood trans-acting T-cell-specific transcription factor GATA-3 amount", "target": "OBA:2051161", "ns": "OBA"}
+{"query": "Edg-7 lysophosphatidic acid receptor ligand", "target": "GO:0031760", "ns": "GO"}
+{"query": "small appendage musculature", "target": "UPHENO:0070463", "ns": "UPHENO"}
+{"query": "missing strand of zigzag hair", "target": "UPHENO:0008814", "ns": "UPHENO"}
+{"query": "P(1),P(4)-bis(5\\-adenosyl) tetraphosphate, P(1)", "target": "CHEBI:58141", "ns": "CHEBI"}
+{"query": "small semicircular canal", "target": "UPHENO:0069382", "ns": "UPHENO"}
+{"query": "high thymus mass", "target": "UPHENO:0008297", "ns": "UPHENO"}
+{"query": "small mesoderm-derived structure in proximal phalanx of manual digit 5", "target": "UPHENO:0012408", "ns": "UPHENO"}
+{"query": "beta-alanine anabolism", "target": "GO:0019483", "ns": "GO"}
+{"query": "Gm9904", "target": "PR:B6A8R8", "ns": "PR"}
+{"query": "EFL-2", "target": "PR:000006918", "ns": "PR"}
+{"query": "Pseudosciatica", "target": "MONDO:0043320", "ns": "MONDO"}
+{"query": "N-propyl-N-[2-(2,4,6-trichlorophenoxy)ethyl]-1H-imidazole-1-carboxamide", "target": "CHEBI:8434", "ns": "CHEBI"}
+{"query": "meningoencephalocele, arthrogryposis and hypoplastic thumbs", "target": "MONDO:0043183", "ns": "MONDO"}
+{"query": "ODC (mouse)", "target": "PR:P00860", "ns": "PR"}
+{"query": "Hypoplasia of the semicircular canals", "target": "HP:0011382", "ns": "HP"}
+{"query": "the ratio of amount of dipeptidyl peptidase 1 (human) in blood to amount of lysosomal phospholipase A and acyltransferase (human) in blood", "target": "OBA:2054618", "ns": "OBA"}
+{"query": "C-X-C motif chemokine 4", "target": "PR:000012569", "ns": "PR"}
+{"query": "short thoracic duct", "target": "UPHENO:0047162", "ns": "UPHENO"}
+{"query": "Extra limb external integument structure", "target": "UPHENO:0014395", "ns": "UPHENO"}
+{"query": "Missing multicellular anatomical structure in the pedal digit 2", "target": "UPHENO:0027184", "ns": "UPHENO"}
+{"query": "beta-Lactam antibiotics", "target": "CHEBI:27933", "ns": "CHEBI"}
+{"query": "anterior dorsal fin base plate", "target": "UBERON:4300033", "ns": "UBERON"}
+{"query": "PRO_0000014873", "target": "PR:000046621", "ns": "PR"}
+{"query": "the ratio of amount of C-C motif chemokine 17 (human) in blood to amount of C-C motif chemokine 5 (human) in blood", "target": "OBA:2054693", "ns": "OBA"}
+{"query": "contactin associated protein-like 3 pseudogene 5", "target": "HGNC:49588", "ns": "HGNC"}
+{"query": "Leg paralysis", "target": "HP:0010550", "ns": "HP"}
+{"query": "changed morphology of ependyma", "target": "UPHENO:0086943", "ns": "UPHENO"}
+{"query": "acquired polycythemia (disease)", "target": "MONDO:0002438", "ns": "MONDO"}
+{"query": "neoplasm of the temporal lobe", "target": "MONDO:0021372", "ns": "MONDO"}
+{"query": "AMY1 signaling pathway", "target": "GO:0150059", "ns": "GO"}
+{"query": "changed split shape of anatomical entity in lip", "target": "UPHENO:0082369", "ns": "UPHENO"}
+{"query": "CMBL/InitMet-", "target": "PR:000019383", "ns": "PR"}
+{"query": "ALAS-E", "target": "HGNC:397", "ns": "HGNC"}
+{"query": "positive regulation of opioid receptor signalling pathway", "target": "GO:2000476", "ns": "GO"}
+{"query": "blood serum zinc-alpha-2-glycoprotein amount", "target": "OBA:2040742", "ns": "OBA"}
+{"query": "duplicated ventral larval melanophore stripe", "target": "UPHENO:0075590", "ns": "UPHENO"}
+{"query": "RN5S149", "target": "HGNC:43049", "ns": "HGNC"}
+{"query": "3-Hydroxy-4-hydroxymethyl-2-methylpyridine-5-carboxylate", "target": "CHEBI:30960", "ns": "CHEBI"}
+{"query": "width of epiphysis", "target": "OBA:VT0000132", "ns": "OBA"}
+{"query": "allergenic beta-lactam antibiotic", "target": "CHEBI:88225", "ns": "CHEBI"}
+{"query": "irregular, dense end plate", "target": "HP:0008476", "ns": "HP"}
+{"query": "arteriae digitales plantares communes", "target": "UBERON:0002455", "ns": "UBERON"}
+{"query": "41 kDa ubiquitin-specific protease (human)", "target": "PR:O75604", "ns": "PR"}
+{"query": "hsa-mir-548h-4", "target": "HGNC:35345", "ns": "HGNC"}
+{"query": "amount of patella", "target": "OBA:0002727", "ns": "OBA"}
+{"query": "middle ear NET", "target": "MONDO:0015071", "ns": "MONDO"}
+{"query": "Berger\\s disease, IgA Nephropathy, IgA glomerulonephritis, IgA nephropathy", "target": "MONDO:0005342", "ns": "MONDO"}
+{"query": "7-Hydroxymethylchlorophyll a", "target": "CHEBI:76032", "ns": "CHEBI"}
+{"query": "morphology of pharyngeal arch artery 6", "target": "OBA:0004238", "ns": "OBA"}
+{"query": "GDF-8", "target": "PR:000010684", "ns": "PR"}
+{"query": "changed morphology of superior cervical ganglion", "target": "UPHENO:0087181", "ns": "UPHENO"}
+{"query": "abieta-7,13-dien-18-al dehydrogenase activity", "target": "GO:0036188", "ns": "GO"}
+{"query": "PRO_0000036005", "target": "PR:000049601", "ns": "PR"}
+{"query": "enlarged forehead", "target": "UPHENO:0001452", "ns": "UPHENO"}
+{"query": "(1R,2R,3S,4R,5S,6S)-6-hydroxycyclohexane-1,2,3,4,5-pentayl pentakis[dihydrogen (phosphate)]", "target": "CHEBI:48405", "ns": "CHEBI"}
+{"query": "Missing epiphysis in the pedal digit 5", "target": "UPHENO:0027110", "ns": "UPHENO"}
+{"query": "activation of cytoplasmic translational elongation", "target": "GO:1900249", "ns": "GO"}
+{"query": "DDX4", "target": "PR:000031218", "ns": "PR"}
+{"query": "DRAM4", "target": "HGNC:37263", "ns": "HGNC"}
+{"query": "mercaptopurines", "target": "CHEBI:35666", "ns": "CHEBI"}
+{"query": "complement component 2", "target": "HGNC:1248", "ns": "HGNC"}
+{"query": "IFNAR1 deficiency", "target": "MONDO:0030970", "ns": "MONDO"}
+{"query": "COMMD8", "target": "PR:Q9NX08", "ns": "PR"}
+{"query": "small trochlear nucleus", "target": "UPHENO:0070040", "ns": "UPHENO"}
+{"query": "SIAE (mouse)", "target": "PR:P70665", "ns": "PR"}
+{"query": "3beta,14-dihydroxy-5beta-card-20(22)-enolide", "target": "CHEBI:42219", "ns": "CHEBI"}
+{"query": "OVCA1", "target": "HGNC:3003", "ns": "HGNC"}
+{"query": "Abnormal morphology of the hippocampus", "target": "HP:0025100", "ns": "HP"}
+{"query": "small epiphysis of metacarpal bone", "target": "UPHENO:0069487", "ns": "UPHENO"}
+{"query": "NAS1", "target": "PR:Q9BZW2", "ns": "PR"}
+{"query": "changed biliary tree", "target": "UPHENO:0003951", "ns": "UPHENO"}
+{"query": "T-614", "target": "CHEBI:31689", "ns": "CHEBI"}
+{"query": "RAF", "target": "PR:P04049", "ns": "PR"}
+{"query": "pelvic fin cartilage", "target": "UBERON:0007391", "ns": "UBERON"}
+{"query": "serotonin transmembrane transporter activity", "target": "GO:0005335", "ns": "GO"}
+{"query": "changed navicular bone of pes", "target": "UPHENO:0075912", "ns": "UPHENO"}
+{"query": "Emc2", "target": "PR:Q9CRD2", "ns": "PR"}
+{"query": "small corpuscles of Stannius", "target": "UPHENO:0069924", "ns": "UPHENO"}
+{"query": "Complete duplication of the outermost bone of the index finger", "target": "HP:0009950", "ns": "HP"}
+{"query": "3beta-Hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carboxylate", "target": "CHEBI:18134", "ns": "CHEBI"}
+{"query": "Increased level of N-benzoylglycine in blood", "target": "HP:0410065", "ns": "HP"}
+{"query": "nuclear assembly factor 1 homolog (S. cerevisiae)", "target": "HGNC:25126", "ns": "HGNC"}
+{"query": "cerebrospinal fluid WW domain binding protein VOPP1 (human) amount", "target": "OBA:2080285", "ns": "OBA"}
+{"query": "PRO_0000017492", "target": "PR:000049192", "ns": "PR"}
+{"query": "Ly-6A.2/Ly-6E.1", "target": "PR:000002979", "ns": "PR"}
+{"query": "Missing multicellular anatomical structure in the male reproductive system", "target": "UPHENO:0025146", "ns": "UPHENO"}
+{"query": "AD14", "target": "MONDO:0012631", "ns": "MONDO"}
+{"query": "Missing anatomical structure in the pedal digit 5", "target": "UPHENO:0027618", "ns": "UPHENO"}
+{"query": "increased sensitivity of organism to lincomycin", "target": "UPHENO:0076410", "ns": "UPHENO"}
+{"query": "Reduced heart rate variability", "target": "HP:0031861", "ns": "HP"}
+{"query": "PTP-1B (mouse)", "target": "PR:P35821", "ns": "PR"}
+{"query": "arteriae digitales dorsales pedis", "target": "UBERON:0006145", "ns": "UBERON"}
+{"query": "Decreased circulating amylase level", "target": "HP:0410289", "ns": "HP"}
+{"query": "4-methyl-N-[3-(4-methyl-1H-imidazol-1-yl)-5-(trifluoromethyl)phenyl]-3-[(4-pyridin-3-ylpyrimidin-2-yl)amino]benzamide", "target": "CHEBI:52172", "ns": "CHEBI"}
+{"query": "degeneration of the tail", "target": "UPHENO:0073869", "ns": "UPHENO"}
+{"query": "ADAM15", "target": "PR:000078950", "ns": "PR"}
+{"query": "calcium-independent cell adhesion molecule activity", "target": "GO:0016338", "ns": "GO"}
+{"query": "Abnormality of parotid gland", "target": "HP:0000197", "ns": "HP"}
+{"query": "position of eyeball of camera-type eye", "target": "OBA:0002106", "ns": "OBA"}
+{"query": "2q deletion", "target": "MONDO:0016901", "ns": "MONDO"}
+{"query": "COPII vesicle budding", "target": "GO:0090114", "ns": "GO"}
+{"query": "Abnormality of the fourth ventricle", "target": "HP:0010950", "ns": "HP"}
+{"query": "vanillate amino acid synthetase activity", "target": "GO:0052627", "ns": "GO"}
+{"query": "adhesion of symbiont haustorium mother cell to host during symbiotic interaction", "target": "GO:0075196", "ns": "GO"}
+{"query": "DEE106", "target": "MONDO:0031052", "ns": "MONDO"}
+{"query": "Avitaminoses", "target": "MONDO:0024298", "ns": "MONDO"}
+{"query": "PCCA antisense RNA 1 (non-protein coding)", "target": "HGNC:39901", "ns": "HGNC"}
+{"query": "cerebrospinal fluid proton-transporting V-type ATPase complex assembly regulator TMEM9 (human) amount", "target": "OBA:2081394", "ns": "OBA"}
+{"query": "Lumenhance", "target": "CHEBI:86368", "ns": "CHEBI"}
+{"query": "IGSF21", "target": "PR:000030476", "ns": "PR"}
+{"query": "Missing anatomical structure in the parathyroid gland", "target": "UPHENO:0026002", "ns": "UPHENO"}
+{"query": "an amide", "target": "CHEBI:140324", "ns": "CHEBI"}
+{"query": "cerebrospinal fluid glutathione S-transferase mu 1 (human) amount", "target": "OBA:2056941", "ns": "OBA"}
+{"query": "FLJ45246", "target": "HGNC:24787", "ns": "HGNC"}
+{"query": "PM20D1", "target": "PR:Q6GTS8", "ns": "PR"}
+{"query": "Underdeveloped middle portion of the collarbone", "target": "HP:0006608", "ns": "HP"}
+{"query": "QAPRTase (mouse)", "target": "PR:Q91X91", "ns": "PR"}
+{"query": "median fin with blister", "target": "UPHENO:0011993", "ns": "UPHENO"}
+{"query": "bA317E16.4", "target": "HGNC:18719", "ns": "HGNC"}
+{"query": "RDJCSS", "target": "MONDO:0014495", "ns": "MONDO"}
+{"query": "HRM2", "target": "MONDO:0044234", "ns": "MONDO"}
+{"query": "anatomical entity bifurcation", "target": "UPHENO:0055805", "ns": "UPHENO"}
+{"query": "closed abdominal segment element", "target": "UPHENO:0074235", "ns": "UPHENO"}
+{"query": "DGK-alpha", "target": "HGNC:2849", "ns": "HGNC"}
+{"query": "purine ribonucleoside monophosphate breakdown", "target": "GO:0009169", "ns": "GO"}
+{"query": "BTB (POZ) domain containing 2", "target": "HGNC:15504", "ns": "HGNC"}
+{"query": "enlarged forelimb endochondral element", "target": "UPHENO:0001023", "ns": "UPHENO"}
+{"query": "NAD(P)H2:nitrite oxidoreductase activity", "target": "GO:0008942", "ns": "GO"}
+{"query": "ATF6", "target": "PR:000004402", "ns": "PR"}
+{"query": "anatomical entity hepatocyte growth factor-like protein amount", "target": "OBA:2050170", "ns": "OBA"}
+{"query": "UV-sensitive opsin", "target": "GO:0009881", "ns": "GO"}
+{"query": "ribonic acid phosphates", "target": "CHEBI:37392", "ns": "CHEBI"}
+{"query": "17q duplication", "target": "MONDO:0016967", "ns": "MONDO"}
+{"query": "FAM90A5P", "target": "HGNC:32253", "ns": "HGNC"}
+{"query": "thickened cartilage tissue", "target": "UPHENO:0048105", "ns": "UPHENO"}
+{"query": "type III restriction enzyme complex", "target": "GO:0019813", "ns": "GO"}
+{"query": "BOZF1", "target": "HGNC:24172", "ns": "HGNC"}
+{"query": "helical", "target": "PATO:0000404", "ns": "PATO"}
+{"query": "Missing metapodium bone in the metacarpus region", "target": "UPHENO:0026650", "ns": "UPHENO"}
+{"query": "between brain dura mater", "target": "UBERON:0003564", "ns": "UBERON"}
+{"query": "2-19", "target": "PR:P98173", "ns": "PR"}
+{"query": "CHDS6", "target": "MONDO:0013765", "ns": "MONDO"}
+{"query": "MGC17922", "target": "HGNC:24051", "ns": "HGNC"}
+{"query": "tRNA 5-carboxymethoxyuridine methyltransferase activity", "target": "GO:0097697", "ns": "GO"}
+{"query": "BAG-2 (mouse)", "target": "PR:Q91YN9", "ns": "PR"}
+{"query": "(2S,3R,4E,8E,10E)-2-aminooctadeca-4,8,10-triene-1,3-diol", "target": "CHEBI:177104", "ns": "CHEBI"}
+{"query": "MGC10527", "target": "HGNC:29918", "ns": "HGNC"}
+{"query": "acid fluoride", "target": "CHEBI:38110", "ns": "CHEBI"}
+{"query": "Lnx", "target": "PR:O70263", "ns": "PR"}
+{"query": "AgRP neuron", "target": "CL:4072017", "ns": "CL"}
+{"query": "hydrogen biosynthesis via biophotolysis", "target": "GO:0044817", "ns": "GO"}
+{"query": "cerebrospinal fluid myogenesis-regulating glycosidase (human) amount", "target": "OBA:2059310", "ns": "OBA"}
+{"query": "NHERF", "target": "PR:000001043", "ns": "PR"}
+{"query": "changed morphology of lateral ventricle subependymal layer", "target": "UPHENO:0087224", "ns": "UPHENO"}
+{"query": "Mrt4", "target": "PR:Q9D0I8", "ns": "PR"}
+{"query": "KRTAP12.1", "target": "HGNC:20529", "ns": "HGNC"}
+{"query": "(2S,3S)-butane-1,2,3,4-tetrol", "target": "CHEBI:42090", "ns": "CHEBI"}
+{"query": "AA1", "target": "MONDO:0007082", "ns": "MONDO"}
+{"query": "desmin", "target": "GO:0045098", "ns": "GO"}
+{"query": "Absent/small upper arm muscles", "target": "HP:0001468", "ns": "HP"}
+{"query": "adrenal vein", "target": "UBERON:0001146", "ns": "UBERON"}
+{"query": "DEB-na", "target": "MONDO:0015553", "ns": "MONDO"}
+{"query": "Abnormal heart left ventricle morphology", "target": "HP:0001711", "ns": "HP"}
+{"query": "BuGZ", "target": "HGNC:12998", "ns": "HGNC"}
+{"query": "urethrocele", "target": "MONDO:0001514", "ns": "MONDO"}
+{"query": "(5alpha)-8,14-didehydro-4,5-epoxy-3-methoxy-17-methylmorphinan-6-one", "target": "CHEBI:7510", "ns": "CHEBI"}
+{"query": "1-Pyrrolidinecarbodithioic acid", "target": "CHEBI:78782", "ns": "CHEBI"}
+{"query": "degeneration of the seminal vesicle epithelium", "target": "UPHENO:0073907", "ns": "UPHENO"}
+{"query": "DKFZp686N1651", "target": "HGNC:26435", "ns": "HGNC"}
+{"query": "lachrymal sac", "target": "UBERON:0001351", "ns": "UBERON"}
+{"query": "ubiquitin-conjugating enzyme E2M pseudogene 1", "target": "HGNC:32195", "ns": "HGNC"}
+{"query": "(2R,3S)-2,3-dimethylmalate hydro-lyase (dimethylmaleate-forming)", "target": "GO:0047868", "ns": "GO"}
+{"query": "LOC129881", "target": "HGNC:25064", "ns": "HGNC"}
+{"query": "plasma membrane-derived thylakoid", "target": "GO:0030075", "ns": "GO"}
+{"query": "Psapl1", "target": "PR:Q8C1C1", "ns": "PR"}
+{"query": "CHMP1A non-syndromic pontocerebellar hypoplasia", "target": "MONDO:0013990", "ns": "MONDO"}
+{"query": "rifamycin", "target": "CHEBI:26580", "ns": "CHEBI"}
+{"query": "ciliopathy-CEP164", "target": "MONDO:0700344", "ns": "MONDO"}
+{"query": "down regulation of type I interferon production", "target": "GO:0032480", "ns": "GO"}
+{"query": "pancreatic E cell differentiation", "target": "GO:0090104", "ns": "GO"}
+{"query": "digit bifurcation", "target": "UPHENO:0055820", "ns": "UPHENO"}
+{"query": "optic lemniscus", "target": "UBERON:0001908", "ns": "UBERON"}
+{"query": "Glc-man-hepp", "target": "CHEBI:42976", "ns": "CHEBI"}
+{"query": "ARSA-I", "target": "HGNC:752", "ns": "HGNC"}
+{"query": "(1S,6S,7S,8S)-1,3-dimethyl-8-(propan-2-yl)-tricyclo[4.4.0.0(2,7)]dec-3-ene", "target": "CHEBI:10221", "ns": "CHEBI"}
+{"query": "Rupture of tendons", "target": "HP:0100550", "ns": "HP"}
+{"query": "auriculo-osteodysplasia", "target": "MONDO:0007177", "ns": "MONDO"}
+{"query": "CDA07", "target": "PR:000008487", "ns": "PR"}
+{"query": "succinyl-CoA anabolism", "target": "GO:1901290", "ns": "GO"}
+{"query": "ANG", "target": "PR:P03950", "ns": "PR"}
+{"query": "blood serum sorting nexin-27 amount", "target": "OBA:2043588", "ns": "OBA"}
+{"query": "flaval ligament", "target": "UBERON:0003673", "ns": "UBERON"}
+{"query": "cancer of spermatic cord", "target": "MONDO:0001654", "ns": "MONDO"}
+{"query": "(2S)-2-amino-3-(methylselanyl)propanoate", "target": "CHEBI:53129", "ns": "CHEBI"}
+{"query": "cellular response to arachidonic acid", "target": "GO:1904551", "ns": "GO"}
+{"query": "nursing behavior", "target": "GO:0001967", "ns": "GO"}
+{"query": "crista terminalis atrii dextri", "target": "UBERON:0005979", "ns": "UBERON"}
+{"query": "extracellular membrane-enclosed organelle", "target": "GO:0065010", "ns": "GO"}
+{"query": "2-oxoacid dehydrogenase complex", "target": "GO:0045240", "ns": "GO"}
+{"query": "muscle relaxant agent therapy", "target": "MAXO:0000324", "ns": "MAXO"}
+{"query": "APOM", "target": "PR:000004165", "ns": "PR"}
+{"query": "short presphenoid bone", "target": "UPHENO:0046496", "ns": "UPHENO"}
+{"query": "fin ray", "target": "UBERON:4000172", "ns": "UBERON"}
+{"query": "Parathyroid adenomas", "target": "HP:0002897", "ns": "HP"}
+{"query": "termination of RNA polymerase II transcription, poly(A)-independent", "target": "GO:0030847", "ns": "GO"}
+{"query": "blood serum cell adhesion molecule CEACAM16 amount", "target": "OBA:2040976", "ns": "OBA"}
+{"query": "aplasia of the eyelid", "target": "UPHENO:0081520", "ns": "UPHENO"}
+{"query": "(-)-alpha-amino-p-hydroxyhydrocinnamic acid", "target": "CHEBI:17895", "ns": "CHEBI"}
+{"query": "morphology of hair medulla", "target": "OBA:VT0003812", "ns": "OBA"}
+{"query": "Neutrophil migratory defect", "target": "HP:0040238", "ns": "HP"}
+{"query": "calcified valve", "target": "UPHENO:0067826", "ns": "UPHENO"}
+{"query": "GGT1 deficiency", "target": "MONDO:0009285", "ns": "MONDO"}
+{"query": "spermine anabolism", "target": "GO:0006597", "ns": "GO"}
+{"query": "SYF2 homolog, RNA splicing factor (S. cerevisiae) pseudogene 2", "target": "HGNC:38139", "ns": "HGNC"}
+{"query": "increased sensitivity of organism to galactose", "target": "UPHENO:0076345", "ns": "UPHENO"}
+{"query": "GAT1", "target": "HGNC:11042", "ns": "HGNC"}
+{"query": "1-pyrroline-5-carboxylate reductase activity", "target": "GO:0004735", "ns": "GO"}
+{"query": "regulation of IL-19 production", "target": "GO:0032662", "ns": "GO"}
+{"query": "thymic tuft cell", "target": "CL:0009074", "ns": "CL"}
+{"query": "changed integument", "target": "UPHENO:0002635", "ns": "UPHENO"}
+{"query": "5beta-hydroxy steroids", "target": "CHEBI:38195", "ns": "CHEBI"}
+{"query": "cerebrospinal fluid lysophospholipase-like protein 1 (human) amount", "target": "OBA:2059235", "ns": "OBA"}
+{"query": "KIAA0050", "target": "HGNC:16467", "ns": "HGNC"}
+{"query": "FLUP", "target": "PR:P62166", "ns": "PR"}
+{"query": "1,4-dihydro-1-ethyl-7-methyl-4-oxo-1,8-naphthyridine-3-carboxylic acid", "target": "CHEBI:100147", "ns": "CHEBI"}
+{"query": "rostral-caudal polarity", "target": "PATO:0002024", "ns": "PATO"}
+{"query": "15q duplication", "target": "MONDO:0016965", "ns": "MONDO"}
+{"query": "antigen transcytosis by M cells in MALT", "target": "GO:0002412", "ns": "GO"}
+{"query": "Globe retraction and deviation on adduction", "target": "HP:0009921", "ns": "HP"}
+{"query": "PE 40:7 zwitterion", "target": "CHEBI:91054", "ns": "CHEBI"}
+{"query": "XXbac-BPG246D15.8", "target": "HGNC:39758", "ns": "HGNC"}
+{"query": "cerebrospinal fluid protein amnionless (human) amount", "target": "OBA:2080783", "ns": "OBA"}
+{"query": "IFN-omega 1, interferon omega-1", "target": "HGNC:5448", "ns": "HGNC"}
+{"query": "NAO activity", "target": "GO:0052664", "ns": "GO"}
+{"query": "Chorangioma", "target": "MONDO:0006375", "ns": "MONDO"}
+{"query": "CD46/SigPep-", "target": "PR:000018465", "ns": "PR"}
+{"query": "FLJ13089", "target": "HGNC:25783", "ns": "HGNC"}
+{"query": "ENST00000418954", "target": "HGNC:53135", "ns": "HGNC"}
+{"query": "17-beta-HSD 3", "target": "PR:000008780", "ns": "PR"}
+{"query": "golgi autoantigen, golgin subfamily a, 6C", "target": "HGNC:32206", "ns": "HGNC"}
+{"query": "Trigeminal anaesthesia", "target": "HP:0031912", "ns": "HP"}
+{"query": "ITR", "target": "HGNC:28899", "ns": "HGNC"}
+{"query": "morphology of dorsal pancreatic bud", "target": "OBA:0005978", "ns": "OBA"}
+{"query": "small skeletal element", "target": "UPHENO:0069125", "ns": "UPHENO"}
+{"query": "activation of apoptosis", "target": "GO:0043065", "ns": "GO"}
+{"query": "5-amino-2,5-dioxopentanoate", "target": "CHEBI:16769", "ns": "CHEBI"}
+{"query": "KIAA0637", "target": "HGNC:20721", "ns": "HGNC"}
+{"query": "Hba-x", "target": "PR:P06467", "ns": "PR"}
+{"query": "Missing vertebral element in the vertebral column", "target": "UPHENO:0026794", "ns": "UPHENO"}
+{"query": "distal tarsal 2", "target": "UBERON:0015105", "ns": "UBERON"}
+{"query": "KIAA0229", "target": "HGNC:11658", "ns": "HGNC"}
+{"query": "segment", "target": "UBERON:0000914", "ns": "UBERON"}
+{"query": "allergenic penicillin", "target": "CHEBI:88187", "ns": "CHEBI"}
+{"query": "Increased bone density in the middle bone of the 3rd toe", "target": "HP:0100936", "ns": "HP"}
+{"query": "annuli", "target": "UBERON:3010058", "ns": "UBERON"}
+{"query": "KIAA0094", "target": "HGNC:15789", "ns": "HGNC"}
+{"query": "enlarged material anatomical entity in pedal digit 2", "target": "UPHENO:0065314", "ns": "UPHENO"}
+{"query": "P15RS", "target": "PR:Q5ZM30", "ns": "PR"}
+{"query": "premature closure of anterior fontanel", "target": "UPHENO:0084647", "ns": "UPHENO"}
+{"query": "changed morphology of skin sebaceous gland", "target": "UPHENO:0086560", "ns": "UPHENO"}
+{"query": "aplasia of the mandible condylar process", "target": "UPHENO:0081532", "ns": "UPHENO"}
+{"query": "FLJ10057", "target": "HGNC:23486", "ns": "HGNC"}
+{"query": "missing inner ear epithelium", "target": "UPHENO:0009890", "ns": "UPHENO"}
+{"query": "MTF", "target": "HGNC:7404", "ns": "HGNC"}
+{"query": "down regulation of DNA endoreduplication", "target": "GO:0032876", "ns": "GO"}
+{"query": "RN5S295", "target": "HGNC:43195", "ns": "HGNC"}
+{"query": "morphology of subcutaneous adipose tissue", "target": "OBA:0005324", "ns": "OBA"}
+{"query": "intracystic papillary adenoma (morphologic abnormality)", "target": "MONDO:0002388", "ns": "MONDO"}
+{"query": "Reduced portal venous flow", "target": "HP:0034883", "ns": "HP"}
+{"query": "increased curvature cutaneous appendage", "target": "UPHENO:0031202", "ns": "UPHENO"}
+{"query": "small thoracic cavity blood vessel", "target": "UPHENO:0070342", "ns": "UPHENO"}
+{"query": "nucleus subcaeruleus", "target": "UBERON:0002587", "ns": "UBERON"}
+{"query": "AV", "target": "UBERON:4300022", "ns": "UBERON"}
+{"query": "amino monocarboxylic acids", "target": "CHEBI:52448", "ns": "CHEBI"}
+{"query": "ADAM10", "target": "PR:000065263", "ns": "PR"}
+{"query": "down regulation of ectodermal cell fate specification", "target": "GO:0042666", "ns": "GO"}
+{"query": "blood serum ADP-ribosylation factor-like protein 1 amount", "target": "OBA:2040663", "ns": "OBA"}
+{"query": "DFNA 23", "target": "MONDO:0011519", "ns": "MONDO"}
+{"query": "FCRH4", "target": "HGNC:18507", "ns": "HGNC"}
+{"query": "MGC129793", "target": "HGNC:27898", "ns": "HGNC"}
+{"query": "mesodermal-endodermal cell signalling", "target": "GO:0003131", "ns": "GO"}
+{"query": "GTP 7,8-8,9-dihydrolase (diphosphate-forming)", "target": "GO:0003935", "ns": "GO"}
+{"query": "DYNC1H1 autosomal dominant non-syndromic intellectual disability", "target": "MONDO:0013805", "ns": "MONDO"}
+{"query": "short pedal digit 1 phalanx endochondral element", "target": "UPHENO:0046668", "ns": "UPHENO"}
+{"query": "Urinary tract neoplasia", "target": "HP:0010786", "ns": "HP"}
+{"query": "APOL-II", "target": "HGNC:619", "ns": "HGNC"}
+{"query": "cerebrospinal fluid forkhead box protein P4 (human) amount", "target": "OBA:2059666", "ns": "OBA"}
+{"query": "PEX", "target": "HGNC:8918", "ns": "HGNC"}
+{"query": "amount of submandibular gland", "target": "OBA:0004759", "ns": "OBA"}
+{"query": "changed pigmented layer of retina", "target": "UPHENO:0005210", "ns": "UPHENO"}
+{"query": "organic compounds", "target": "CHEBI:50860", "ns": "CHEBI"}
+{"query": "(3beta,4alpha)-3-hydroxy-24-methylene-9,19-cycloanostan-28-one", "target": "CHEBI:142918", "ns": "CHEBI"}
+{"query": "HSP70B\\, heat shock 70kD protein 6 (HSP70B\\)", "target": "HGNC:5239", "ns": "HGNC"}
+{"query": "blood scavenger receptor class A member 5 (human) amount", "target": "OBA:2052098", "ns": "OBA"}
+{"query": "N(6)-amidino-N(2)-(3-mercaptopropionyl)-L-lysylglycyl-L-alpha-aspartyl-L-tryptophyl-L-prolyl-L-cysteinamide, cyclic(1-6)-disulfide", "target": "CHEBI:291902", "ns": "CHEBI"}
+{"query": "A6-related protein (mouse)", "target": "PR:Q9Z0P5", "ns": "PR"}
+{"query": "Scarpa\\s nerve, naso-palatine nerve, nasopalatine, nasopalatine nerves, nervus nasopalatinus", "target": "UBERON:0008810", "ns": "UBERON"}
+{"query": "Intestinal hypoperistalsis", "target": "HP:0100771", "ns": "HP"}
+{"query": "carcinoma of distal biliary tract", "target": "MONDO:0003707", "ns": "MONDO"}
+{"query": "fallopian tube inflammation", "target": "MONDO:0003619", "ns": "MONDO"}
+{"query": "FLJ13092", "target": "HGNC:14137", "ns": "HGNC"}
+{"query": "FLJ22609", "target": "HGNC:26208", "ns": "HGNC"}
+{"query": "deoxyglucoses", "target": "CHEBI:23623", "ns": "CHEBI"}
+{"query": "Missing gland in the pituitary gland", "target": "UPHENO:0026703", "ns": "UPHENO"}
+{"query": "DNA-3\\pp5\\G guanylate hydrolase", "target": "GO:0120108", "ns": "GO"}
+{"query": "secretory dimeric IgA antibody", "target": "GO:0071752", "ns": "GO"}
+{"query": "the ratio of amount of complement decay-accelerating factor (human) in blood to amount of prostaglandin-H2 D-isomerase (human) in blood", "target": "OBA:2054161", "ns": "OBA"}
+{"query": "RP58", "target": "MONDO:0013328", "ns": "MONDO"}
+{"query": "FLJ22759", "target": "HGNC:15861", "ns": "HGNC"}
+{"query": "ARMC10", "target": "PR:000004298", "ns": "PR"}
+{"query": "anterior bronchopulmonary segment of left pulmonary artery", "target": "UBERON:0039850", "ns": "UBERON"}
+{"query": "inorganic radicals", "target": "CHEBI:36871", "ns": "CHEBI"}
+{"query": "morphology of metanephric mesenchyme", "target": "OBA:0005294", "ns": "OBA"}
+{"query": "Somnambulism", "target": "HP:0025236", "ns": "HP"}
+{"query": "longer mesoderm-derived structure", "target": "UPHENO:0072297", "ns": "UPHENO"}
+{"query": "hRABGAP1L/iso:9", "target": "PR:Q5R372-9", "ns": "PR"}
+{"query": "cerebrospinal fluid S-formylglutathione hydrolase (human) amount", "target": "OBA:2057038", "ns": "OBA"}
+{"query": "changed morphology of olfactory lobe", "target": "UPHENO:0087712", "ns": "UPHENO"}
+{"query": "2-Benzazine", "target": "CHEBI:16092", "ns": "CHEBI"}
+{"query": "CD320 (mouse)", "target": "PR:Q9Z1P5", "ns": "PR"}
+{"query": "small cervical ganglion", "target": "UPHENO:0069343", "ns": "UPHENO"}
+{"query": "functionality of type B pancreatic cell", "target": "OBA:VT0003562", "ns": "OBA"}
+{"query": "(5Z,13E)-(15S)-9alpha,11alpha,15-trihydroxyprosta-5,13-dienoate:NADP(+) 11-oxidoreductase inhibitor", "target": "CHEBI:77425", "ns": "CHEBI"}
+{"query": "FBLN2/SigPep-", "target": "PR:000019852", "ns": "PR"}
+{"query": "fam:C/C-C chemokine", "target": "PR:000001808", "ns": "PR"}
+{"query": "cerebrospinal fluid death domain-containing protein CRADD (human) amount", "target": "OBA:2058383", "ns": "OBA"}
+{"query": "PTK9", "target": "PR:000016844", "ns": "PR"}
+{"query": "acetate salts", "target": "CHEBI:59230", "ns": "CHEBI"}
+{"query": "Bilateral congenital sensorineural deafness", "target": "HP:0008527", "ns": "HP"}
+{"query": "mammary anlage", "target": "UBERON:0005311", "ns": "UBERON"}
+{"query": "3-(dioxido-lambda(5)-azanylidene)propanoate", "target": "CHEBI:57892", "ns": "CHEBI"}
+{"query": "COL9A1 autosomal recessive Stickler syndrome", "target": "MONDO:0013590", "ns": "MONDO"}
+{"query": "-CF3", "target": "CHEBI:50127", "ns": "CHEBI"}
+{"query": "Nrf3", "target": "HGNC:7783", "ns": "HGNC"}
+{"query": "anticoagulant agent treatment", "target": "MAXO:0000178", "ns": "MAXO"}
+{"query": "small microcirculatory vessel", "target": "UPHENO:0070100", "ns": "UPHENO"}
+{"query": "Reduced number of lipid droplet in the brown adipose tissue", "target": "UPHENO:0089262", "ns": "UPHENO"}
+{"query": "Chondroitin sulphate excretion in urine", "target": "HP:0012070", "ns": "HP"}
+{"query": "polysaccharide receptor activity", "target": "GO:0001873", "ns": "GO"}
+{"query": "POMC/SigPep-", "target": "PR:000021035", "ns": "PR"}
+{"query": "Mmel1", "target": "PR:Q9JLI3", "ns": "PR"}
+{"query": "wider tail", "target": "UPHENO:0006721", "ns": "UPHENO"}
+{"query": "Silver-Russell syndrome due to maternal uniparental disomy of chromosome type 7", "target": "MONDO:0019913", "ns": "MONDO"}
+{"query": "enlarged ventral fin fold", "target": "UPHENO:0001876", "ns": "UPHENO"}
+{"query": "Absent middle finger", "target": "HP:0009460", "ns": "HP"}
+{"query": "LSM1 homolog, mRNA degradation associated pseudogene 1", "target": "HGNC:49776", "ns": "HGNC"}
+{"query": "enlarged open anatomical space", "target": "UPHENO:0001989", "ns": "UPHENO"}
+{"query": "platelet count test", "target": "MAXO:0001008", "ns": "MAXO"}
+{"query": "size of mandible condylar process", "target": "OBA:0002659", "ns": "OBA"}
+{"query": "Abnormality of carotid artery", "target": "HP:3000041", "ns": "HP"}
+{"query": "PI-5 (human)", "target": "PR:P36952", "ns": "PR"}
+{"query": "L-leucine import", "target": "GO:1903801", "ns": "GO"}
+{"query": "missing Feyrter cell", "target": "UPHENO:0086231", "ns": "UPHENO"}
+{"query": "localised reticulosis", "target": "MONDO:0015809", "ns": "MONDO"}
+{"query": "28 kDa heat shock protein (human)", "target": "PR:P04792", "ns": "PR"}
+{"query": "3-[(1R)-5-cyano-1-(4-fluorophenyl)-1,3-dihydro-2-benzofuran-1-yl]-N,N-dimethylpropan-1-aminium", "target": "CHEBI:77405", "ns": "CHEBI"}
+{"query": "receptor signalling protein tyrosine kinase activator activity", "target": "GO:0030298", "ns": "GO"}
+{"query": "skinny gland", "target": "UPHENO:0054678", "ns": "UPHENO"}
+{"query": "QRFP/ClvPrd", "target": "PR:000021202", "ns": "PR"}
+{"query": "FLJ10482", "target": "HGNC:20155", "ns": "HGNC"}
+{"query": "FLJ10432", "target": "HGNC:18684", "ns": "HGNC"}
+{"query": "diabetes mellitus, insulin-dependent, X-linked", "target": "MONDO:0010255", "ns": "MONDO"}
+{"query": "size of diaphysis", "target": "OBA:0002587", "ns": "OBA"}
+{"query": "cell growth in three dimensions", "target": "GO:0009825", "ns": "GO"}
+{"query": "meningioma of thoracic spinal canal and spinal cord", "target": "MONDO:0003770", "ns": "MONDO"}
+{"query": "1-alkyl-2-acylglycerols", "target": "CHEBI:598", "ns": "CHEBI"}
+{"query": "nuclear pore complex interacting protein family, member B5", "target": "HGNC:37233", "ns": "HGNC"}
+{"query": "ampullary electroreceptor", "target": "UBERON:0008917", "ns": "UBERON"}
+{"query": "cerebrospinal fluid galectin-7 (human) amount", "target": "OBA:2057906", "ns": "OBA"}
+{"query": "abnormality of arterial blood vessel weight", "target": "UPHENO:0010777", "ns": "UPHENO"}
+{"query": "blood serum CMRF35-like molecule 1 amount", "target": "OBA:2040943", "ns": "OBA"}
+{"query": "phenol-containing compound anabolism", "target": "GO:0046189", "ns": "GO"}
+{"query": "GNG12 antisense RNA 1 (non-protein coding)", "target": "HGNC:43938", "ns": "HGNC"}
+{"query": "DKFZp434K171", "target": "HGNC:14596", "ns": "HGNC"}
+{"query": "[(2,2-dimethylpropanoyl)oxy]methyl (6R,7R)-7-{[(2Z)-2-(2-amino-1,3-thiazol-4-yl)-2-(methoxyimino)acetyl]amino}-3-[(Z)-2-(4-methyl-1,3-thiazol-5-yl)ethenyl]-8-oxo-5-thia-1-azabicyclo[4.2.0]oct-2-ene-2-carboxylate", "target": "CHEBI:560555", "ns": "CHEBI"}
+{"query": "lipoate metabolism", "target": "GO:0009106", "ns": "GO"}
+{"query": "mitotic G2/M transition DNA damage checkpoint effector process", "target": "GO:0072435", "ns": "GO"}
+{"query": "type 2 galanin receptor ligand", "target": "GO:0031765", "ns": "GO"}
+{"query": "AU-rich element RNA-binding protein 1 (human)", "target": "PR:Q14103", "ns": "PR"}
+{"query": "Sema3g", "target": "PR:Q4LFA9", "ns": "PR"}
+{"query": "disc-shaped", "target": "PATO:0001874", "ns": "PATO"}
+{"query": "KIAA1322", "target": "HGNC:29246", "ns": "HGNC"}
+{"query": "mitochondrial ornithine transmembrane transport", "target": "GO:1990575", "ns": "GO"}
+{"query": "DNAJB6 autosomal dominant limb-girdle muscular dystrophy", "target": "MONDO:0021018", "ns": "MONDO"}
+{"query": "GPC6", "target": "PR:000008168", "ns": "PR"}
+{"query": "spzn", "target": "HGNC:17726", "ns": "HGNC"}
+{"query": "inborn error of sphingolipid biosynthetic process", "target": "MONDO:0021130", "ns": "MONDO"}
+{"query": "the ratio of amount of DnaJ homolog subfamily B member 1 (human) in blood to amount of stress-induced-phosphoprotein 1 (human) in blood", "target": "OBA:2053597", "ns": "OBA"}
+{"query": "blood secernin-3 amount", "target": "OBA:2050889", "ns": "OBA"}
+{"query": "blood serum protein disulfide-isomerase-like protein of the testis amount", "target": "OBA:2042831", "ns": "OBA"}
+{"query": "PC-3", "target": "HGNC:29663", "ns": "HGNC"}
+{"query": "tapetal layer development", "target": "GO:0048658", "ns": "GO"}
+{"query": "Reduced number of anatomical entity in the post-anal tail", "target": "UPHENO:0035021", "ns": "UPHENO"}
+{"query": "4,4\\-diarsene-1", "target": "CHEBI:50953", "ns": "CHEBI"}
+{"query": "tetradecenoyl-coenzyme A", "target": "CHEBI:26900", "ns": "CHEBI"}
+{"query": "IR2155535", "target": "HGNC:29213", "ns": "HGNC"}
+{"query": "LAD", "target": "PR:O00515", "ns": "PR"}
+{"query": "behavioural defense response to nematode", "target": "GO:0002212", "ns": "GO"}
+{"query": "CG (sensu Cancer borealis)", "target": "UBERON:8910021", "ns": "UBERON"}
+{"query": "blood serum mitogen-activated protein kinase kinase kinase 3 amount", "target": "OBA:2042288", "ns": "OBA"}
+{"query": "2-(butan-2-yl)-4-{4-[4-(4-{[(2R,4S)-2-(2,4-dichlorophenyl)-2-(1H-1,2,4-triazol-1-ylmethyl)-1,3-dioxolan-4-yl]methoxy}phenyl)piperazin-1-yl]phenyl}-2,4-dihydro-3H-1,2,4-triazol-3-one", "target": "CHEBI:6076", "ns": "CHEBI"}
+{"query": "MGC10999", "target": "HGNC:28144", "ns": "HGNC"}
+{"query": "(+-)-carbovir", "target": "CHEBI:202940", "ns": "CHEBI"}
+{"query": "regulation of synaptic growth at neuromuscular junction", "target": "GO:0008582", "ns": "GO"}
+{"query": "Etk4 (mouse)", "target": "PR:O54988", "ns": "PR"}
+{"query": "ALR", "target": "HGNC:7133", "ns": "HGNC"}
+{"query": "thalassemia, beta", "target": "MONDO:0013517", "ns": "MONDO"}
+{"query": "short craniocervical region vein", "target": "UPHENO:0047125", "ns": "UPHENO"}
+{"query": "7-NI", "target": "CHEBI:40287", "ns": "CHEBI"}
+{"query": "A-chimaerin (mouse)", "target": "PR:Q91V57", "ns": "PR"}
+{"query": "FLJ13203", "target": "HGNC:21744", "ns": "HGNC"}
+{"query": "ADTB2", "target": "PR:000004101", "ns": "PR"}
+{"query": "fam:hALAT", "target": "PR:000050341", "ns": "PR"}
+{"query": "purine nucleoside diphosphate metabolism", "target": "GO:0009135", "ns": "GO"}
+{"query": "(2S,6S)-2-amino-6-(3-carboxypropanamido)heptanedioic acid", "target": "CHEBI:17279", "ns": "CHEBI"}
+{"query": "SYS1-DBNDD2 readthrough (non-protein coding)", "target": "HGNC:33535", "ns": "HGNC"}
+{"query": "5-methyltetrahydrofolyl polyglutamate", "target": "CHEBI:63907", "ns": "CHEBI"}
+{"query": "blood serum calsequestrin-2 amount", "target": "OBA:2040906", "ns": "OBA"}
+{"query": "short sternum", "target": "UPHENO:0046572", "ns": "UPHENO"}
+{"query": "Atypical HUS with complement gene abnormality", "target": "MONDO:0035290", "ns": "MONDO"}
+{"query": "prostate gland muscle tissue", "target": "UBERON:0008715", "ns": "UBERON"}
+{"query": "BUB1", "target": "PR:000004854", "ns": "PR"}
+{"query": "changed morphology of lacrimal apparatus", "target": "UPHENO:0088074", "ns": "UPHENO"}
+{"query": "GALK", "target": "HGNC:4118", "ns": "HGNC"}
+{"query": "N-acetyl-D-mannosamine dehydrogenase activity", "target": "GO:0050123", "ns": "GO"}
+{"query": "JmjC domain-containing protein 6 (mouse)", "target": "PR:Q9ERI5", "ns": "PR"}
+{"query": "HCV non-structural protein 4A-transactivated protein 2 (human)", "target": "PR:Q9HAJ7", "ns": "PR"}
+{"query": "ARMD14", "target": "MONDO:0014207", "ns": "MONDO"}
+{"query": "prohibitin 2 pseudogene 1", "target": "HGNC:45249", "ns": "HGNC"}
+{"query": "Fancf", "target": "PR:E9Q5Z5", "ns": "PR"}
+{"query": "down regulation of hair follicle maturation", "target": "GO:0048817", "ns": "GO"}
+{"query": "NAKAP95", "target": "HGNC:29857", "ns": "HGNC"}
+{"query": "ACTN2", "target": "PR:000003689", "ns": "PR"}
+{"query": "enlarged membrane bone", "target": "UPHENO:0001077", "ns": "UPHENO"}
+{"query": "ERMAP", "target": "PR:000007182", "ns": "PR"}
+{"query": "down regulation of acrosome reaction", "target": "GO:1902225", "ns": "GO"}
+{"query": "AA986860", "target": "PR:Q8BI29", "ns": "PR"}
+{"query": "Breastfeeding triggered symptoms", "target": "HP:0025205", "ns": "HP"}
+{"query": "COXPD3", "target": "MONDO:0012512", "ns": "MONDO"}
+{"query": "22 kDa neuronal tissue-enriched acidic protein", "target": "PR:000004647", "ns": "PR"}
+{"query": "(2E,6E)-farnesyl-diphosphate diphosphate-lyase (8-epi-cedrol-forming) activity", "target": "GO:0052682", "ns": "GO"}
+{"query": "ZNF705E", "target": "HGNC:33203", "ns": "HGNC"}
+{"query": "prickle cell of epidermis", "target": "CL:0000649", "ns": "CL"}
+{"query": "mannosylglycerate transport", "target": "GO:0051476", "ns": "GO"}
+{"query": "DEFB127/SigPep-", "target": "PR:000019665", "ns": "PR"}
+{"query": "morphology of nucleolus", "target": "OBA:0004501", "ns": "OBA"}
+{"query": "Absent mastoids", "target": "HP:0012761", "ns": "HP"}
+{"query": "quality of physical aggression behavior", "target": "OBA:1000443", "ns": "OBA"}
+{"query": "4-carboxylato-2-hydroxyhexa-2,4-dienedioate trianion", "target": "CHEBI:57732", "ns": "CHEBI"}
+{"query": "MFSD14A-AS1", "target": "HGNC:58237", "ns": "HGNC"}
+{"query": "atria", "target": "UBERON:0002081", "ns": "UBERON"}
+{"query": "ARF-like 2-binding protein (mouse)", "target": "PR:Q9D385", "ns": "PR"}
+{"query": "the ratio of amount of ATPase inhibitor, mitochondrial (human) in blood to amount of consortin (human) in blood", "target": "OBA:2054119", "ns": "OBA"}
+{"query": "Reduced number of germ cell", "target": "UPHENO:0085292", "ns": "UPHENO"}
+{"query": "blood period circadian protein homolog 3 amount", "target": "OBA:2051617", "ns": "OBA"}
+{"query": "SHK", "target": "HGNC:1492", "ns": "HGNC"}
+{"query": "CCAAT-box-binding transcription factor (mouse)", "target": "PR:P70255", "ns": "PR"}
+{"query": "CAMTA1 intronic transcript 1 (non-protein coding)", "target": "HGNC:41446", "ns": "HGNC"}
+{"query": "fusion of sacral vertebra and sacral vertebra", "target": "UPHENO:0078157", "ns": "UPHENO"}
+{"query": "C5orf13", "target": "PR:000030950", "ns": "PR"}
+{"query": "H- cell", "target": "CL:0002674", "ns": "CL"}
+{"query": "longitudinal muscle layer of zone of large intestine", "target": "UBERON:0012399", "ns": "UBERON"}
+{"query": "moclobenid", "target": "CHEBI:6960", "ns": "CHEBI"}
+{"query": "PRO_0000023583", "target": "PR:000046534", "ns": "PR"}
+{"query": "down regulation of synapse assembly", "target": "GO:0051964", "ns": "GO"}
+{"query": "size of cochlear ganglion", "target": "OBA:VT0003986", "ns": "OBA"}
+{"query": "cerebrospinal fluid neuferricin (human) amount", "target": "OBA:2080058", "ns": "OBA"}
+{"query": "Mucosynechial pemphigoid", "target": "MONDO:0018746", "ns": "MONDO"}
+{"query": "1,2-Dihydro-3-methylbenz(j)aceanthrylene", "target": "CHEBI:34342", "ns": "CHEBI"}
+{"query": "CD164", "target": "PR:Q04900", "ns": "PR"}
+{"query": "uterus epithelial development", "target": "GO:0035847", "ns": "GO"}
+{"query": "S-adenosyl-L-homocysteine aminohydrolase activity", "target": "GO:0050270", "ns": "GO"}
+{"query": "MT1", "target": "HGNC:7394", "ns": "HGNC"}
+{"query": "changed optic fissure", "target": "UPHENO:0004478", "ns": "UPHENO"}
+{"query": "changed size of the fornix of brain", "target": "UPHENO:0075194", "ns": "UPHENO"}
+{"query": "blood serum tryptophan 2,3-dioxygenase amount", "target": "OBA:2043820", "ns": "OBA"}
+{"query": "HBII-52-33", "target": "HGNC:33052", "ns": "HGNC"}
+{"query": "ANCL", "target": "MONDO:0019260", "ns": "MONDO"}
+{"query": "increased sensitivity of organism to EC 3.1.1.7 (acetylcholinesterase) inhibitor", "target": "UPHENO:0076056", "ns": "UPHENO"}
+{"query": "cobalt-precorrin 8 methylmutase activity", "target": "GO:0043778", "ns": "GO"}
+{"query": "GNT-II (human)", "target": "PR:Q10469", "ns": "PR"}
+{"query": "RP", "target": "MONDO:0008377", "ns": "MONDO"}
+{"query": "Hypoplastic pubic bones", "target": "HP:0003173", "ns": "HP"}
+{"query": "cerebrospinal fluid putative uncharacterized protein ANKRD13C-DT (human) amount", "target": "OBA:2081713", "ns": "OBA"}
+{"query": "22q deletion", "target": "MONDO:0022760", "ns": "MONDO"}
+{"query": "Exal (TN)", "target": "CHEBI:9984", "ns": "CHEBI"}
+{"query": "positive regulation of site selection involved in cell cycle cytokinesis", "target": "GO:2000076", "ns": "GO"}
+{"query": "ALDH18A1 autosomal recessive complex spastic paraplegia", "target": "MONDO:0014702", "ns": "MONDO"}
+{"query": "RN5S212", "target": "HGNC:43112", "ns": "HGNC"}
+{"query": "CRP", "target": "PR:000005897", "ns": "PR"}
+{"query": "presumptive epidermis", "target": "UBERON:0006601", "ns": "UBERON"}
+{"query": "small mesoderm-derived structure in proximal phalanx of manual digit 3", "target": "UPHENO:0012404", "ns": "UPHENO"}
+{"query": "ILT-8", "target": "PR:000009807", "ns": "PR"}
+{"query": "IMD40", "target": "MONDO:0014637", "ns": "MONDO"}
+{"query": "3\\", "target": "GO:0061939", "ns": "GO"}
+{"query": "6-deoxy-1-O-phosphono-L-fructose", "target": "CHEBI:17892", "ns": "CHEBI"}
+{"query": "multicentric osteosarcoma", "target": "MONDO:0002622", "ns": "MONDO"}
+{"query": "2-deoxy-5-O-phosphono-D-erythro-pentofuranose", "target": "CHEBI:55513", "ns": "CHEBI"}
+{"query": "PSP (human)", "target": "PR:O60542", "ns": "PR"}
+{"query": "cerebrospinal fluid cystatin-B (human) amount", "target": "OBA:2056720", "ns": "OBA"}
+{"query": "morphology of pancreatic duct", "target": "OBA:0004622", "ns": "OBA"}
+{"query": "the ratio of amount of B-cell scaffold protein with ankyrin repeats (human) in blood to amount of phosphatidylinositol 3,4,5-trisphosphate 5-phosphatase 2 (human) in blood", "target": "OBA:2053578", "ns": "OBA"}
+{"query": "enlarged epiphysis in phalanx of pes", "target": "UPHENO:0065152", "ns": "UPHENO"}
+{"query": "export of mitochondrial rRNA", "target": "GO:0019090", "ns": "GO"}
+{"query": "cell cycle process arrest", "target": "UPHENO:0018609", "ns": "UPHENO"}
+{"query": "KSPG lumican", "target": "PR:000009981", "ns": "PR"}
+{"query": "AML, inv(16)(p13.1;q22)", "target": "MONDO:0100373", "ns": "MONDO"}
+{"query": "GGT 2", "target": "PR:000007962", "ns": "PR"}
+{"query": "(3-[2-(dimethylamino)ethyl]-1H-indol-5-yl)-N-methylmethanesulfonamide", "target": "CHEBI:10650", "ns": "CHEBI"}
+{"query": "cerebrospinal fluid glutamate decarboxylase 1 (human) amount", "target": "OBA:2080574", "ns": "OBA"}
+{"query": "CRSBP-1 (mouse)", "target": "PR:Q8BHC0", "ns": "PR"}
+{"query": "the ratio of amount of CXADR-like membrane protein (human) in blood to amount of phosphoinositide-3-kinase-interacting protein 1 (human) in blood", "target": "OBA:2055010", "ns": "OBA"}
+{"query": "Left-right confusion", "target": "HP:6000000", "ns": "HP"}
+{"query": "Lyp", "target": "HGNC:9652", "ns": "HGNC"}
+{"query": "FLJ10851", "target": "HGNC:25590", "ns": "HGNC"}
+{"query": "ethmoid sinus mucosa", "target": "UBERON:0005045", "ns": "UBERON"}
+{"query": "Absence of part of skin at birth", "target": "HP:0001057", "ns": "HP"}
+{"query": "Excess nuchal skin", "target": "HP:0000474", "ns": "HP"}
+{"query": "MRP-S25", "target": "HGNC:14511", "ns": "HGNC"}
+{"query": "cerebrospinal fluid citrate synthase, mitochondrial (human) amount", "target": "OBA:2056350", "ns": "OBA"}
+{"query": "BIG3", "target": "PR:P61964", "ns": "PR"}
+{"query": "(9Z)-N-[2-(3,4-dihydroxyphenyl)ethyl]octadec-9-enamide", "target": "CHEBI:31883", "ns": "CHEBI"}
+{"query": "FLJ46210", "target": "HGNC:37173", "ns": "HGNC"}
+{"query": "CH3COSH", "target": "CHEBI:16555", "ns": "CHEBI"}
+{"query": "cerebrospinal fluid negative elongation factor A (human) amount", "target": "OBA:2080958", "ns": "OBA"}
+{"query": "proximal epiphysis of fibula hypertrophy", "target": "UPHENO:0084534", "ns": "UPHENO"}
+{"query": "Biceps tendon tear", "target": "HP:6001262", "ns": "HP"}
+{"query": "MLTNB", "target": "HGNC:197", "ns": "HGNC"}
+{"query": "AI1G", "target": "MONDO:0008771", "ns": "MONDO"}
+{"query": "changed morphology of inferior alveolar artery", "target": "UPHENO:0088178", "ns": "UPHENO"}
+{"query": "FXYD domain-containing ion transport regulator 7", "target": "HGNC:4034", "ns": "HGNC"}
+{"query": "Segmental glomerulosclerosis, tip variant", "target": "HP:0033497", "ns": "HP"}
+{"query": "Extra nephron tubule", "target": "UPHENO:0014709", "ns": "UPHENO"}
+{"query": "short cochlea", "target": "UPHENO:0089303", "ns": "UPHENO"}
+{"query": "small jaw muscle", "target": "UPHENO:0069673", "ns": "UPHENO"}
+{"query": "blood interleukin-27 subunit beta amount", "target": "OBA:2052662", "ns": "OBA"}
+{"query": "Afar", "target": "PR:Q8CG76", "ns": "PR"}
+{"query": "2-ammonio-3-(1H-imidazol-3-ium-4-yl)propanoate", "target": "CHEBI:32531", "ns": "CHEBI"}
+{"query": "THPH1", "target": "MONDO:0008559", "ns": "MONDO"}
+{"query": "Twisted vestigial remnant of the Muellerian duct", "target": "HP:0033180", "ns": "HP"}
+{"query": "nephron water absorption", "target": "GO:0070295", "ns": "GO"}
+{"query": "USH1H", "target": "MONDO:0012968", "ns": "MONDO"}
+{"query": "basihyoid", "target": "UBERON:0011618", "ns": "UBERON"}
+{"query": "Abnormal NK cells", "target": "HP:0012176", "ns": "HP"}
+{"query": "IRX6", "target": "PR:000029562", "ns": "PR"}
+{"query": "MRX72", "target": "HGNC:16499", "ns": "HGNC"}
+{"query": "A42", "target": "UBERON:0034752", "ns": "UBERON"}
+{"query": "(5S,6S)-5-[(1-carboxyethenyl)oxy]-6-hydroxycyclohexa-1,3-diene-1-carboxylic acid", "target": "CHEBI:17582", "ns": "CHEBI"}
+{"query": "blood eukaryotic translation initiation factor 4 gamma 1 (human) amount", "target": "OBA:2052680", "ns": "OBA"}
+{"query": "down regulation of fatty acid biosynthetic process", "target": "GO:0045717", "ns": "GO"}
+{"query": "PKD3", "target": "MONDO:0033004", "ns": "MONDO"}
+{"query": "pyrimidine deoxyribonucleoside triphosphate anabolism", "target": "GO:0009212", "ns": "GO"}
+{"query": "blood serum spermatogenesis-associated protein 22 amount", "target": "OBA:2043618", "ns": "OBA"}
+{"query": "blood serum signal peptide, CUB and EGF-like domain-containing protein 1 amount", "target": "OBA:2043410", "ns": "OBA"}
+{"query": "blood serum DNA mismatch repair protein Msh2 amount", "target": "OBA:2042439", "ns": "OBA"}
+{"query": "CILD16", "target": "MONDO:0013525", "ns": "MONDO"}
+{"query": "response to fatty acid trait", "target": "OBA:2040041", "ns": "OBA"}
+{"query": "CD8-positive, alpha-beta regulatory T cell development", "target": "GO:0002307", "ns": "GO"}
+{"query": "Kiaa1514", "target": "PR:Q6V4S5", "ns": "PR"}
+{"query": "UDP-glucose:xyloglucan 1,4-beta-D-glucosyltransferase activity", "target": "GO:0033826", "ns": "GO"}
+{"query": "small autonomic nervous system", "target": "UPHENO:0070356", "ns": "UPHENO"}
+{"query": "blood serum integrator complex subunit 3 amount", "target": "OBA:2042039", "ns": "OBA"}
+{"query": "altered number of trunk region elements", "target": "UPHENO:0011559", "ns": "UPHENO"}
+{"query": "biotinase", "target": "HGNC:1122", "ns": "HGNC"}
+{"query": "changed morphology of maxillary nerve", "target": "UPHENO:0086684", "ns": "UPHENO"}
+{"query": "Kiaa1823", "target": "PR:Q9D4J7", "ns": "PR"}
+{"query": "behavioral response to drought", "target": "GO:0042630", "ns": "GO"}
+{"query": "N-acetyl-beta-D-glucosaminides", "target": "CHEBI:61631", "ns": "CHEBI"}
+{"query": "hsa-mir-513b", "target": "HGNC:33935", "ns": "HGNC"}
+{"query": "morphology of renal lobe", "target": "OBA:0005430", "ns": "OBA"}
+{"query": "GH-releasing peptide receptor (mouse)", "target": "PR:Q99P50", "ns": "PR"}
+{"query": "short chain fatty acid biosynthesis", "target": "GO:0051790", "ns": "GO"}
+{"query": "ITGA2b-ITGB3-FN1-TGM2 complex", "target": "GO:0071090", "ns": "GO"}
+{"query": "dJ25J6.5", "target": "HGNC:21195", "ns": "HGNC"}
+{"query": "FLJ21281", "target": "HGNC:29333", "ns": "HGNC"}
+{"query": "6-O-phosphonato-D-tagatofuranose", "target": "CHEBI:58695", "ns": "CHEBI"}
+{"query": "RNA, 7SK small nuclear pseudogene 37", "target": "HGNC:45761", "ns": "HGNC"}
+{"query": "activation of fertilization", "target": "GO:1905516", "ns": "GO"}
+{"query": "Pneumonias, radiation", "target": "MONDO:0043919", "ns": "MONDO"}
+{"query": "B3galtl", "target": "PR:Q8BHT6", "ns": "PR"}
+{"query": "FA 18:4", "target": "CHEBI:132503", "ns": "CHEBI"}
+{"query": "parapineal gland", "target": "UBERON:0015241", "ns": "UBERON"}
+{"query": "epencephalon-2 floor plate", "target": "UBERON:0003310", "ns": "UBERON"}
+{"query": "Missing strand of hair in the eyelid", "target": "UPHENO:0026395", "ns": "UPHENO"}
+{"query": "Somatosensory agnosia", "target": "HP:0010527", "ns": "HP"}
+{"query": "Missing anatomical entity in the proximal phalanx of pedal digit 1", "target": "UPHENO:0027084", "ns": "UPHENO"}
+{"query": "snRNP U4atac", "target": "GO:0005690", "ns": "GO"}
+{"query": "C10orf69", "target": "PR:000007180", "ns": "PR"}
+{"query": "embryonal carcinoma", "target": "MONDO:0003581", "ns": "MONDO"}
+{"query": "A20-binding inhibitor of NF-kappa-B activation", "target": "PR:000016492", "ns": "PR"}
+{"query": "Extra anatomical entity in the abdomen", "target": "UPHENO:0056059", "ns": "UPHENO"}
+{"query": "8-(4-(4-(2-Pyrimidinyl)-1-piperizinyl)butyl)-8-azaspiro(4,5)decane-7,9-dione", "target": "CHEBI:3223", "ns": "CHEBI"}
+{"query": "CAGH32", "target": "HGNC:11958", "ns": "HGNC"}
+{"query": "DKFZp686G0786", "target": "HGNC:25395", "ns": "HGNC"}
+{"query": "the ratio of amount of hippocalcin-like protein 1 (human) in blood to amount of serpin B9 (human) in blood", "target": "OBA:2053073", "ns": "OBA"}
+{"query": "CLDN21", "target": "HGNC:37200", "ns": "HGNC"}
+{"query": "4,4\\-(1-triazene-1", "target": "CHEBI:81724", "ns": "CHEBI"}
+{"query": "response to Ca2+ ion", "target": "GO:0051592", "ns": "GO"}
+{"query": "imidazole antifungal agents", "target": "CHEBI:86420", "ns": "CHEBI"}
+{"query": "high-mobility group nucleosomal binding domain 2 pseudogene 41", "target": "HGNC:39412", "ns": "HGNC"}
+{"query": "AW-1", "target": "PR:000017728", "ns": "PR"}
+{"query": "thickened long bone", "target": "UPHENO:0047986", "ns": "UPHENO"}
+{"query": "convex 3-D shape of dentition", "target": "OBA:0002136", "ns": "OBA"}
+{"query": "cerebrospinal fluid tubulin-folding cofactor B (human) amount", "target": "OBA:2080577", "ns": "OBA"}
+{"query": "PSS6", "target": "MONDO:0054852", "ns": "MONDO"}
+{"query": "changed middle phalanx of pedal digit 2", "target": "UPHENO:0075822", "ns": "UPHENO"}
+{"query": "Renal urothelial carcinoma", "target": "HP:0030409", "ns": "HP"}
+{"query": "6-chloro-1-(4-hydroxyphenyl)-2,3,4,5-tetrahydro-1H-3-benzazepine-7,8-diol", "target": "CHEBI:5002", "ns": "CHEBI"}
+{"query": "NF-AT4 (human)", "target": "PR:Q12968", "ns": "PR"}
+{"query": "(2E)-4-hydroxy-3-methylbut-2-en-1-yl pyrophosphate", "target": "CHEBI:15664", "ns": "CHEBI"}
+{"query": "quality of labium minora", "target": "OBA:1000344", "ns": "OBA"}
+{"query": "changed morphology of paraxial mesoderm", "target": "UPHENO:0086482", "ns": "UPHENO"}
+{"query": "2-(p-hydroxyphenyl)-5,7-dihydroxychromone", "target": "CHEBI:18388", "ns": "CHEBI"}
+{"query": "ITGA4-ITGB1-CB47 complex", "target": "GO:0071120", "ns": "GO"}
+{"query": "3-hydroxy-5-(hydroxymethyl)-2-methyl-4-pyridinecarboxylate", "target": "CHEBI:30959", "ns": "CHEBI"}
+{"query": "onset quality of death stage", "target": "OBA:0002455", "ns": "OBA"}
+{"query": "5,6-dihydrouracil:oxygen oxidoreductase activity", "target": "GO:0047857", "ns": "GO"}
+{"query": "(2S)-2-ammonio-5-{[iminio(phosphonatoamino)methyl]amino}pentanoate", "target": "CHEBI:58477", "ns": "CHEBI"}
+{"query": "benzylic alcohol", "target": "CHEBI:22743", "ns": "CHEBI"}
+{"query": "DHPR", "target": "PR:P09417", "ns": "PR"}
+{"query": "acetoxyl", "target": "CHEBI:82405", "ns": "CHEBI"}
+{"query": "short proximal phalanx of pedal digit 3", "target": "UPHENO:0079223", "ns": "UPHENO"}
+{"query": "curved ventral surface structure", "target": "UPHENO:0031427", "ns": "UPHENO"}
+{"query": "cell cycle control", "target": "GO:1901987", "ns": "GO"}
+{"query": "PAA", "target": "GO:1990295", "ns": "GO"}
+{"query": "NADP-aldehyde reductase activity", "target": "GO:0008106", "ns": "GO"}
+{"query": "changed morphology of pterygopalatine ganglion", "target": "UPHENO:0088012", "ns": "UPHENO"}
+{"query": "FLJ11190", "target": "HGNC:15893", "ns": "HGNC"}
+{"query": "anterior appendage", "target": "UBERON:0004710", "ns": "UBERON"}
+{"query": "post-embryonic gut morphogenesis", "target": "GO:0048621", "ns": "GO"}
+{"query": "glycine acetyltransferase activity", "target": "GO:0008890", "ns": "GO"}
+{"query": "blood serum large ribosomal subunit protein mL38 amount", "target": "OBA:2042431", "ns": "OBA"}
+{"query": "(2R)-2-(sulfooxy)propanoic acid", "target": "CHEBI:48290", "ns": "CHEBI"}
+{"query": "CT47.10", "target": "HGNC:33291", "ns": "HGNC"}
+{"query": "ZC3HDC11B", "target": "HGNC:25659", "ns": "HGNC"}
+{"query": "complement component 1, s subcomponent", "target": "HGNC:1247", "ns": "HGNC"}
+{"query": "RP 24", "target": "MONDO:0010259", "ns": "MONDO"}
+{"query": "inhibition of host TLR pathway by virus", "target": "GO:0039722", "ns": "GO"}
+{"query": "ventral surface of tongue", "target": "UBERON:0007373", "ns": "UBERON"}
+{"query": "anterior prostate gland", "target": "UBERON:0008807", "ns": "UBERON"}
+{"query": "Abnormal CSF findings", "target": "HP:0002921", "ns": "HP"}
+{"query": "H2", "target": "HGNC:3688", "ns": "HGNC"}
+{"query": "cranial nerve disease", "target": "MONDO:0003569", "ns": "MONDO"}
+{"query": "alveolar arch of mandible", "target": "UBERON:0004528", "ns": "UBERON"}
+{"query": "DUSP21", "target": "PR:Q9H596", "ns": "PR"}
+{"query": "regulation of neurite biosynthesis", "target": "GO:0010975", "ns": "GO"}
+{"query": "trnC", "target": "HGNC:7477", "ns": "HGNC"}
+{"query": "Tall shaped cranium", "target": "HP:0000262", "ns": "HP"}
+{"query": "structure of olfactory placode", "target": "OBA:0004216", "ns": "OBA"}
+{"query": "blood serum ceruloplasmin amount", "target": "OBA:2050073", "ns": "OBA"}
+{"query": "Mobitz type 1 atrioventricular block", "target": "HP:0011707", "ns": "HP"}
+{"query": "PAM", "target": "PR:P19021", "ns": "PR"}
+{"query": "IL21 antisense RNA 1 (non-protein coding)", "target": "HGNC:40299", "ns": "HGNC"}
+{"query": "CDAN1", "target": "PR:000005182", "ns": "PR"}
+{"query": "Elevated urine osmolality", "target": "HP:0033359", "ns": "HP"}
+{"query": "CD339", "target": "PR:000001921", "ns": "PR"}
+{"query": "p55", "target": "HGNC:8981", "ns": "HGNC"}
+{"query": "ankyrin repeat and SOCS box-containing 5", "target": "HGNC:17180", "ns": "HGNC"}
+{"query": "INSDM", "target": "MONDO:0007834", "ns": "MONDO"}
+{"query": "BBS17", "target": "MONDO:0014445", "ns": "MONDO"}
+{"query": "Displacement of the external urethral orifice", "target": "HP:0100627", "ns": "HP"}
+{"query": "cytochrome c anabolism", "target": "GO:1903607", "ns": "GO"}
+{"query": "musculus opponens digiti minimi (Manus)", "target": "UBERON:0036176", "ns": "UBERON"}
+{"query": "(2S,5R,6R)-6-{[(2R)-2-amino-2-phenylacetyl]amino}-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo[3.2.0]heptane-2-carboxylate", "target": "CHEBI:50658", "ns": "CHEBI"}
+{"query": "C12orf49", "target": "PR:000060086", "ns": "PR"}
+{"query": "diencephalic neural crest", "target": "UBERON:0003851", "ns": "UBERON"}
+{"query": "cerebrospinal fluid glucoside xylosyltransferase 1 (human) amount", "target": "OBA:2059102", "ns": "OBA"}
+{"query": "lysosomal microautophagy", "target": "GO:0016237", "ns": "GO"}
+{"query": "GDH", "target": "PR:O95479", "ns": "PR"}
+{"query": "glycogen debranching enzyme", "target": "GO:0120549", "ns": "GO"}
+{"query": "agente antinicotinico", "target": "CHEBI:48878", "ns": "CHEBI"}
+{"query": "Pulmonary hemangiomas", "target": "HP:0005954", "ns": "HP"}
+{"query": "(formyloxy)phosphonic acid", "target": "CHEBI:16729", "ns": "CHEBI"}
+{"query": "Notched thumb bone", "target": "HP:0009614", "ns": "HP"}
+{"query": "naphthalenones", "target": "CHEBI:25479", "ns": "CHEBI"}
+{"query": "editosome", "target": "GO:0045293", "ns": "GO"}
+{"query": "changed shape of type II cell of adrenal medulla", "target": "UPHENO:0079681", "ns": "UPHENO"}
+{"query": "CFTR-associated ligand (mouse)", "target": "PR:Q8BH60", "ns": "PR"}
+{"query": "ALL", "target": "MONDO:0004967", "ns": "MONDO"}
+{"query": "BLT syndrome", "target": "MONDO:0012593", "ns": "MONDO"}
+{"query": "SMUC", "target": "HGNC:18411", "ns": "HGNC"}
+{"query": "nociceptor", "target": "CL:0000198", "ns": "CL"}
+{"query": "airway basal cell", "target": "CL:0002633", "ns": "CL"}
+{"query": "CXorf69", "target": "HGNC:41913", "ns": "HGNC"}
+{"query": "SMAD9-AS1", "target": "HGNC:39963", "ns": "HGNC"}
+{"query": "blood serum SLIT and NTRK-like protein 3 amount", "target": "OBA:2043548", "ns": "OBA"}
+{"query": "thiamin:hydrogen symporter activity", "target": "GO:0034215", "ns": "GO"}
+{"query": "RFA", "target": "MAXO:0001395", "ns": "MAXO"}
+{"query": "HIP-12", "target": "PR:000008565", "ns": "PR"}
+{"query": "central B lymphocyte negative selection", "target": "GO:0002354", "ns": "GO"}
+{"query": "SRL", "target": "PR:000015620", "ns": "PR"}
+{"query": "KIAA1164", "target": "HGNC:26954", "ns": "HGNC"}
+{"query": "Missing zone of long bone in the middle phalanx of pedal digit 2", "target": "UPHENO:0027481", "ns": "UPHENO"}
+{"query": "Tup11/Tup12 repressor complex", "target": "GO:0160051", "ns": "GO"}
+{"query": "1-Hydroxy-2-methyl-5-isopropylbenzene", "target": "CHEBI:3440", "ns": "CHEBI"}
+{"query": "bA528A10.3", "target": "HGNC:21578", "ns": "HGNC"}
+{"query": "Gallus gallus (Linnaeus, 1758)", "target": "FOODON:03411457", "ns": "FOODON"}
+{"query": "cerebrospinal fluid methylthioribose-1-phosphate isomerase (human) amount", "target": "OBA:2080734", "ns": "OBA"}
+{"query": "cerebrospinal fluid myocardial zonula adherens protein (human) amount", "target": "OBA:2056984", "ns": "OBA"}
+{"query": "FLJ40494", "target": "HGNC:23515", "ns": "HGNC"}
+{"query": "Fragmented, irregular end part of bone", "target": "HP:0005063", "ns": "HP"}
+{"query": "fusion of arytenoid cartilage and cricoid cartilage", "target": "UPHENO:0078059", "ns": "UPHENO"}
+{"query": "SRY (sex determining region Y)-box 30", "target": "HGNC:30635", "ns": "HGNC"}
+{"query": "Juvenile polyarthritis rheumatoid factor negative", "target": "MONDO:0023249", "ns": "MONDO"}
+{"query": "CNTFR", "target": "PR:000075036", "ns": "PR"}
+{"query": "misshaped alveolar process of maxilla", "target": "UPHENO:0041278", "ns": "UPHENO"}
+{"query": "UGT1A", "target": "HGNC:12530", "ns": "HGNC"}
+{"query": "deviation (from_normal) of establishment of blood-brain barrier", "target": "OBA:0004133", "ns": "OBA"}
+{"query": "Missing forelimb endochondral element in the forelimb", "target": "UPHENO:0025882", "ns": "UPHENO"}
+{"query": "quality of facial artery", "target": "OBA:1000507", "ns": "OBA"}
+{"query": "dJ281H8.1", "target": "HGNC:21175", "ns": "HGNC"}
+{"query": "down regulation of establishment of macromolecular complex localisation to telomere", "target": "GO:1904914", "ns": "GO"}
+{"query": "delta-opioid agents", "target": "CHEBI:60601", "ns": "CHEBI"}
+{"query": "regulation of physiological fear response", "target": "GO:1903365", "ns": "GO"}
+{"query": "D-23129", "target": "CHEBI:68584", "ns": "CHEBI"}
+{"query": "vitamin A anabolism", "target": "GO:0035238", "ns": "GO"}
+{"query": "2-aminoadipate aminotransferase (human)", "target": "PR:Q8N5Z0", "ns": "PR"}
+{"query": "the ratio of amount of fatty acid-binding protein 5 (human) in blood to amount of thymosin beta-10 (human) in blood", "target": "OBA:2055437", "ns": "OBA"}
+{"query": "NVL2", "target": "HGNC:8070", "ns": "HGNC"}
+{"query": "changed position of epithelial sac", "target": "UPHENO:0053560", "ns": "UPHENO"}
+{"query": "PRO_0000028053", "target": "PR:000048810", "ns": "PR"}
+{"query": "decreased sensitivity of organism to arecoline", "target": "UPHENO:0076979", "ns": "UPHENO"}
+{"query": "coated tip", "target": "GO:0097422", "ns": "GO"}
+{"query": "peritonaeum", "target": "UBERON:0002358", "ns": "UBERON"}
+{"query": "1,4-epoxy-1,3-butadiene", "target": "CHEBI:35559", "ns": "CHEBI"}
+{"query": "FAM19A2", "target": "PR:000030838", "ns": "PR"}
+{"query": "CORD22", "target": "MONDO:0030440", "ns": "MONDO"}
+{"query": "omental adipocyte", "target": "CL:0002615", "ns": "CL"}
+{"query": "HMG box-containing protein 20A (mouse)", "target": "PR:Q9DC33", "ns": "PR"}
+{"query": "increased curvature subdivision of skeleton", "target": "UPHENO:0031629", "ns": "UPHENO"}
+{"query": "4-pyridoxolactone lactonohydrolase activity", "target": "GO:0047585", "ns": "GO"}
+{"query": "misshaped cochlea", "target": "UPHENO:0041229", "ns": "UPHENO"}
+{"query": "PPIP1", "target": "HGNC:9263", "ns": "HGNC"}
+{"query": "FGF-15", "target": "PR:000007488", "ns": "PR"}
+{"query": "Cigarette paper scarring", "target": "HP:0001073", "ns": "HP"}
+{"query": "Interosseous membrane calcification of forearm", "target": "HP:0030267", "ns": "HP"}
+{"query": "blood decapping and exoribonuclease protein amount", "target": "OBA:2051363", "ns": "OBA"}
+{"query": "thoracic spinal cord intermediate horn", "target": "UBERON:0014607", "ns": "UBERON"}
+{"query": "BHD", "target": "MONDO:0800444", "ns": "MONDO"}
+{"query": "FLJ10374", "target": "HGNC:25518", "ns": "HGNC"}
+{"query": "2-[(2,6-dichloro-3-methylphenyl)amino]benzoate", "target": "CHEBI:76230", "ns": "CHEBI"}
+{"query": "anti-GBM antibody disease", "target": "MONDO:0003136", "ns": "MONDO"}
+{"query": "changed morphology of superior cerebellar peduncle", "target": "UPHENO:0086556", "ns": "UPHENO"}
+{"query": "Extra epidermis gland", "target": "UPHENO:0014293", "ns": "UPHENO"}
+{"query": "abnormally stippled anatomical entity of distal phalanx of pedal digit 1", "target": "UPHENO:0084616", "ns": "UPHENO"}
+{"query": "double muscling", "target": "MONDO:1010914", "ns": "MONDO"}
+{"query": "ataxic cerebral palsy", "target": "MONDO:0011548", "ns": "MONDO"}
+{"query": "purine ribonucleoside 5\\-monophosphates", "target": "CHEBI:37021", "ns": "CHEBI"}
+{"query": "1-C-(indol-3-yl)glycerol 3-phosphate (2-)", "target": "CHEBI:60820", "ns": "CHEBI"}
+{"query": "the ratio of amount of thymosin beta-10 (human) in blood to amount of trem-like transcript 2 protein (human) in blood", "target": "OBA:2053052", "ns": "OBA"}
+{"query": "MYOPODIN", "target": "HGNC:17732", "ns": "HGNC"}
+{"query": "LHCI", "target": "GO:0009518", "ns": "GO"}
+{"query": "changed size of the clitoris", "target": "UPHENO:0075153", "ns": "UPHENO"}
+{"query": "regulation of pro-T lymphocyte differentiation", "target": "GO:2000174", "ns": "GO"}
+{"query": "PA(36:3)", "target": "CHEBI:137164", "ns": "CHEBI"}
+{"query": "beta-alanine derivatives", "target": "CHEBI:22823", "ns": "CHEBI"}
+{"query": "changed morphology of arrector muscle of hair", "target": "UPHENO:0086920", "ns": "UPHENO"}
+{"query": "eve, even-skipped homeobox homolog 2 (Drosophila)", "target": "HGNC:3507", "ns": "HGNC"}
+{"query": "P-protein", "target": "GO:0004375", "ns": "GO"}
+{"query": "diffuse PPK", "target": "MONDO:0017666", "ns": "MONDO"}
+{"query": "guanine 2\\-deoxyribonucleotide, guanine deoxyribonucleotide, guanyl 2\\-deoxyribonucleotide", "target": "CHEBI:63573", "ns": "CHEBI"}
+{"query": "Missing epiphysis in the distal phalanx of pedal digit 5", "target": "UPHENO:0027279", "ns": "UPHENO"}
+{"query": "LEAP-1", "target": "HGNC:15598", "ns": "HGNC"}
+{"query": "Complex carbohydrate intolerance", "target": "MONDO:0011731", "ns": "MONDO"}
+{"query": "all-trans-retinyl-palmitate acylhydrolase activity", "target": "GO:0047376", "ns": "GO"}
+{"query": "MAP1LC3B/ClvPrd", "target": "PR:000020531", "ns": "PR"}
+{"query": "cerebrospinal fluid synapsin-3 (human) amount", "target": "OBA:2056045", "ns": "OBA"}
+{"query": "mixed cell uveal melanoma of optic choroid", "target": "MONDO:0003913", "ns": "MONDO"}
+{"query": "monoterpenoid breakdown", "target": "GO:0016100", "ns": "GO"}
+{"query": "AIDS-related lymphoma", "target": "MONDO:0018842", "ns": "MONDO"}
+{"query": "NR5A1 primary ovarian failure", "target": "MONDO:0013065", "ns": "MONDO"}
+{"query": "ATP13A2 hereditary spastic paraplegia", "target": "MONDO:0014975", "ns": "MONDO"}
+{"query": "blood serum zinc finger protein 526 amount", "target": "OBA:2044207", "ns": "OBA"}
+{"query": "2\\-Deoxyadenosine 5\\-triphosphate", "target": "CHEBI:16284", "ns": "CHEBI"}
+{"query": "LOC285696", "target": "HGNC:26609", "ns": "HGNC"}
+{"query": "area claustralis amygdalae", "target": "UBERON:0002729", "ns": "UBERON"}
+{"query": "TSPAN26", "target": "HGNC:1666", "ns": "HGNC"}
+{"query": "Roseolovirus caused disease or disorder", "target": "MONDO:0005949", "ns": "MONDO"}
+{"query": "RP 33", "target": "MONDO:0012477", "ns": "MONDO"}
+{"query": "AP-B (mouse)", "target": "PR:Q8VCT3", "ns": "PR"}
+{"query": "L-aspartate:tRNAAsp ligase (AMP-forming)", "target": "GO:0004815", "ns": "GO"}
+{"query": "LAM receptor activity", "target": "GO:0001877", "ns": "GO"}
+{"query": "RN5S345", "target": "HGNC:43245", "ns": "HGNC"}
+{"query": "cellular response to histamine stimulus", "target": "GO:0071420", "ns": "GO"}
+{"query": "LMPHM11", "target": "MONDO:0030316", "ns": "MONDO"}
+{"query": "changed pigmentation of the anatomical entity", "target": "UPHENO:0066794", "ns": "UPHENO"}
+{"query": "glycosylphosphatidylinositol binding", "target": "GO:0034235", "ns": "GO"}
+{"query": "basal cell hamartoma with follicular differentiation", "target": "MONDO:0004560", "ns": "MONDO"}
+{"query": "cerebrospinal fluid apolipoprotein E (human) amount", "target": "OBA:2081971", "ns": "OBA"}
+{"query": "mannosamines", "target": "CHEBI:25166", "ns": "CHEBI"}
+{"query": "KFS4", "target": "MONDO:0014689", "ns": "MONDO"}
+{"query": "carcinoma, large cell", "target": "MONDO:0005232", "ns": "MONDO"}
+{"query": "AD", "target": "MONDO:0004980", "ns": "MONDO"}
+{"query": "pathogen inclusion membrane", "target": "GO:0140221", "ns": "GO"}
+{"query": "CM", "target": "MONDO:0002096", "ns": "MONDO"}
+{"query": "activation of translation initiation in response to stress", "target": "GO:0032058", "ns": "GO"}
+{"query": "cervical nerve", "target": "UBERON:0000962", "ns": "UBERON"}
+{"query": "radical SAM enzyme activity", "target": "GO:1904047", "ns": "GO"}
+{"query": "low-grade neuroendocrine tumor of the uterine corpus", "target": "MONDO:0016270", "ns": "MONDO"}
+{"query": "morphology of innervation", "target": "OBA:VT0002184", "ns": "OBA"}
+{"query": "missing neurogenic placode", "target": "UPHENO:0008898", "ns": "UPHENO"}
+{"query": "size of labium majora", "target": "OBA:VT0003517", "ns": "OBA"}
+{"query": "cerebrospinal fluid myoneurin (human) amount", "target": "OBA:2081143", "ns": "OBA"}
+{"query": "3,6-dideoxy-L-threo-hex-2-ulosonic acid", "target": "CHEBI:16950", "ns": "CHEBI"}
+{"query": "311 CBX MLI Megf11 Gaba", "target": "CL:4300351", "ns": "CL"}
+{"query": "ACAM", "target": "PR:Q9H6B4", "ns": "PR"}
+{"query": "TNT", "target": "HGNC:30755", "ns": "HGNC"}
+{"query": "pharyngeal branch", "target": "UBERON:0000929", "ns": "UBERON"}
+{"query": "viral entry via permeabilization of endosomal membrane", "target": "GO:0099006", "ns": "GO"}
+{"query": "regulation of extracellular vesicular exosome assembly", "target": "GO:1903551", "ns": "GO"}
+{"query": "Fragmentation of the end part of the big toe bone", "target": "HP:0010117", "ns": "HP"}
+{"query": "aplasia of the distal phalanx of manual digit 2", "target": "UPHENO:0081517", "ns": "UPHENO"}
+{"query": "lens of camera-type eye surgical removal", "target": "MAXO:0001220", "ns": "MAXO"}
+{"query": "hsa-mir-380", "target": "HGNC:31873", "ns": "HGNC"}
+{"query": "hedgehog signaling pathway involved in lung development", "target": "GO:0060506", "ns": "GO"}
+{"query": "PP13624", "target": "PR:Q5VIR6", "ns": "PR"}
+{"query": "cerebrospinal fluid kidney-associated antigen 1 (human) amount", "target": "OBA:2081447", "ns": "OBA"}
+{"query": "blood serum Cer(d40:1) amount", "target": "OBA:2045185", "ns": "OBA"}
+{"query": "antifreeze activity", "target": "GO:0071497", "ns": "GO"}
+{"query": "HO3", "target": "HGNC:4817", "ns": "HGNC"}
+{"query": "[H2NO](-)", "target": "CHEBI:29773", "ns": "CHEBI"}
+{"query": "an omega-(methylsulfanyl)-(E)-alkanal oxime", "target": "CHEBI:134680", "ns": "CHEBI"}
+{"query": "missing interhyal-epihyal joint", "target": "UPHENO:0010438", "ns": "UPHENO"}
+{"query": "encysted zoospore germination on or near host", "target": "GO:0075226", "ns": "GO"}
+{"query": "small material anatomical entity in manual digit 4 phalanx", "target": "UPHENO:0012503", "ns": "UPHENO"}
+{"query": "1,2,3-propanetricarboxylate", "target": "CHEBI:62517", "ns": "CHEBI"}
+{"query": "B-cell activation protein", "target": "PR:000001310", "ns": "PR"}
+{"query": "quality of outflow part of left ventricle", "target": "OBA:1000444", "ns": "OBA"}
+{"query": "2-aminoethyl (2S,3R)-2-(hexadecanoylamino)-3-hydroxyoctadecyl hydrogen phosphate", "target": "CHEBI:82732", "ns": "CHEBI"}
+{"query": "2-(4-Chlorophenoxy)-2-methylpropionic acid", "target": "CHEBI:34648", "ns": "CHEBI"}
+{"query": "spatial deviation of pedal digit", "target": "OBA:0002268", "ns": "OBA"}
+{"query": "RNU6-48", "target": "HGNC:34292", "ns": "HGNC"}
+{"query": "blood ephrin-A1 (human) amount", "target": "OBA:2052657", "ns": "OBA"}
+{"query": "(3R)-3-phenylchromane", "target": "CHEBI:36101", "ns": "CHEBI"}
+{"query": "Col3a1", "target": "PR:P08121", "ns": "PR"}
+{"query": "PRO_0000207378", "target": "PR:000046374", "ns": "PR"}
+{"query": "mitochondrially encoded cytochrome c oxidase II pseudogene 27", "target": "HGNC:52156", "ns": "HGNC"}
+{"query": "Brenner tumor of the vagina", "target": "MONDO:0022607", "ns": "MONDO"}
+{"query": "PI11", "target": "HGNC:10570", "ns": "HGNC"}
+{"query": "BPTF", "target": "PR:000004799", "ns": "PR"}
+{"query": "Abnormal probe-to-bone test", "target": "HP:6001105", "ns": "HP"}
+{"query": "BMP antagonist", "target": "CHEBI:78623", "ns": "CHEBI"}
+{"query": "ALX", "target": "HGNC:24920", "ns": "HGNC"}
+{"query": "101F10.1", "target": "HGNC:34404", "ns": "HGNC"}
+{"query": "Decreased forced vital capacity", "target": "HP:0032341", "ns": "HP"}
+{"query": "carcinoma ex pleomorphic adenoma (morphologic abnormality)", "target": "MONDO:0002472", "ns": "MONDO"}
+{"query": "morphology of malleus processus brevis", "target": "OBA:0005036", "ns": "OBA"}
+{"query": "B3GNT6", "target": "PR:000004596", "ns": "PR"}
+{"query": "accessory obturator vein", "target": "UBERON:0039256", "ns": "UBERON"}
+{"query": "failed signaling", "target": "UPHENO:0018738", "ns": "UPHENO"}
+{"query": "Fth", "target": "PR:P09528", "ns": "PR"}
+{"query": "quality of L-ascorbic acid metabolic process", "target": "OBA:1000480", "ns": "OBA"}
+{"query": "caudal vein with blister", "target": "UPHENO:0011997", "ns": "UPHENO"}
+{"query": "HLA class I histocompatibility antigen, E alpha chain precursor", "target": "PR:000062664", "ns": "PR"}
+{"query": "dual-specificity kinase activity", "target": "GO:0004712", "ns": "GO"}
+{"query": "Pestivirus caused disease or disorder", "target": "MONDO:0005909", "ns": "MONDO"}
+{"query": "KIAA0563-related", "target": "HGNC:29070", "ns": "HGNC"}
+{"query": "activation of smooth muscle cell apoptosis", "target": "GO:0034393", "ns": "GO"}
+{"query": "B cell of appendix vermiformis", "target": "CL:0009032", "ns": "CL"}
+{"query": "changed morphology of chest", "target": "UPHENO:0087481", "ns": "UPHENO"}
+{"query": "DKFZP566F2124", "target": "HGNC:24543", "ns": "HGNC"}
+{"query": "l. palpebrale mediale", "target": "UBERON:0004724", "ns": "UBERON"}
+{"query": "activation of osteoblast proliferation", "target": "GO:0033690", "ns": "GO"}
+{"query": "missing chordate pharyngeal muscle", "target": "UPHENO:0010191", "ns": "UPHENO"}
+{"query": "small epiphysis of first metatarsal bone", "target": "UPHENO:0069484", "ns": "UPHENO"}
+{"query": "FLJ22055", "target": "HGNC:23786", "ns": "HGNC"}
+{"query": "PRO_0000010957", "target": "PR:000047529", "ns": "PR"}
+{"query": "cerebrospinal fluid MICAL-like protein 2 (human) amount", "target": "OBA:2059704", "ns": "OBA"}
+{"query": "GSTA3/InitMet-", "target": "PR:000020066", "ns": "PR"}
+{"query": "blood serum single-stranded DNA-binding protein, mitochondrial amount", "target": "OBA:2043663", "ns": "OBA"}
+{"query": "cerebrospinal fluid coxsackievirus and adenovirus receptor (human) amount", "target": "OBA:2058355", "ns": "OBA"}
+{"query": "release from dormancy", "target": "GO:0097438", "ns": "GO"}
+{"query": "changed position of pharyngeal arch cartilage", "target": "UPHENO:0054035", "ns": "UPHENO"}
+{"query": "CEP152", "target": "PR:000005342", "ns": "PR"}
+{"query": "zinc finger DHHC-type containing 4 pseudogene 1", "target": "HGNC:39443", "ns": "HGNC"}
+{"query": "ETM5", "target": "MONDO:0014756", "ns": "MONDO"}
+{"query": "HSPC171", "target": "HGNC:25015", "ns": "HGNC"}
+{"query": "BDA6", "target": "MONDO:0007219", "ns": "MONDO"}
+{"query": "sulfur-containing amino-acid anions", "target": "CHEBI:63470", "ns": "CHEBI"}
+{"query": "small tetrapod parietal bone", "target": "UPHENO:0069299", "ns": "UPHENO"}
+{"query": "2,7-dihydroxy-3-(4-methoxyphenyl)-2,3-dihydro-4H-chromen-4-one", "target": "CHEBI:62734", "ns": "CHEBI"}
+{"query": "small gonad primordium", "target": "UPHENO:0070258", "ns": "UPHENO"}
+{"query": "5-Bromo-6-(2-imidazolin-2-ylamino)quinoxaline D-tartrate (1:1)", "target": "CHEBI:51157", "ns": "CHEBI"}
+{"query": "cerebrospinal fluid protocadherin gamma-A2 (human) amount", "target": "OBA:2081835", "ns": "OBA"}
+{"query": "galactolipid metabolism", "target": "GO:0019374", "ns": "GO"}
+{"query": "hsa-mir-548a-1", "target": "HGNC:32796", "ns": "HGNC"}
+{"query": "KIAA1970", "target": "HGNC:29419", "ns": "HGNC"}
+{"query": "activation of mitochondrial depolarization", "target": "GO:0051901", "ns": "GO"}
+{"query": "down regulation of receptor recycling", "target": "GO:0001920", "ns": "GO"}
+{"query": "wingless-type MMTV integration site family, member 3A", "target": "HGNC:15983", "ns": "HGNC"}
+{"query": "Hepatic cirrhosis", "target": "HP:0001394", "ns": "HP"}
+{"query": "S-100 protein beta chain (human)", "target": "PR:P04271", "ns": "PR"}
+{"query": "color of pupil", "target": "OBA:0004210", "ns": "OBA"}
+{"query": "position of vagus nerve", "target": "OBA:0005958", "ns": "OBA"}
+{"query": "blood plasma T-cell differentiation antigen CD6 (human) amount", "target": "OBA:2050336", "ns": "OBA"}
+{"query": "6-N-[2-[[4-(2,4-dichlorophenyl)-5-imidazol-1-ylpyrimidin-2-yl]amino]ethyl]-3-nitropyridine-2,6-diamine", "target": "CHEBI:167657", "ns": "CHEBI"}
+{"query": "altered number of plasma cells", "target": "UPHENO:0077359", "ns": "UPHENO"}
+{"query": "hsa-mir-4288", "target": "HGNC:38203", "ns": "HGNC"}
+{"query": "Furlong syndrome", "target": "MONDO:0012212", "ns": "MONDO"}
+{"query": "Complex focal seizures", "target": "HP:0002384", "ns": "HP"}
+{"query": "PLXDC2", "target": "PR:000012891", "ns": "PR"}
+{"query": "Pustulosis", "target": "HP:0033605", "ns": "HP"}
+{"query": "TRPML2", "target": "HGNC:13357", "ns": "HGNC"}
+{"query": "Familial predisposition", "target": "HP:0001426", "ns": "HP"}
+{"query": "morphology of cardiac vein", "target": "OBA:0005058", "ns": "OBA"}
+{"query": "PA28beta", "target": "HGNC:9569", "ns": "HGNC"}
+{"query": "FLJ39599", "target": "HGNC:26827", "ns": "HGNC"}
+{"query": "HPR6.6", "target": "HGNC:16090", "ns": "HGNC"}
+{"query": "anatomical tube", "target": "UBERON:0000025", "ns": "UBERON"}
+{"query": "Omphalitis", "target": "HP:0032435", "ns": "HP"}
+{"query": "Increased glycogen in myocardium", "target": "HP:0034532", "ns": "HP"}
+{"query": "changed bracket shape of epiphysis of phalanx of manus in manual digit 4", "target": "UPHENO:0082149", "ns": "UPHENO"}
+{"query": "PCH2", "target": "MONDO:0016759", "ns": "MONDO"}
+{"query": "4-deoxy-beta-D-gluc-4-enuronosyl-(1,3)-N-acetyl-D-galactosamine-4-sulfate 4-sulfohydrolase activity", "target": "GO:0033887", "ns": "GO"}
+{"query": "anal-fin hook", "target": "UBERON:2001948", "ns": "UBERON"}
+{"query": "maternal determination of dorsal/ventral axis, oocyte, germ-line encoded", "target": "GO:0007311", "ns": "GO"}
+{"query": "changed position of pronephric proximal convoluted tubule", "target": "UPHENO:0054100", "ns": "UPHENO"}
+{"query": "host cell pre-synaptic membrane", "target": "GO:0044231", "ns": "GO"}
+{"query": "Fused ankle bones", "target": "HP:0008368", "ns": "HP"}
+{"query": "iron-sulfur cluster assembly 2 homolog (S. cerevisiae) pseudogene 1", "target": "HGNC:38022", "ns": "HGNC"}
+{"query": "SRY-related HMG-box gene 11", "target": "HGNC:11191", "ns": "HGNC"}
+{"query": "changed morphology of aortic valve anulus", "target": "UPHENO:0086973", "ns": "UPHENO"}
+{"query": "nervous system infectious disease", "target": "MONDO:0020010", "ns": "MONDO"}
+{"query": "high-mobility group nucleosomal binding domain 2 pseudogene 32", "target": "HGNC:39403", "ns": "HGNC"}
+{"query": "IGLON2", "target": "PR:Q9P121", "ns": "PR"}
+{"query": "blastema cell of olfactory epithelium", "target": "CL:0002171", "ns": "CL"}
+{"query": "Enah", "target": "PR:Q03173", "ns": "PR"}
+{"query": "C7", "target": "PR:P10643", "ns": "PR"}
+{"query": "LSKB", "target": "MONDO:0032868", "ns": "MONDO"}
+{"query": "E14", "target": "HGNC:7896", "ns": "HGNC"}
+{"query": "Rimmed vacuoles on biopsy", "target": "HP:0003805", "ns": "HP"}
+{"query": "60 kDa poly(U)-binding-splicing factor", "target": "PR:000013491", "ns": "PR"}
+{"query": "FAD anabolism", "target": "GO:0006747", "ns": "GO"}
+{"query": "meningioma (disease) of sella turcica", "target": "MONDO:0004312", "ns": "MONDO"}
+{"query": "presphenoidal bone", "target": "UBERON:0008828", "ns": "UBERON"}
+{"query": "the ratio of amount of syndecan-4 (human) in blood to amount of semaphorin-4D (human) in blood", "target": "OBA:2055745", "ns": "OBA"}
+{"query": "Tumor of the peripheral nervous system", "target": "HP:0100007", "ns": "HP"}
+{"query": "cerebrospinal fluid delta-aminolevulinic acid dehydratase (human) amount", "target": "OBA:2057123", "ns": "OBA"}
+{"query": "EDA tooth agenesis", "target": "MONDO:0010741", "ns": "MONDO"}
+{"query": "2,2\\-ammoniodipropanoate, 2", "target": "CHEBI:58934", "ns": "CHEBI"}
+{"query": "enlarged glomerular capillary", "target": "UPHENO:0001902", "ns": "UPHENO"}
+{"query": "N(6)-(2-hydroxy-2-methylpropanoyl)-L-lysine", "target": "CHEBI:145391", "ns": "CHEBI"}
+{"query": "extraembryonic umbilical artery right", "target": "UBERON:0011697", "ns": "UBERON"}
+{"query": "PRO_0000118811", "target": "PR:000048557", "ns": "PR"}
+{"query": "Abnormal cutaneous elastic fibre morphology", "target": "HP:0025082", "ns": "HP"}
+{"query": "Penile edema", "target": "HP:6000087", "ns": "HP"}
+{"query": "the ratio of amount of stress-induced-phosphoprotein 1 (human) in blood to amount of thioredoxin reductase 1, cytoplasmic (human) in blood", "target": "OBA:2053095", "ns": "OBA"}
+{"query": "Missing anatomical entity in the immune system", "target": "UPHENO:0025506", "ns": "UPHENO"}
+{"query": "M. sphincter colli superficialis", "target": "UBERON:0011508", "ns": "UBERON"}
+{"query": "2-methybutyric acid", "target": "CHEBI:37070", "ns": "CHEBI"}
+{"query": "hAGO4", "target": "HGNC:18424", "ns": "HGNC"}
+{"query": "FLJ38690", "target": "HGNC:26785", "ns": "HGNC"}
+{"query": "PRO_0000228159", "target": "PR:000048486", "ns": "PR"}
+{"query": "zinc ions", "target": "CHEBI:27365", "ns": "CHEBI"}
+{"query": "PCH1D", "target": "MONDO:0054844", "ns": "MONDO"}
+{"query": "lysidine monophosphate residue", "target": "CHEBI:83665", "ns": "CHEBI"}
+{"query": "prolidase", "target": "HGNC:8840", "ns": "HGNC"}
+{"query": "the ratio of amount of large proline-rich protein BAG6 (human) in blood to amount of actin-binding protein WASF1 (human) in blood", "target": "OBA:2053570", "ns": "OBA"}
+{"query": "cerebrospinal fluid alkaline phosphatase, tissue-nonspecific isozyme (human) amount", "target": "OBA:2056776", "ns": "OBA"}
+{"query": "cerebrospinal fluid programmed cell death 1 ligand 1 (human) amount", "target": "OBA:2081368", "ns": "OBA"}
+{"query": "maintenance of protein location at spindle pole body", "target": "GO:0071990", "ns": "GO"}
+{"query": "Dens evaginatus", "target": "HP:0011087", "ns": "HP"}
+{"query": "CNTN1", "target": "PR:Q12860", "ns": "PR"}
+{"query": "cytosolic phospholipase A2 activity", "target": "GO:0004623", "ns": "GO"}
+{"query": "Ly6g6d", "target": "PR:Q9Z1Q3", "ns": "PR"}
+{"query": "JDM", "target": "MONDO:0008054", "ns": "MONDO"}
+{"query": "high erythroid lineage cell mass", "target": "UPHENO:0084814", "ns": "UPHENO"}
+{"query": "cerebrospinal fluid tripeptidyl-peptidase 1 (human) amount", "target": "OBA:2056006", "ns": "OBA"}
+{"query": "HBI-36", "target": "HGNC:32625", "ns": "HGNC"}
+{"query": "malignant spindle cell tumor", "target": "MONDO:0020663", "ns": "MONDO"}
+{"query": "response to DL-alpha-tocopherol acetate", "target": "GO:0033197", "ns": "GO"}
+{"query": "1,2-didehydropiperidine-2-carboxylic acid", "target": "CHEBI:30912", "ns": "CHEBI"}
+{"query": "DKFZp547A023", "target": "HGNC:25330", "ns": "HGNC"}
+{"query": "DC-UbP", "target": "HGNC:24463", "ns": "HGNC"}
+{"query": "morphology of metapodial pad", "target": "OBA:VT0000574", "ns": "OBA"}
+{"query": "genetic anorectal anomalies", "target": "MONDO:0007136", "ns": "MONDO"}
+{"query": "Csn1", "target": "PR:P19228", "ns": "PR"}
+{"query": "Pfeiffer Palm Teller syndrome", "target": "MONDO:0009858", "ns": "MONDO"}
+{"query": "carbon oxides", "target": "CHEBI:23014", "ns": "CHEBI"}
+{"query": "activation of distal tip cell migration", "target": "GO:1903356", "ns": "GO"}
+{"query": "Absent bones of the lower limbs", "target": "HP:0009817", "ns": "HP"}
+{"query": "Missing lobule of pinna in the ear", "target": "UPHENO:0026224", "ns": "UPHENO"}
+{"query": "(HO)2P(O)-O-", "target": "CHEBI:32958", "ns": "CHEBI"}
+{"query": "activation of antigen processing and presentation via MHC class Ib", "target": "GO:0002594", "ns": "GO"}
+{"query": "decreased sensitivity of organism to tridemorph", "target": "UPHENO:0077028", "ns": "UPHENO"}
+{"query": "3,5,7-Trihydroxyflavone", "target": "CHEBI:5262", "ns": "CHEBI"}
+{"query": "Ccnd2", "target": "PR:P30280", "ns": "PR"}
+{"query": "HBV X-interacting protein (human)", "target": "PR:O43504", "ns": "PR"}
+{"query": "morphology of perilymphatic space", "target": "OBA:VT0003168", "ns": "OBA"}
+{"query": "S4", "target": "HGNC:9547", "ns": "HGNC"}
+{"query": "Flamazine", "target": "CHEBI:9142", "ns": "CHEBI"}
+{"query": "Diisopropyl phosphate", "target": "CHEBI:16785", "ns": "CHEBI"}
+{"query": "decreased sensitivity of organism to kanamycin A", "target": "UPHENO:0077051", "ns": "UPHENO"}
+{"query": "Crowded follicles", "target": "HP:0020245", "ns": "HP"}
+{"query": "HSPC286", "target": "PR:000011202", "ns": "PR"}
+{"query": "curved medial ectoderm-derived structure", "target": "UPHENO:0031535", "ns": "UPHENO"}
+{"query": "cerebrospinal fluid zymogen granule membrane protein 16 (human) amount", "target": "OBA:2056284", "ns": "OBA"}
+{"query": "(E3-independent) E2 ubiquitin-conjugating enzyme H (mouse)", "target": "PR:P62257", "ns": "PR"}
+{"query": "gland hyperpigmentation", "target": "UPHENO:0010733", "ns": "UPHENO"}
+{"query": "P-PST", "target": "HGNC:11453", "ns": "HGNC"}
+{"query": "Partial duplication of the middle bone of the 4th toe", "target": "HP:0100420", "ns": "HP"}
+{"query": "glioblast cell division in pallium", "target": "GO:0022016", "ns": "GO"}
+{"query": "DMRT6", "target": "HGNC:13913", "ns": "HGNC"}
+{"query": "2,3-Bis(3-hydroxytetradecanoyl)-alpha-D-glucosaminyl 1-phosphate", "target": "CHEBI:16942", "ns": "CHEBI"}
+{"query": "Arha", "target": "PR:Q9QUI0", "ns": "PR"}
+{"query": "mammary gland branching involved in puberty", "target": "GO:0060744", "ns": "GO"}
+{"query": "FLJ41471", "target": "HGNC:29578", "ns": "HGNC"}
+{"query": "changed endo-epithelium", "target": "UPHENO:0004094", "ns": "UPHENO"}
+{"query": "T cell receptor alpha variable 3 (gene/pseudogene)", "target": "HGNC:12128", "ns": "HGNC"}
+{"query": "straight-chain fatty acids", "target": "CHEBI:59202", "ns": "CHEBI"}
+{"query": "Supramolecular aggregate of collagen", "target": "GO:0098644", "ns": "GO"}
+{"query": "size of skull", "target": "OBA:VT0003104", "ns": "OBA"}
+{"query": "H3-K4me1 modified histone binding", "target": "GO:0140109", "ns": "GO"}
+{"query": "RaLP (mouse)", "target": "PR:Q6S5L9", "ns": "PR"}
+{"query": "subopercles", "target": "UBERON:2000284", "ns": "UBERON"}
+{"query": "FLJ33207", "target": "HGNC:26576", "ns": "HGNC"}
+{"query": "size of nasal cartilage", "target": "OBA:0002087", "ns": "OBA"}
+{"query": "1-lyso-2-acyl-sn-glycero-3-phosphoglycerol(1-)", "target": "CHEBI:145393", "ns": "CHEBI"}
+{"query": "FLJ20356", "target": "HGNC:26009", "ns": "HGNC"}
+{"query": "KIAA0118", "target": "PR:000013594", "ns": "PR"}
+{"query": "(2Z,3Z)-bis{amino[(2-aminophenyl)sulfanyl]methylene}succinonitrile", "target": "CHEBI:90693", "ns": "CHEBI"}
+{"query": "65 kDa eukaryotic translation initiation factor 2A (human)", "target": "PR:Q9BY44", "ns": "PR"}
+{"query": "dihydrosphingosine biosynthesis", "target": "GO:0046511", "ns": "GO"}
+{"query": "Cos17", "target": "HGNC:13140", "ns": "HGNC"}
+{"query": "Anx8", "target": "PR:O35640", "ns": "PR"}
+{"query": "Absent end part of the long bone of hand", "target": "HP:0009196", "ns": "HP"}
+{"query": "down regulation of detection of mechanical stimulus involved in sensory perception of touch", "target": "GO:1905788", "ns": "GO"}
+{"query": "LOC440456", "target": "HGNC:35411", "ns": "HGNC"}
+{"query": "the ratio of amount of cell surface glycoprotein MUC18 (human) in blood to amount of neural cell adhesion molecule 1 (human) in blood", "target": "OBA:2053789", "ns": "OBA"}
+{"query": "IL-4", "target": "GO:0005136", "ns": "GO"}
+{"query": "CD305", "target": "PR:Q6GTX8", "ns": "PR"}
+{"query": "TRPM2-AS1", "target": "HGNC:50758", "ns": "HGNC"}
+{"query": "DDU", "target": "MONDO:0007447", "ns": "MONDO"}
+{"query": "fifth metatarsal bone epiphysis", "target": "UBERON:0004399", "ns": "UBERON"}
+{"query": "MRG2", "target": "HGNC:7002", "ns": "HGNC"}
+{"query": "quality of navicular bone of pes", "target": "OBA:1000189", "ns": "OBA"}
+{"query": "thiophene-2-carbonyl-CoA, hydrogen-donor:oxygen oxidoreductase activity", "target": "GO:0050603", "ns": "GO"}
+{"query": "N-ribosyldihydronicotinamide dehydrogenase (quinone) activity", "target": "GO:0001512", "ns": "GO"}
+{"query": "CD28/SigPep-", "target": "PR:000018541", "ns": "PR"}
+{"query": "FLJ21029", "target": "HGNC:28035", "ns": "HGNC"}
+{"query": "C11orf87", "target": "PR:Q6NUJ2", "ns": "PR"}
+{"query": "FLJ43373", "target": "HGNC:34237", "ns": "HGNC"}
+{"query": "MMF", "target": "MONDO:0018942", "ns": "MONDO"}
+{"query": "Dedifferentiated thyroid gland carcinoma", "target": "MONDO:0006468", "ns": "MONDO"}
+{"query": "kidney venous blood vessel", "target": "UBERON:0014401", "ns": "UBERON"}
+{"query": "actin-dependent nuclear movement", "target": "GO:1990974", "ns": "GO"}
+{"query": "lower first permanent molar tooth", "target": "UBERON:0018578", "ns": "UBERON"}
+{"query": "atrophy of the musculature of pectoral girdle", "target": "UPHENO:0014140", "ns": "UPHENO"}
+{"query": "15q13.3 microdeletion", "target": "MONDO:0012774", "ns": "MONDO"}
+{"query": "hip muscle organ", "target": "UBERON:0003658", "ns": "UBERON"}
+{"query": "myo-inositol hexakisphosphate anabolism", "target": "GO:0010264", "ns": "GO"}
+{"query": "carbon monoxide oxidase activity", "target": "GO:0008805", "ns": "GO"}
+{"query": "activation of cellular metabolic process", "target": "GO:0031325", "ns": "GO"}
+{"query": "1F-oligo[beta-D-fructofuranosyl-(2->1)-]sucrose 6G-beta-D-fructotransferase activity", "target": "GO:0033841", "ns": "GO"}
+{"query": "CD3g (mouse)", "target": "PR:P11942", "ns": "PR"}
+{"query": "(2Z)-2-(2-furyl)-3-(5-nitro-2-furyl)prop-2-enamide", "target": "CHEBI:15660", "ns": "CHEBI"}
+{"query": "processing at B2", "target": "GO:0000468", "ns": "GO"}
+{"query": "hsa-mir-1306", "target": "HGNC:35371", "ns": "HGNC"}
+{"query": "Missing mammary duct terminal end bud in the mammary duct", "target": "UPHENO:0027024", "ns": "UPHENO"}
+{"query": "fatty acid derivative anabolism", "target": "GO:1901570", "ns": "GO"}
+{"query": "Rhinosporidioses", "target": "MONDO:0005946", "ns": "MONDO"}
+{"query": "amount of erythroblast", "target": "OBA:VT0005096", "ns": "OBA"}
+{"query": "cerebrospinal fluid transmembrane protein 230 (human) amount", "target": "OBA:2080268", "ns": "OBA"}
+{"query": "AC141928.1", "target": "HGNC:53177", "ns": "HGNC"}
+{"query": "FSHD region gene 2 family, member C", "target": "HGNC:33626", "ns": "HGNC"}
+{"query": "blood mercury atom amount", "target": "OBA:2050088", "ns": "OBA"}
+{"query": "parenchymal cell differentiation", "target": "GO:0048760", "ns": "GO"}
+{"query": "activation of peptide secretion", "target": "GO:0002793", "ns": "GO"}
+{"query": "eIF3-gamma", "target": "HGNC:3273", "ns": "HGNC"}
+{"query": "position of jugal bone", "target": "OBA:0003303", "ns": "OBA"}
+{"query": "(12Z)-9,10-dihydroxyoctadec-12-enoate", "target": "CHEBI:84027", "ns": "CHEBI"}
+{"query": "(9Z,11E,13Z)-octadeca-9,11,13-trienoic acid", "target": "CHEBI:8638", "ns": "CHEBI"}
+{"query": "TRAPP1", "target": "GO:0030008", "ns": "GO"}
+{"query": "MAHCF", "target": "MONDO:0010183", "ns": "MONDO"}
+{"query": "3ost", "target": "PR:O35310", "ns": "PR"}
+{"query": "4-O-succinyl-L-homoserine:L-cysteine S-(3-amino-3-carboxypropyl)transferase inhibitor", "target": "CHEBI:137566", "ns": "CHEBI"}
+{"query": "small hyomandibular cartilage", "target": "UPHENO:0070116", "ns": "UPHENO"}
+{"query": "complement activation, lectin pathway disease", "target": "MONDO:0044209", "ns": "MONDO"}
+{"query": "missing anatomical cluster", "target": "UPHENO:0009149", "ns": "UPHENO"}
+{"query": "membranous labyrinth saccule", "target": "UBERON:0001854", "ns": "UBERON"}
+{"query": "canine tooth cingulum", "target": "UBERON:0017297", "ns": "UBERON"}
+{"query": "the ratio of amount of complement component C1q receptor (human) in blood to amount of C-type lectin domain family 14 member A (human) in blood", "target": "OBA:2053392", "ns": "OBA"}
+{"query": "closed multicellular anatomical structure", "target": "UPHENO:0074245", "ns": "UPHENO"}
+{"query": "Hhl", "target": "PR:A6H6A9", "ns": "PR"}
+{"query": "blood C-C motif chemokine 28 (human) amount", "target": "OBA:2052435", "ns": "OBA"}
+{"query": "kyphoscoliosis-lateral tongue atrophy-HSP syndrome", "target": "MONDO:0044648", "ns": "MONDO"}
+{"query": "DKFZp781M09150", "target": "HGNC:32369", "ns": "HGNC"}
+{"query": "RAPH syndrome", "target": "MONDO:0100155", "ns": "MONDO"}
+{"query": "Lundberg syndrome", "target": "MONDO:0017379", "ns": "MONDO"}
+{"query": "longer primary circulatory organ", "target": "UPHENO:0072642", "ns": "UPHENO"}
+{"query": "Graves\u2019 eye disease", "target": "MONDO:0001509", "ns": "MONDO"}
+{"query": "RAB3B", "target": "PR:P20337", "ns": "PR"}
+{"query": "Absent ribs", "target": "HP:0000921", "ns": "HP"}
+{"query": "AMCase", "target": "PR:000005425", "ns": "PR"}
+{"query": "DNA topoisomerase II, beta isozyme (human)", "target": "PR:Q02880", "ns": "PR"}
+{"query": "the ratio of amount of cadherin-1 (human) in blood to amount of cadherin-17 (human) in blood", "target": "OBA:2054389", "ns": "OBA"}
+{"query": "raw horse meat", "target": "FOODON:03306058", "ns": "FOODON"}
+{"query": "Gm837", "target": "PR:Q69ZU6", "ns": "PR"}
+{"query": "Constriction of the pupil", "target": "UPHENO:0081832", "ns": "UPHENO"}
+{"query": "BACH1", "target": "PR:000004617", "ns": "PR"}
+{"query": "MLC", "target": "MONDO:0011391", "ns": "MONDO"}
+{"query": "autolysis", "target": "GO:0097264", "ns": "GO"}
+{"query": "JNK2", "target": "PR:P79996", "ns": "PR"}
+{"query": "DSG4", "target": "PR:000081379", "ns": "PR"}
+{"query": "capsule of prostate", "target": "UBERON:0035316", "ns": "UBERON"}
+{"query": "acetyl-CoA-L-phenylalanine alpha-N-acetyltransferase activity", "target": "GO:0050176", "ns": "GO"}
+{"query": "4-((2,4-dichloro-5-methoxyphenyl)amino)-6-methoxy-7-(3-(4-methyl-1-piperazinyl)propoxy)-3-quinolinecarbonitrile", "target": "CHEBI:39112", "ns": "CHEBI"}
+{"query": "blood intercellular adhesion molecule 4 (human) amount", "target": "OBA:2052814", "ns": "OBA"}
+{"query": "Missing anatomical entity in the intestine", "target": "UPHENO:0025222", "ns": "UPHENO"}
+{"query": "BASP1", "target": "PR:000064475", "ns": "PR"}
+{"query": "uc.65", "target": "HGNC:55913", "ns": "HGNC"}
+{"query": "blood T-complex protein 1 subunit epsilon amount", "target": "OBA:2051282", "ns": "OBA"}
+{"query": "(4S)-4,11-diethyl-4,9-dihydroxy-1H-pyrano[3\\", "target": "CHEBI:8988", "ns": "CHEBI"}
+{"query": "fatty acid metabolism", "target": "GO:0006631", "ns": "GO"}
+{"query": "the ratio of amount of protein AMBP (human) in blood to amount of hepatitis A virus cellular receptor 1 (human) in blood", "target": "OBA:2054261", "ns": "OBA"}
+{"query": "FAD nucleotidohydrolase activity", "target": "GO:0047884", "ns": "GO"}
+{"query": "hydroxybenzyl alcohols", "target": "CHEBI:24679", "ns": "CHEBI"}
+{"query": "cerebrospinal fluid cGMP-dependent protein kinase 1 (human) amount", "target": "OBA:2058749", "ns": "OBA"}
+{"query": "changed humerus endochondral element", "target": "UPHENO:0003193", "ns": "UPHENO"}
+{"query": "6-deoxy-D-galactose", "target": "CHEBI:28847", "ns": "CHEBI"}
+{"query": "IL-20", "target": "GO:0045517", "ns": "GO"}
+{"query": "wholeness of epiphysis of first metatarsal bone", "target": "OBA:0003071", "ns": "OBA"}
+{"query": "altered number of epithelium of lenss", "target": "UPHENO:0011937", "ns": "UPHENO"}
+{"query": "regulation of VSMC apoptosis", "target": "GO:1905459", "ns": "GO"}
+{"query": "the ratio of amount of annexin A3 (human) in blood to amount of hematopoietic lineage cell-specific protein (human) in blood", "target": "OBA:2054314", "ns": "OBA"}
+{"query": "glycolytic fermentation to propionate", "target": "GO:0019657", "ns": "GO"}
+{"query": "morphology of tarsal gland acinus", "target": "OBA:0004914", "ns": "OBA"}
+{"query": "secondary metabolism", "target": "GO:0019748", "ns": "GO"}
+{"query": "hsa-mir-1972", "target": "HGNC:37060", "ns": "HGNC"}
+{"query": "GK intronic transcript 1 (non-protein coding)", "target": "HGNC:41339", "ns": "HGNC"}
+{"query": "von Willebrand Disease Type II Normandy", "target": "HP:0040237", "ns": "HP"}
+{"query": "PP2A subunit A isoform PR65-alpha", "target": "PR:000013134", "ns": "PR"}
+{"query": "ARO", "target": "HGNC:2594", "ns": "HGNC"}
+{"query": "Extra ciliated columnar epithelium", "target": "UPHENO:0014866", "ns": "UPHENO"}
+{"query": "C5orf60", "target": "HGNC:27753", "ns": "HGNC"}
+{"query": "bicarbonate:chloride antiporter activity", "target": "GO:0140900", "ns": "GO"}
+{"query": "onset quality of fontanelle", "target": "OBA:0002053", "ns": "OBA"}
+{"query": "Medially flared eyebrows", "target": "HP:0010747", "ns": "HP"}
+{"query": "lesser sac mesothelium", "target": "UBERON:0003274", "ns": "UBERON"}
+{"query": "ACTA1 nemaline myopathy", "target": "MONDO:0008070", "ns": "MONDO"}
+{"query": "the ratio of amount of alpha-enolase (human) in blood to amount of serpin B6 (human) in blood", "target": "OBA:2054675", "ns": "OBA"}
+{"query": "hsa-mir-6731", "target": "HGNC:50036", "ns": "HGNC"}
+{"query": "PTP-1D", "target": "PR:000013449", "ns": "PR"}
+{"query": "Reduced number of sensory ganglion", "target": "UPHENO:0064591", "ns": "UPHENO"}
+{"query": "quality of distal phalanx of pedal digit 5", "target": "OBA:1000283", "ns": "OBA"}
+{"query": "Extra eosinophil in the blood", "target": "UPHENO:0085944", "ns": "UPHENO"}
+{"query": "DUNQU1", "target": "HGNC:48696", "ns": "HGNC"}
+{"query": "longer serous gland", "target": "UPHENO:0072565", "ns": "UPHENO"}
+{"query": "mitochondrially encoded NADH:ubiquinone oxidoreductase core subunit 5 pseudogene 20", "target": "HGNC:42300", "ns": "HGNC"}
+{"query": "anatomical entity proliferating cell nuclear antigen amount", "target": "OBA:2045366", "ns": "OBA"}
+{"query": "1,3-alpha-mannosidase activity", "target": "GO:0052768", "ns": "GO"}
+{"query": "size of semimembranosus muscle", "target": "OBA:VT0010675", "ns": "OBA"}
+{"query": "Extra future central nervous system", "target": "UPHENO:0015092", "ns": "UPHENO"}
+{"query": "NOD8", "target": "HGNC:21464", "ns": "HGNC"}
+{"query": "cerebrospinal fluid uncharacterized protein FAM241A (human) amount", "target": "OBA:2059857", "ns": "OBA"}
+{"query": "Reduced number of kidney", "target": "UPHENO:0063822", "ns": "UPHENO"}
+{"query": "hereditary osteosclerosis", "target": "MONDO:0042973", "ns": "MONDO"}
+{"query": "Delayed maturation of the trapezoid bone", "target": "HP:0004257", "ns": "HP"}
+{"query": "PLB", "target": "HGNC:30041", "ns": "HGNC"}
+{"query": "anterior colliculus", "target": "UBERON:0001945", "ns": "UBERON"}
+{"query": "Missing craniocervical muscle in the mouth", "target": "UPHENO:0025396", "ns": "UPHENO"}
+{"query": "MTND6 pseudogene 16", "target": "HGNC:39479", "ns": "HGNC"}
+{"query": "Elevated urinary dopamine", "target": "HP:0011979", "ns": "HP"}
+{"query": "KLC2L", "target": "HGNC:20717", "ns": "HGNC"}
+{"query": "FGF-2 (chicken)", "target": "PR:P48800", "ns": "PR"}
+{"query": "SA node cardiac muscle cell action potential", "target": "GO:0086015", "ns": "GO"}
+{"query": "FLJ10038", "target": "HGNC:25469", "ns": "HGNC"}
+{"query": "morphology of snout", "target": "OBA:VT0000443", "ns": "OBA"}
+{"query": "adequacy", "target": "PATO:0001626", "ns": "PATO"}
+{"query": "blood HPODE amount", "target": "OBA:2055806", "ns": "OBA"}
+{"query": "cerebrospinal fluid mediator of RNA polymerase II transcription subunit 28 (human) amount", "target": "OBA:2080921", "ns": "OBA"}
+{"query": "brain commissure dysgenesis", "target": "UPHENO:0047434", "ns": "UPHENO"}
+{"query": "activated CD8-positive, alpha-beta T cell apoptosis", "target": "GO:1905397", "ns": "GO"}
+{"query": "blood inositol monophosphatase 1 (human) amount", "target": "OBA:2052345", "ns": "OBA"}
+{"query": "down regulation of chlorophyll breakdown", "target": "GO:1903647", "ns": "GO"}
+{"query": "blood serum histone H2B type 3-B amount", "target": "OBA:2041880", "ns": "OBA"}
+{"query": "Extra commissure of telencephalon", "target": "UPHENO:0014334", "ns": "UPHENO"}
+{"query": "NFAT protein import into nucleus", "target": "GO:0070884", "ns": "GO"}
+{"query": "polyene antibiotics", "target": "CHEBI:26177", "ns": "CHEBI"}
+{"query": "Bifid distal phalanges of toes", "target": "HP:0001853", "ns": "HP"}
+{"query": "AKV", "target": "MONDO:0007048", "ns": "MONDO"}
+{"query": "changed morphology of thyroid follicle", "target": "UPHENO:0087815", "ns": "UPHENO"}
+{"query": "HALD4", "target": "MONDO:0014875", "ns": "MONDO"}
+{"query": "cerebrospinal fluid regulator of G-protein signaling 10 (human) amount", "target": "OBA:2056178", "ns": "OBA"}
+{"query": "articulatio tibiofibularis", "target": "UBERON:0011117", "ns": "UBERON"}
+{"query": "Kiaa4072", "target": "PR:Q8C181", "ns": "PR"}
+{"query": "O(4)-phosphono-L-tyrosine", "target": "CHEBI:37788", "ns": "CHEBI"}
+{"query": "curved caudal cartilage element", "target": "UPHENO:0031448", "ns": "UPHENO"}
+{"query": "fusion of middle phalanx of manual digit 5 and anatomical entity", "target": "UPHENO:0078209", "ns": "UPHENO"}
+{"query": "ATP:D-glucuronate 1-phosphotransferase activity", "target": "GO:0047940", "ns": "GO"}
+{"query": "protein localisation to actomyosin contractile ring involved in cytokinesis after mitosis", "target": "GO:1904498", "ns": "GO"}
+{"query": "protein localisation in cytoplasmic microtubule plus-end", "target": "GO:1904518", "ns": "GO"}
+{"query": "Missing bone of pelvic complex in the pelvic region element", "target": "UPHENO:0026936", "ns": "UPHENO"}
+{"query": "urodaeal gland", "target": "UBERON:0012479", "ns": "UBERON"}
+{"query": "6-methoxy-4-oxo-3-(2,4,5-trimethoxyphenyl)-4H-chromen-7-olate", "target": "CHEBI:83859", "ns": "CHEBI"}
+{"query": "Increased muscle lipid droplets", "target": "HP:0012240", "ns": "HP"}
+{"query": "coccygeus muscle", "target": "UBERON:0011528", "ns": "UBERON"}
+{"query": "MORMS", "target": "MONDO:0012423", "ns": "MONDO"}
+{"query": "cerebrospinal fluid OTU domain-containing protein 3 (human) amount", "target": "OBA:2059190", "ns": "OBA"}
+{"query": "PDCOS", "target": "MONDO:0013814", "ns": "MONDO"}
+{"query": "generation of action potential", "target": "GO:0098908", "ns": "GO"}
+{"query": "1-(beta-D-ribofuranosyl)-1H-1,2,4-triazole-3-carboxamide", "target": "CHEBI:63580", "ns": "CHEBI"}
+{"query": "arabinogalactan 4-beta-D-galactanohydrolase activity", "target": "GO:0031218", "ns": "GO"}
+{"query": "cerebrospinal fluid clusterin-associated protein 1 (human) amount", "target": "OBA:2080280", "ns": "OBA"}
+{"query": "remex", "target": "UBERON:0011795", "ns": "UBERON"}
+{"query": "partial duplication of chromosome 17p", "target": "MONDO:0016950", "ns": "MONDO"}
+{"query": "CEB", "target": "HGNC:12644", "ns": "HGNC"}
+{"query": "a 14alpha-methyl steroid", "target": "CHEBI:138029", "ns": "CHEBI"}
+{"query": "(2Z,4E)-5-[(1R,5R,8S)-8-hydroxy-1,5-dimethyl-3-oxo-6-oxabicyclo[3.2.1]oct-8-yl]-3-methylpenta-2,4-dienoate", "target": "CHEBI:62069", "ns": "CHEBI"}
+{"query": "changed roof plate", "target": "UPHENO:0002524", "ns": "UPHENO"}
+{"query": "fundal gland", "target": "UBERON:0010038", "ns": "UBERON"}
+{"query": "blood pre-pro-epidermal growth factor (human) amount", "target": "OBA:2052659", "ns": "OBA"}
+{"query": "apocrine adenosis of the breast", "target": "MONDO:0003726", "ns": "MONDO"}
+{"query": "Alopecia, complete", "target": "HP:0002289", "ns": "HP"}
+{"query": "length of pedal digit 1", "target": "OBA:0002264", "ns": "OBA"}
+{"query": "cerebrospinal fluid cullin-9 (human) amount", "target": "OBA:2059686", "ns": "OBA"}
+{"query": "(+)-Carnitine", "target": "CHEBI:11060", "ns": "CHEBI"}
+{"query": "neutropenia immunoglobulin deficiency peculiar facies and bony anomalies", "target": "MONDO:0009523", "ns": "MONDO"}
+{"query": "small digestive system duct", "target": "UPHENO:0070419", "ns": "UPHENO"}
+{"query": "right anterior cilium", "target": "GO:0097555", "ns": "GO"}
+{"query": "mesonephric glomerular visceral epithelial cell fate commitment", "target": "GO:0061258", "ns": "GO"}
+{"query": "(2S,3S,4S)-2,3,4,6-tetrahydroxy-5-oxohexanoic acid", "target": "CHEBI:47950", "ns": "CHEBI"}
+{"query": "Frizzled degradation", "target": "GO:0038018", "ns": "GO"}
+{"query": "Gaisboeck\\s syndrome, Pseudopolycythaemia, Pseudopolycythemia, stress erythrocytosis, stress polycythemia", "target": "MONDO:0019538", "ns": "MONDO"}
+{"query": "2-deoxy-1-O-phosphonato-alpha-D-erythro-pentofuranose", "target": "CHEBI:57259", "ns": "CHEBI"}
+{"query": "curved ulna", "target": "UPHENO:0031105", "ns": "UPHENO"}
+{"query": "blood fibroblast growth factor 21 (human) amount", "target": "OBA:2052593", "ns": "OBA"}
+{"query": "1-[4-({(1R)-1-[(7S)-2-amino-5-formyl-7-methyl-4-oxo-3,4,5,6,7,8-hexahydropteridin-6-yl]ethyl}amino)phenyl]-1-deoxy-5-O-[5-O-({[(1S)-1,3-dicarboxylatopropyl]oxy}phosphinato)-alpha-D-ribofuranosyl]-D-ribitol", "target": "CHEBI:58018", "ns": "CHEBI"}
+{"query": "Enh", "target": "PR:Q8CI51", "ns": "PR"}
+{"query": "FLJ32468", "target": "HGNC:21961", "ns": "HGNC"}
+{"query": "high organ mass", "target": "UPHENO:0008319", "ns": "UPHENO"}
+{"query": "angiolymphoid cutaneous hyperplasia", "target": "MONDO:0001939", "ns": "MONDO"}
+{"query": "branchial arch 5 skeleton", "target": "UBERON:2001229", "ns": "UBERON"}
+{"query": "failed obsolete cellular metabolic process", "target": "UPHENO:0019184", "ns": "UPHENO"}
+{"query": "misshaped superior cerebellar peduncle of pons", "target": "UPHENO:0041426", "ns": "UPHENO"}
+{"query": "ribosomal protein S3a pseudogene 49", "target": "HGNC:36810", "ns": "HGNC"}
+{"query": "polyprenyl phospho oligosaccharides", "target": "CHEBI:26186", "ns": "CHEBI"}
+{"query": "Brunner-Winter syndrome", "target": "MONDO:0015267", "ns": "MONDO"}
+{"query": "phosphate ion membrane transport", "target": "GO:0035435", "ns": "GO"}
+{"query": "caput fibulae", "target": "UBERON:0008775", "ns": "UBERON"}
+{"query": "colic node", "target": "UBERON:0039168", "ns": "UBERON"}
+{"query": "blood C-C motif chemokine 13 (human) amount", "target": "OBA:2052461", "ns": "OBA"}
+{"query": "organic sulfates", "target": "CHEBI:25704", "ns": "CHEBI"}
+{"query": "DNA damage-regulated overexpressed in cancer 45 (human)", "target": "PR:Q9NTK5", "ns": "PR"}
+{"query": "regulation of type III IFN production", "target": "GO:0034344", "ns": "GO"}
+{"query": "(S)-cheilanthifoline oxidase (methylenedioxy-bridge-forming) activity", "target": "GO:0047052", "ns": "GO"}
+{"query": "BTCL2", "target": "PR:Q8NC67", "ns": "PR"}
+{"query": "Extra bones within cranial sutures", "target": "HP:0002645", "ns": "HP"}
+{"query": "missing pelvic complex muscle", "target": "UPHENO:0009421", "ns": "UPHENO"}
+{"query": "cerebrospinal fluid GATA zinc finger domain-containing protein 1 (human) amount", "target": "OBA:2080064", "ns": "OBA"}
+{"query": "Extra prolactin secreting cell", "target": "UPHENO:0085472", "ns": "UPHENO"}
+{"query": "induction of apoptosis by intracellular signals", "target": "GO:0097193", "ns": "GO"}
+{"query": "urine HCG pregancy test", "target": "MAXO:0000786", "ns": "MAXO"}
+{"query": "establishment of latency as a linear plasmid", "target": "GO:0075530", "ns": "GO"}
+{"query": "angioid streaks of optic choroid", "target": "MONDO:0004882", "ns": "MONDO"}
+{"query": "meningioma (disease) of pituitary stalk", "target": "MONDO:0004447", "ns": "MONDO"}
+{"query": "C-C motif chemokine 11 production", "target": "GO:0071954", "ns": "GO"}
+{"query": "metaphysis dysgenesis", "target": "UPHENO:0047398", "ns": "UPHENO"}
+{"query": "clumsy child syndrome", "target": "MONDO:0004922", "ns": "MONDO"}
+{"query": "pedal digit 2 lateral deviation", "target": "UPHENO:0085895", "ns": "UPHENO"}
+{"query": "20 kDa CGG-binding protein (mouse)", "target": "PR:Q8BHG9", "ns": "PR"}
+{"query": "closure of internal naris", "target": "OBA:0002094", "ns": "OBA"}
+{"query": "gut muscularis", "target": "UBERON:0006676", "ns": "UBERON"}
+{"query": "CDR", "target": "HGNC:1535", "ns": "HGNC"}
+{"query": "protein phosphatase 1A (formerly 2C), magnesium-dependent, alpha isoform pseudogene 1", "target": "HGNC:30175", "ns": "HGNC"}
+{"query": "cyclohexenecarboxylic acids", "target": "CHEBI:23483", "ns": "CHEBI"}
+{"query": "alpha-L-mannopyranose", "target": "CHEBI:37680", "ns": "CHEBI"}
+{"query": "ILc", "target": "UBERON:0019295", "ns": "UBERON"}
+{"query": "lysosome-mitochondrion membrane contact site", "target": "GO:7770051", "ns": "GO"}
+{"query": "ER alpha-1,2-mannosidase (human)", "target": "PR:Q9UKM7", "ns": "PR"}
+{"query": "blood serum proteasome subunit beta type-9 amount", "target": "OBA:2043073", "ns": "OBA"}
+{"query": "blood serum guanine deaminase amount", "target": "OBA:2041695", "ns": "OBA"}
+{"query": "missing oocyte", "target": "UPHENO:0086214", "ns": "UPHENO"}
+{"query": "enlarged rhombomere 1", "target": "UPHENO:0000977", "ns": "UPHENO"}
+{"query": "MPN", "target": "HGNC:15475", "ns": "HGNC"}
+{"query": "LICAS", "target": "MONDO:0030963", "ns": "MONDO"}
+{"query": "cervical adenomyoma, endometrial type", "target": "MONDO:0004487", "ns": "MONDO"}
+{"query": "foot region skeleton", "target": "UBERON:0001445", "ns": "UBERON"}
+{"query": "Extra multicellular anatomical structure in the digit 1", "target": "UPHENO:0056115", "ns": "UPHENO"}
+{"query": "non-allergic asthma", "target": "MONDO:0004765", "ns": "MONDO"}
+{"query": "Irregular maturation of the end part of the long bone in upper arm", "target": "HP:0003897", "ns": "HP"}
+{"query": "CYTL1/SigPep-", "target": "PR:000019626", "ns": "PR"}
+{"query": "MGC44669", "target": "HGNC:21579", "ns": "HGNC"}
+{"query": "cartilago epiphysialis", "target": "UBERON:0002215", "ns": "UBERON"}
+{"query": "TNF alpha-induced protein 2 (mouse)", "target": "PR:Q61333", "ns": "PR"}
+{"query": "os cruris", "target": "UBERON:0006714", "ns": "UBERON"}
+{"query": "LPAAT-beta", "target": "HGNC:325", "ns": "HGNC"}
+{"query": "DKFZp761P211", "target": "HGNC:30491", "ns": "HGNC"}
+{"query": "size of hypoglossal nerve", "target": "OBA:0005961", "ns": "OBA"}
+{"query": "cerebrospinal fluid Rap1 GTPase-activating protein 1 (human) amount", "target": "OBA:2057900", "ns": "OBA"}
+{"query": "anatomical line between pupils length trait", "target": "OBA:1000005", "ns": "OBA"}
+{"query": "activation of hyaluronan anabolism", "target": "GO:1900127", "ns": "GO"}
+{"query": "small zone of bone organ in distal phalanx of manual digit 1", "target": "UPHENO:0012330", "ns": "UPHENO"}
+{"query": "amyloid fibril assembly", "target": "GO:1990000", "ns": "GO"}
+{"query": "snRNA metabolism", "target": "GO:0016073", "ns": "GO"}
+{"query": "blood BDNF/NT-3 growth factors receptor (human) amount", "target": "OBA:2052558", "ns": "OBA"}
+{"query": "blood serum tumor necrosis factor alpha-induced protein 3 amount", "target": "OBA:2043888", "ns": "OBA"}
+{"query": "changed morphology of pharyngeal arch 2", "target": "UPHENO:0086490", "ns": "UPHENO"}
+{"query": "high abdomen connective tissue mass", "target": "UPHENO:0008348", "ns": "UPHENO"}
+{"query": "inhibition of tube lumen cavitation", "target": "GO:1903133", "ns": "GO"}
+{"query": "response to zileuton trait", "target": "OBA:2040001", "ns": "OBA"}
+{"query": "Antithyroid antibody positivity", "target": "HP:0430050", "ns": "HP"}
+{"query": "FSAP", "target": "PR:000008428", "ns": "PR"}
+{"query": "U104", "target": "HGNC:32768", "ns": "HGNC"}
+{"query": "NaOCN", "target": "CHEBI:38906", "ns": "CHEBI"}
+{"query": "Alkylmercury", "target": "CHEBI:33255", "ns": "CHEBI"}
+{"query": "SPGF56", "target": "MONDO:0030430", "ns": "MONDO"}
+{"query": "(+)-lariciresinol breakdown", "target": "GO:1902131", "ns": "GO"}
+{"query": "size of outer plexiform layer of retina", "target": "OBA:0004446", "ns": "OBA"}
+{"query": "anatomical cavity of middle ear nerve", "target": "UBERON:0004116", "ns": "UBERON"}
+{"query": "activation of meiotic DNA double-strand break formation", "target": "GO:1903343", "ns": "GO"}
+{"query": "structure of nail of pedal digit", "target": "OBA:0003399", "ns": "OBA"}
+{"query": "duplicated utricle of membranous labyrinth", "target": "UPHENO:0075466", "ns": "UPHENO"}
+{"query": "suppression of complement activation by another organism by inactivation of complement proteins", "target": "GO:0141115", "ns": "GO"}
+{"query": "ER to chloroplast transport", "target": "GO:1901965", "ns": "GO"}
+{"query": "blood serum serine protease inhibitor Kazal-type 6 amount", "target": "OBA:2043634", "ns": "OBA"}
+{"query": "KIAA0693", "target": "HGNC:15592", "ns": "HGNC"}
+{"query": "Lymphocytic choriomeningitis virus antibody titer high in blood", "target": "HP:0430084", "ns": "HP"}
+{"query": "ceramide 1-phosphate signaling pathway", "target": "GO:0090520", "ns": "GO"}
+{"query": "Coro1", "target": "PR:O89053", "ns": "PR"}
+{"query": "BRWD3 non-syndromic X-linked intellectual disability", "target": "MONDO:0010393", "ns": "MONDO"}
+{"query": "S-adenosyl-L-methionine:S-adenosyl-L-methionine:S-adenosyl-L-methionine 3-amino-3-carboxypropyltransferase activity", "target": "GO:0030410", "ns": "GO"}
+{"query": "Noradrenergic cell group A6", "target": "UBERON:0002148", "ns": "UBERON"}
+{"query": "Neuroendocrine neoplasia", "target": "HP:0100634", "ns": "HP"}
+{"query": "acetylcholine agonist", "target": "CHEBI:38324", "ns": "CHEBI"}
+{"query": "regulation of Amylopectin catabolism", "target": "GO:2000945", "ns": "GO"}
+{"query": "HAT", "target": "MONDO:0018048", "ns": "MONDO"}
+{"query": "Arasan", "target": "CHEBI:9495", "ns": "CHEBI"}
+{"query": "the ratio of amount of tyrosine-protein phosphatase non-receptor type 6 (human) in blood to amount of sulfotransferase 1A1 (human) in blood", "target": "OBA:2053215", "ns": "OBA"}
+{"query": "gustatory area", "target": "UBERON:8440075", "ns": "UBERON"}
+{"query": "small zone of long bone in pedal digit 5", "target": "UPHENO:0012355", "ns": "UPHENO"}
+{"query": "hyperplasia, reactive lymphoid", "target": "MONDO:0043959", "ns": "MONDO"}
+{"query": "blood serum tyrosine-protein kinase RYK amount", "target": "OBA:2043361", "ns": "OBA"}
+{"query": "rcl", "target": "HGNC:21218", "ns": "HGNC"}
+{"query": "cobalt-precorrin 3 C17-methyltransferase activity", "target": "GO:0043782", "ns": "GO"}
+{"query": "depsipeptide anabolism", "target": "GO:0050763", "ns": "GO"}
+{"query": "CT63", "target": "HGNC:20686", "ns": "HGNC"}
+{"query": "low position", "target": "PATO:0001476", "ns": "PATO"}
+{"query": "allantoic placenta", "target": "UBERON:0001987", "ns": "UBERON"}
+{"query": "small epiphysis of phalanx in middle phalanx of manual digit 3", "target": "UPHENO:0012097", "ns": "UPHENO"}
+{"query": "Parathyroid dysfunction", "target": "HP:0011767", "ns": "HP"}
+{"query": "coagulation factor deficiency", "target": "MONDO:0002242", "ns": "MONDO"}
+{"query": "IPOA7", "target": "HGNC:6399", "ns": "HGNC"}
+{"query": "B4GALT6", "target": "PR:000004610", "ns": "PR"}
+{"query": "hyperplastic club cell", "target": "UPHENO:0088212", "ns": "UPHENO"}
+{"query": "Lman2", "target": "PR:Q9DBH5", "ns": "PR"}
+{"query": "short vertebral element 7", "target": "UPHENO:0047151", "ns": "UPHENO"}
+{"query": "methyl-L-glutamic acids", "target": "CHEBI:149778", "ns": "CHEBI"}
+{"query": "linear eisosome", "target": "GO:0036286", "ns": "GO"}
+{"query": "RRT", "target": "MAXO:0000600", "ns": "MAXO"}
+{"query": "PHF5GP", "target": "HGNC:23269", "ns": "HGNC"}
+{"query": "HKL-14 (human)", "target": "PR:P47929", "ns": "PR"}
+{"query": "down regulation of myeloid leukocyte mediated immunity", "target": "GO:0002887", "ns": "GO"}
+{"query": "alveolitis of jaw", "target": "MONDO:0001752", "ns": "MONDO"}
+{"query": "(3-amino-1-hydroxypropane-1,1-diyl)bis(phosphonic acid)", "target": "CHEBI:7903", "ns": "CHEBI"}
+{"query": "DKFZp434M202", "target": "HGNC:25316", "ns": "HGNC"}
+{"query": "CAVIN1", "target": "PR:Q6NZI2", "ns": "PR"}
+{"query": "BIN3", "target": "PR:000004750", "ns": "PR"}
+{"query": "enlarged zone of organ in distal phalanx of manus", "target": "UPHENO:0065532", "ns": "UPHENO"}
+{"query": "Eburnated epiphyses of distal phalanges", "target": "HP:0010252", "ns": "HP"}
+{"query": "T=169 icosahedral capsid", "target": "GO:0039628", "ns": "GO"}
+{"query": "ICOS", "target": "PR:000085947", "ns": "PR"}
+{"query": "5-O-phosphonato-D-ribofuranosylaminium", "target": "CHEBI:58089", "ns": "CHEBI"}
+{"query": "AMOG (mouse)", "target": "PR:P14231", "ns": "PR"}
+{"query": "Schneiderian papilloma of the sphenoid sinus", "target": "MONDO:0004327", "ns": "MONDO"}
+{"query": "shape of platelet", "target": "OBA:VT0003405", "ns": "OBA"}
+{"query": "blood serum progesterone receptor amount", "target": "OBA:2042868", "ns": "OBA"}
+{"query": "cerebrospinal fluid dickkopf-related protein 3 (human) amount", "target": "OBA:2081445", "ns": "OBA"}
+{"query": "G17", "target": "HGNC:8633", "ns": "HGNC"}
+{"query": "GET4-GET5 transmembrane domain recognition complex", "target": "GO:0072380", "ns": "GO"}
+{"query": "gonad rudiment", "target": "UBERON:0009117", "ns": "UBERON"}
+{"query": "anti-inflammatory drugs", "target": "CHEBI:35472", "ns": "CHEBI"}
+{"query": "changed chordate pharyngeal muscle", "target": "UPHENO:0004869", "ns": "UPHENO"}
+{"query": "orthodenticle homolog 2 (Drosophila)", "target": "HGNC:8522", "ns": "HGNC"}
+{"query": "Maxalt (TN)", "target": "CHEBI:8875", "ns": "CHEBI"}
+{"query": "SML1", "target": "PR:Q03403", "ns": "PR"}
+{"query": "the ratio of amount of tubulin-folding cofactor B (human) in blood to amount of tubulin-specific chaperone C (human) in blood", "target": "OBA:2053038", "ns": "OBA"}
+{"query": "changed green color of anatomical entity", "target": "UPHENO:0083462", "ns": "UPHENO"}
+{"query": "(4beta,12R)-12,13-epoxytrichothec-9-en-4-yl acetate", "target": "CHEBI:9688", "ns": "CHEBI"}
+{"query": "BR-cadherin (human)", "target": "PR:P55289", "ns": "PR"}
+{"query": "P.PG (human)", "target": "PR:P10124", "ns": "PR"}
+{"query": "regulation of cerebrum blood circulation", "target": "GO:0120276", "ns": "GO"}
+{"query": "Bracket shaped end part of the outermost bone of the little toe", "target": "HP:0100203", "ns": "HP"}
+{"query": "carcinoma of thyroid follicle", "target": "MONDO:0005034", "ns": "MONDO"}
+{"query": "PKD2", "target": "PR:000012773", "ns": "PR"}
+{"query": "VISrl", "target": "UBERON:0035912", "ns": "UBERON"}
+{"query": "PCDH9 antisense RNA 3 (non-protein coding)", "target": "HGNC:40427", "ns": "HGNC"}
+{"query": "down regulation of mammary gland epithelial cell proliferation", "target": "GO:0033600", "ns": "GO"}
+{"query": "changed shape of intraepithelial lymphocyte", "target": "UPHENO:0079581", "ns": "UPHENO"}
+{"query": "KPI", "target": "MONDO:0017266", "ns": "MONDO"}
+{"query": "IKBE", "target": "HGNC:7799", "ns": "HGNC"}
+{"query": "GTP cyclohydrolase I (mouse)", "target": "PR:Q05915", "ns": "PR"}
+{"query": "NPHP1 Senior-Loken syndrome", "target": "MONDO:0009962", "ns": "MONDO"}
+{"query": "DGCR13", "target": "PR:Q96DF8", "ns": "PR"}
+{"query": "(-)-endo-fenchol cyclase activity", "target": "GO:0050437", "ns": "GO"}
+{"query": "down regulation of circadian sleep/wake cycle, REM sleep", "target": "GO:0042322", "ns": "GO"}
+{"query": "ASPG2", "target": "MONDO:0012079", "ns": "MONDO"}
+{"query": "decreased sensitivity of organism to furazolidone", "target": "UPHENO:0077053", "ns": "UPHENO"}
+{"query": "blood serum ubiquitin thioesterase ZRANB1 amount", "target": "OBA:2044220", "ns": "OBA"}
+{"query": "extremity part", "target": "UBERON:0002529", "ns": "UBERON"}
+{"query": "AGTAVPRL", "target": "HGNC:16400", "ns": "HGNC"}
+{"query": "Tmprss5", "target": "PR:Q9ER04", "ns": "PR"}
+{"query": "-CH2-SeH", "target": "CHEBI:50327", "ns": "CHEBI"}
+{"query": "activation of calcium-independent cell-cell adhesion", "target": "GO:0051041", "ns": "GO"}
+{"query": "blood serum ribonuclease P protein subunit p40 amount", "target": "OBA:2043328", "ns": "OBA"}
+{"query": "type F enteroendocrine cell", "target": "CL:0000696", "ns": "CL"}
+{"query": "the ratio of amount of lymphocyte-specific protein 1 (human) in blood to amount of neutrophil cytosol factor 2 (human) in blood", "target": "OBA:2054937", "ns": "OBA"}
+{"query": "changed morphology of conjunctival fornix", "target": "UPHENO:0087544", "ns": "UPHENO"}
+{"query": "Ignores peers", "target": "HP:4000083", "ns": "HP"}
+{"query": "cadmium sensitivity/resistance", "target": "GO:0046686", "ns": "GO"}
+{"query": "aortic valve disease", "target": "MONDO:0003803", "ns": "MONDO"}
+{"query": "SGLT4", "target": "HGNC:22146", "ns": "HGNC"}
+{"query": "cerebrospinal fluid dynein light chain roadblock-type 2 (human) amount", "target": "OBA:2080037", "ns": "OBA"}
+{"query": "blood selenocysteine lyase (human) amount", "target": "OBA:2052699", "ns": "OBA"}
+{"query": "5-taurinomethyluridine-tRNA synthase", "target": "GO:7770010", "ns": "GO"}
+{"query": "Wy 4036", "target": "CHEBI:6539", "ns": "CHEBI"}
+{"query": "the ratio of amount of Kunitz-type protease inhibitor 2 (human) in blood to amount of V-type immunoglobulin domain-containing suppressor of T-cell activation (human) in blood", "target": "OBA:2055707", "ns": "OBA"}
+{"query": "thickened tract of brain", "target": "UPHENO:0047980", "ns": "UPHENO"}
+{"query": "Wide radial epiphyseal plates", "target": "HP:0004014", "ns": "HP"}
+{"query": "changed head somite", "target": "UPHENO:0003825", "ns": "UPHENO"}
+{"query": "Reduced number of hindbrain commissure", "target": "UPHENO:0064558", "ns": "UPHENO"}
+{"query": "2-Aminobenzoic acid butyl ester", "target": "CHEBI:86192", "ns": "CHEBI"}
+{"query": "changed mass density of bone element", "target": "UPHENO:0084654", "ns": "UPHENO"}
+{"query": "TOS", "target": "UBERON:0002612", "ns": "UBERON"}
+{"query": "Missing endochondral element in the basisphenoid bone", "target": "UPHENO:0026716", "ns": "UPHENO"}
+{"query": "PRO_0000211260", "target": "PR:000047637", "ns": "PR"}
+{"query": "cerebrospinal fluid protein C-ets-2 (human) amount", "target": "OBA:2057172", "ns": "OBA"}
+{"query": "TCRBV16S1", "target": "HGNC:12191", "ns": "HGNC"}
+{"query": "PRKAR1B", "target": "PR:P31321", "ns": "PR"}
+{"query": "Missing neuron projection bundle in the trigeminal nerve", "target": "UPHENO:0026173", "ns": "UPHENO"}
+{"query": "VEGFL", "target": "HGNC:12681", "ns": "HGNC"}
+{"query": "Irregular end part of the innermost bone of the 2nd toe", "target": "HP:0100127", "ns": "HP"}
+{"query": "MC4DN3", "target": "MONDO:0033635", "ns": "MONDO"}
+{"query": "incompletely closed trunk blood vessel", "target": "UPHENO:0033593", "ns": "UPHENO"}
+{"query": "calcified anatomical structure", "target": "UPHENO:0067753", "ns": "UPHENO"}
+{"query": "cerebrospinal fluid paired box protein Pax-3 (human) amount", "target": "OBA:2057460", "ns": "OBA"}
+{"query": "CD3G", "target": "PR:P09693", "ns": "PR"}
+{"query": "optic recess", "target": "UBERON:0002287", "ns": "UBERON"}
+{"query": "Inability to produce voice sounds", "target": "HP:0001618", "ns": "HP"}
+{"query": "Loss of fat tissue", "target": "HP:0008887", "ns": "HP"}
+{"query": "inhibition of appetite by leptin signaling", "target": "GO:0038108", "ns": "GO"}
+{"query": "ribose triphosphates", "target": "CHEBI:26563", "ns": "CHEBI"}
+{"query": "K2p10.1", "target": "HGNC:6273", "ns": "HGNC"}
+{"query": "the ratio of amount of cartilage oligomeric matrix protein (human) in blood to amount of intercellular adhesion molecule 1 (human) in blood", "target": "OBA:2053841", "ns": "OBA"}
+{"query": "longer subdivision of digestive tract", "target": "UPHENO:0072305", "ns": "UPHENO"}
+{"query": "regulation of hedgehog signaling pathway", "target": "GO:0008589", "ns": "GO"}
+{"query": "Rab4", "target": "PR:P56371", "ns": "PR"}
+{"query": "aplasia of the lymphatic vessel", "target": "UPHENO:0081443", "ns": "UPHENO"}
+{"query": "wider phalanx of manus", "target": "UPHENO:0006299", "ns": "UPHENO"}
+{"query": "blood fatty acid-binding protein 5 (human) amount", "target": "OBA:2052618", "ns": "OBA"}
+{"query": "KIAA1601", "target": "PR:000015244", "ns": "PR"}
+{"query": "AGMX1", "target": "PR:Q06187", "ns": "PR"}
+{"query": "process quality of defense response to other organism", "target": "OBA:2045296", "ns": "OBA"}
+{"query": "fructose:hydrogen symporter activity", "target": "GO:0055054", "ns": "GO"}
+{"query": "altered number of female reproductive glands", "target": "UPHENO:0011486", "ns": "UPHENO"}
+{"query": "A1 adenosine receptor activity, G protein coupled", "target": "GO:0001609", "ns": "GO"}
+{"query": "(4S)-5-[[(2S)-6-amino-1-[[(2S)-1-[[2-[[(2S)-5-amino-1-[[(2S)-4-amino-1-[[(2S,3S)-1-[[(2S)-1-[[(2S)-1-[[2-[[(2S,3S)-1-[[(2S,3S)-1-[[(2S)-6-amino-1-[[(2S)-1-[[2-[(2S)-2-[[(2S)-1-[[(2S)-1-[[(2S)-1-[[(2S)-1-[[(2S)-1-[[2-[[(2S)-5-amino-1-[[(2S)-1-[[(2S,3R)-1-[[(2S)-5-amino-1-[[(2S,3S)-1-[[(2S)-1-[[(2S)-1,6-diamino-1-oxohexan-2-yl]amino]-1-oxopropan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-1,5-dioxopentan-2-yl]amino]-3-hydroxy-1-oxobutan-2-yl]amino]-1-oxopropan-2-yl]amino]-1,5-dioxopentan-2-yl]amino]-2-oxoethyl]amino]-3-methyl-1-oxobutan-2-yl]amino]-3-methyl-1-oxobutan-2-yl]amino]-1-oxopropan-2-yl]amino]-3-methyl-1-oxobutan-2-yl]amino]-1-oxopropan-2-yl]carbamoyl]pyrrolidin-1-yl]-2-oxoethyl]amino]-1-oxopropan-2-yl]amino]-1-oxohexan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-2-oxoethyl]amino]-3-carboxy-1-oxopropan-2-yl]amino]-5-carbamimidamido-1-oxopentan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-1,4-dioxobutan-2-yl]amino]-1,5-dioxopentan-2-yl]amino]-2-oxoethyl]amino]-3-methyl-1-oxobutan-2-yl]amino]-1-oxohexan-2-yl]amino]-4-[[(2S,3S)-2-[[(2S)-6-amino-2-[[(2S)-6-amino-2-[[(2S)-2-[[(2S)-2-[[(2S)-6-amino-2-[[(2S)-2-[[(2S)-2,6-diaminohexanoyl]amino]-3-(1H-indol-3-yl)propanoyl]amino]hexanoyl]amino]-4-methylpentanoyl]amino]-3-phenylpropanoyl]amino]hexanoyl]amino]hexanoyl]amino]-3-methylpentanoyl]amino]-5-oxopentanoic acid", "target": "CHEBI:201428", "ns": "CHEBI"}
+{"query": "late infantile CLN5 disease", "target": "MONDO:0979348", "ns": "MONDO"}
+{"query": "betapressin", "target": "CHEBI:7954", "ns": "CHEBI"}
+{"query": "iso-cyanates", "target": "CHEBI:53212", "ns": "CHEBI"}
+{"query": "centriole amplification", "target": "GO:0098535", "ns": "GO"}
+{"query": "OLFmf3", "target": "HGNC:8242", "ns": "HGNC"}
+{"query": "AKAP75", "target": "HGNC:375", "ns": "HGNC"}
+{"query": "decreased sensitivity of organism to cyproconazole", "target": "UPHENO:0077054", "ns": "UPHENO"}
+{"query": "PRO_0000015049", "target": "PR:000048586", "ns": "PR"}
+{"query": "the ratio of amount of tubulointerstitial nephritis antigen-like (human) in blood to amount of von Willebrand factor (human) in blood", "target": "OBA:2053051", "ns": "OBA"}
+{"query": "changed ganglion", "target": "UPHENO:0002829", "ns": "UPHENO"}
+{"query": "UBOX3", "target": "HGNC:12500", "ns": "HGNC"}
+{"query": "neuroblastoma breakpoint family, member 19", "target": "HGNC:31999", "ns": "HGNC"}
+{"query": "STYX", "target": "PR:Q8WUJ0", "ns": "PR"}
+{"query": "chick-B4GALT3", "target": "PR:A0A1L1RXH4", "ns": "PR"}
+{"query": "quality of mesangial matrix", "target": "OBA:1000880", "ns": "OBA"}
+{"query": "maintenance of template fidelity during replication fork processing", "target": "GO:0120291", "ns": "GO"}
+{"query": "PGF", "target": "CHEBI:26340", "ns": "CHEBI"}
+{"query": "curved ventral basihyal cartilage", "target": "UPHENO:0031562", "ns": "UPHENO"}
+{"query": "small segmental subdivision of nervous system", "target": "UPHENO:0069178", "ns": "UPHENO"}
+{"query": "CIA complex", "target": "GO:0097361", "ns": "GO"}
+{"query": "HH13", "target": "MONDO:0013915", "ns": "MONDO"}
+{"query": "BKLF3", "target": "HGNC:6351", "ns": "HGNC"}
+{"query": "2p15-p16.1 microdeletion syndrome", "target": "MONDO:0012916", "ns": "MONDO"}
+{"query": "morphology of brachiocephalic artery", "target": "OBA:0005141", "ns": "OBA"}
+{"query": "Monomethyl sulfate", "target": "CHEBI:17760", "ns": "CHEBI"}
+{"query": "the ratio of amount of Ras GTPase-activating-like protein IQGAP2 (human) in blood to amount of syntaxin-4 (human) in blood", "target": "OBA:2055519", "ns": "OBA"}
+{"query": "missing craniocervical region musculature", "target": "UPHENO:0010079", "ns": "UPHENO"}
+{"query": "(17-alpha)-norethindrone acetate", "target": "CHEBI:7628", "ns": "CHEBI"}
+{"query": "B-cell CLL/lymphoma 10 (mouse)", "target": "PR:Q9Z0H7", "ns": "PR"}
+{"query": "ssDNA binding", "target": "GO:0003697", "ns": "GO"}
+{"query": "forked DNA binding", "target": "GO:0000403", "ns": "GO"}
+{"query": "FSH activity", "target": "GO:0016913", "ns": "GO"}
+{"query": "primary macular atrophy", "target": "MONDO:0016444", "ns": "MONDO"}
+{"query": "Reduced number of pectoral appendage", "target": "UPHENO:0064356", "ns": "UPHENO"}
+{"query": "DAP-5 (human)", "target": "PR:P78344", "ns": "PR"}
+{"query": "ACA26", "target": "HGNC:32560", "ns": "HGNC"}
+{"query": "(2S)-2-azaniumyl-4-[(S)-methylsulfinyl]butanoate", "target": "CHEBI:58772", "ns": "CHEBI"}
+{"query": "glucuronate metabolism", "target": "GO:0019585", "ns": "GO"}
+{"query": "polyneuropathy in diabetes", "target": "MONDO:0001583", "ns": "MONDO"}
+{"query": "hsa-mir-4436b-2", "target": "HGNC:43451", "ns": "HGNC"}
+{"query": "OR5AL1P", "target": "HGNC:14844", "ns": "HGNC"}
+{"query": "feather row", "target": "UBERON:0013512", "ns": "UBERON"}
+{"query": "Reduced muscle fibre merosin", "target": "HP:0030092", "ns": "HP"}
+{"query": "HBII-85-16", "target": "HGNC:33082", "ns": "HGNC"}
+{"query": "EF-3 (mouse)", "target": "PR:P97807", "ns": "PR"}
+{"query": "situs inversus, cystic dysplastic kidney and pancreas, bowed lower limbs,severe intrauterine growth retardation, and oligohydramnios", "target": "MONDO:0011354", "ns": "MONDO"}
+{"query": "anthranilate 2,3-dioxygenase (deaminating)", "target": "GO:0018672", "ns": "GO"}
+{"query": "cerebrospinal fluid prostate and testis expressed protein 1 (human) amount", "target": "OBA:2080108", "ns": "OBA"}
+{"query": "KCTD4", "target": "PR:000031738", "ns": "PR"}
+{"query": "enlarged hindlimb bone", "target": "UPHENO:0001129", "ns": "UPHENO"}
+{"query": "TICAM-2", "target": "PR:000001750", "ns": "PR"}
+{"query": "RS2", "target": "GO:0120334", "ns": "GO"}
+{"query": "blood serum small ribosomal subunit protein eS4, X isoform amount", "target": "OBA:2043336", "ns": "OBA"}
+{"query": "changed oculomotor nuclear complex", "target": "UPHENO:0005314", "ns": "UPHENO"}
+{"query": "color of shoot axis node", "target": "OBA:1000043", "ns": "OBA"}
+{"query": "CT2 (human)", "target": "PR:Q86VW1", "ns": "PR"}
+{"query": "ATPase-coupled tungstate transmembrane transporter activity", "target": "GO:1901238", "ns": "GO"}
+{"query": "regulation of chromosome congression", "target": "GO:0090235", "ns": "GO"}
+{"query": "morphology of ventral striatum", "target": "OBA:VT0004103", "ns": "OBA"}
+{"query": "Lark homolog (human)", "target": "PR:Q9BWF3", "ns": "PR"}
+{"query": "PBD11B", "target": "MONDO:0013950", "ns": "MONDO"}
+{"query": "AH neuron", "target": "CL:0020045", "ns": "CL"}
+{"query": "FLJ90724", "target": "HGNC:26909", "ns": "HGNC"}
+{"query": "short nerve of head region", "target": "UPHENO:0046777", "ns": "UPHENO"}
+{"query": "Abnormality of the axial skeleton", "target": "HP:0009121", "ns": "HP"}
+{"query": "(9E)-Octadecenoic acid", "target": "CHEBI:27997", "ns": "CHEBI"}
+{"query": "FLJ33761", "target": "HGNC:26595", "ns": "HGNC"}
+{"query": "blood serum ABI gene family member 3 amount", "target": "OBA:2040461", "ns": "OBA"}
+{"query": "hypoplastic hair follicle", "target": "UPHENO:0081196", "ns": "UPHENO"}
+{"query": "FLJ14528", "target": "HGNC:20064", "ns": "HGNC"}
+{"query": "CRYG8", "target": "PR:000005919", "ns": "PR"}
+{"query": "3,16-dihydroxypalmitic acid", "target": "CHEBI:63900", "ns": "CHEBI"}
+{"query": "Euthyroid multinodular goitre", "target": "HP:0000866", "ns": "HP"}
+{"query": "cerebrospinal fluid teneurin-3 (human) amount", "target": "OBA:2081408", "ns": "OBA"}
+{"query": "Reduced number of pectoral appendage musculature", "target": "UPHENO:0065071", "ns": "UPHENO"}
+{"query": "SRD5AP1", "target": "HGNC:11286", "ns": "HGNC"}
+{"query": "aorta-pulmonary artery fistula", "target": "MONDO:0016077", "ns": "MONDO"}
+{"query": "SCHOPF-Schulz-Passarge syndrome", "target": "MONDO:0009145", "ns": "MONDO"}
+{"query": "4H syndrome", "target": "MONDO:0011897", "ns": "MONDO"}
+{"query": "etoposide induced 2.4 pseudogene 1", "target": "HGNC:44586", "ns": "HGNC"}
+{"query": "glycerophosphoethanolamine zwitterions", "target": "CHEBI:72823", "ns": "CHEBI"}
+{"query": "CD240CE", "target": "HGNC:10008", "ns": "HGNC"}
+{"query": "LDS3", "target": "MONDO:0013426", "ns": "MONDO"}
+{"query": "mass of diaphragm", "target": "OBA:VT1000414", "ns": "OBA"}
+{"query": "DKFZp313N0621", "target": "HGNC:25241", "ns": "HGNC"}
+{"query": "Decreased length of nasal septum", "target": "HP:0000420", "ns": "HP"}
+{"query": "HBZ17", "target": "PR:Q14494", "ns": "PR"}
+{"query": "60S ribosomal protein L5 (mouse)", "target": "PR:P47962", "ns": "PR"}
+{"query": "chromosome number anomaly", "target": "MONDO:0700064", "ns": "MONDO"}
+{"query": "anatomical entity serum amyloid A amount", "target": "OBA:2050097", "ns": "OBA"}
+{"query": "arteria tibialis anterior", "target": "UBERON:0001537", "ns": "UBERON"}
+{"query": "PCCMT", "target": "HGNC:5350", "ns": "HGNC"}
+{"query": "GDNF receptor alpha-2 (mouse)", "target": "PR:O08842", "ns": "PR"}
+{"query": "CoQ-responsive oxidative phosphorylation disorder", "target": "MONDO:0011978", "ns": "MONDO"}
+{"query": "KIAA0991", "target": "PR:000014661", "ns": "PR"}
+{"query": "blood KIF-binding protein (human) amount", "target": "OBA:2052627", "ns": "OBA"}
+{"query": "WW domain binding protein 1-like pseudogene 6", "target": "HGNC:43956", "ns": "HGNC"}
+{"query": "L-idonate/D-gluconate:hydrogen symporter activity", "target": "GO:0015295", "ns": "GO"}
+{"query": "G protein coupled receptor binding", "target": "GO:0001664", "ns": "GO"}
+{"query": "down regulation of nigerotriose transport", "target": "GO:1900358", "ns": "GO"}
+{"query": "3\\-(L-isoleucyl)adenylyl group", "target": "CHEBI:78528", "ns": "CHEBI"}
+{"query": "cerebrospinal fluid cysteine-rich tail protein 1 (human) amount", "target": "OBA:2055879", "ns": "OBA"}
+{"query": "NRK2", "target": "HGNC:11399", "ns": "HGNC"}
+{"query": "MAC", "target": "GO:0005579", "ns": "GO"}
+{"query": "negative regulation of TLR9 signaling pathway", "target": "GO:0034164", "ns": "GO"}
+{"query": "Herlitz type junctional epidermolysis bullosa, sheep", "target": "MONDO:1012728", "ns": "MONDO"}
+{"query": "ATP:protein-L-histidine N-pros-phosphotransferase activity", "target": "GO:0008256", "ns": "GO"}
+{"query": "selenite:reduced acceptor oxidoreductase activity", "target": "GO:0033797", "ns": "GO"}
+{"query": "regulation of sleep", "target": "GO:0045187", "ns": "GO"}
+{"query": "cellular hormone metabolic process", "target": "GO:0042445", "ns": "GO"}
+{"query": "splayed dermal skeletal element", "target": "UPHENO:0031495", "ns": "UPHENO"}
+{"query": "atrial cardiac muscle cell", "target": "CL:0002129", "ns": "CL"}
+{"query": "2-ethoxy-1-{[2\\-(tetrazol-1-id-5-yl)[biphenyl]-4-yl]methyl}-1H-benzimidazole-7-carboxylate, candesartan", "target": "CHEBI:149509", "ns": "CHEBI"}
+{"query": "response to TCDD", "target": "GO:1904612", "ns": "GO"}
+{"query": "Extremely elevated CPK", "target": "HP:0030235", "ns": "HP"}
+{"query": "hsa-mir-1269b", "target": "HGNC:41787", "ns": "HGNC"}
+{"query": "(2S,3R)-3-hydroxypyrrolidine-2-carboxylic acid", "target": "CHEBI:55479", "ns": "CHEBI"}
+{"query": "missing nasopharynx", "target": "UPHENO:0009248", "ns": "UPHENO"}
+{"query": "CHMT", "target": "GO:0033802", "ns": "GO"}
+{"query": "Decreased height of lower lip vermilion", "target": "HP:0010282", "ns": "HP"}
+{"query": "midbrain roof", "target": "UBERON:0003299", "ns": "UBERON"}
+{"query": "MGC10731", "target": "HGNC:28127", "ns": "HGNC"}
+{"query": "18 kDa Sin3-associated polypeptide (human)", "target": "PR:O00422", "ns": "PR"}
+{"query": "DFNA47", "target": "MONDO:0012090", "ns": "MONDO"}
+{"query": "Reduced number of immature eye", "target": "UPHENO:0064509", "ns": "UPHENO"}
+{"query": "blood eotaxin (human) amount", "target": "OBA:2052460", "ns": "OBA"}
+{"query": "ataxia, spinocerebellar, SLC12A6-related, dog", "target": "MONDO:1012836", "ns": "MONDO"}
+{"query": "ganglioneuroma of skin", "target": "MONDO:0002293", "ns": "MONDO"}
+{"query": "C17orf89", "target": "PR:000059676", "ns": "PR"}
+{"query": "5-hydroxy-2-[4-hydroxy-3-(sulfonatooxy)phenyl]-4-oxo-4H-chromene-3,7-diyl disulfate", "target": "CHEBI:57813", "ns": "CHEBI"}
+{"query": "MDRS1", "target": "MONDO:0011271", "ns": "MONDO"}
+{"query": "(2R,3Z)-8,12-bis(2-carboxyethyl)-18-ethyl-3-ethylidene-2,7,13,17-tetramethyl-2,3-dihydrobilin-1,19(21H,24H)-dione", "target": "CHEBI:15617", "ns": "CHEBI"}
+{"query": "Cushing syndrome, ACTH-independent adrenal, somatic", "target": "MONDO:0014359", "ns": "MONDO"}
+{"query": "OTX2OS1", "target": "HGNC:43906", "ns": "HGNC"}
+{"query": "TCONS_00021500", "target": "HGNC:42709", "ns": "HGNC"}
+{"query": "adrenaline cardiac chronotropy", "target": "GO:0003065", "ns": "GO"}
+{"query": "DNA endoreduplication initiation", "target": "GO:0006270", "ns": "GO"}
+{"query": "b-globin", "target": "PR:000008457", "ns": "PR"}
+{"query": "functionality of sperm", "target": "OBA:0004007", "ns": "OBA"}
+{"query": "33 kDa VAMP-associated protein", "target": "PR:000017257", "ns": "PR"}
+{"query": "Extra epicardium", "target": "UPHENO:0014687", "ns": "UPHENO"}
+{"query": "Bracket shaped end part of the innermost hand bones", "target": "HP:0010269", "ns": "HP"}
+{"query": "sulphur amino acid transport", "target": "GO:0000101", "ns": "GO"}
+{"query": "missing fat pad", "target": "UPHENO:0009238", "ns": "UPHENO"}
+{"query": "(2Z,4E)-5-[(1S,4S,6R)-4-hydroxy-2,2,6-trimethyl-7-oxabicyclo[4.1.0]hept-1-yl]-3-methylpenta-2,4-dienal", "target": "CHEBI:32304", "ns": "CHEBI"}
+{"query": "Fgg", "target": "PR:Q8VCM7", "ns": "PR"}
+{"query": "IL-26 receptor activity", "target": "GO:0045508", "ns": "GO"}
+{"query": "anal canal lumen", "target": "UBERON:0007158", "ns": "UBERON"}
+{"query": "joint of shoulder region", "target": "UBERON:0016884", "ns": "UBERON"}
+{"query": "RELT", "target": "PR:Q969Z4", "ns": "PR"}
+{"query": "Reduced number of bone of pectoral complex", "target": "UPHENO:0063721", "ns": "UPHENO"}
+{"query": "FLJ40142", "target": "HGNC:33790", "ns": "HGNC"}
+{"query": "DNAJC30", "target": "PR:Q96LL9", "ns": "PR"}
+{"query": "Hsc40", "target": "HGNC:14887", "ns": "HGNC"}
+{"query": "S4 segment", "target": "UBERON:0006463", "ns": "UBERON"}
+{"query": "Missing anatomical structure in the male reproductive system", "target": "UPHENO:0026149", "ns": "UPHENO"}
+{"query": "Loss of fat tissue below the skin from upper limbs", "target": "HP:0009056", "ns": "HP"}
+{"query": "Recurrent H. influenzae infections", "target": "HP:0005376", "ns": "HP"}
+{"query": "FLJ10948", "target": "HGNC:23408", "ns": "HGNC"}
+{"query": "the ratio of amount of basal cell adhesion molecule (human) in blood to amount of erythropoietin (human) in blood", "target": "OBA:2053614", "ns": "OBA"}
+{"query": "cancer of gastric pylorus", "target": "MONDO:0003971", "ns": "MONDO"}
+{"query": "blood serum calnexin amount", "target": "OBA:2040887", "ns": "OBA"}
+{"query": "missing phalanx of manus", "target": "UPHENO:0009328", "ns": "UPHENO"}
+{"query": "MXD2", "target": "HGNC:7534", "ns": "HGNC"}
+{"query": "changed bracket shape of epiphysis of phalanx of manus in proximal phalanx of manual digit 1", "target": "UPHENO:0082109", "ns": "UPHENO"}
+{"query": "4-oxalocrotonate carboxy-lyase (2-oxopent-4-enoate-forming)", "target": "GO:0047437", "ns": "GO"}
+{"query": "hsa-mir-4753", "target": "HGNC:41527", "ns": "HGNC"}
+{"query": "DLG4 synaptopathy", "target": "MONDO:0032919", "ns": "MONDO"}
+{"query": "FGF13 antisense RNA 1 (non-protein coding)", "target": "HGNC:44264", "ns": "HGNC"}
+{"query": "Abnormality of circulating corticosterone level", "target": "HP:0012112", "ns": "HP"}
+{"query": "examination of the cervix", "target": "MAXO:0001154", "ns": "MAXO"}
+{"query": "hACF1", "target": "HGNC:960", "ns": "HGNC"}
+{"query": "caudal colliculus commissure", "target": "UBERON:0003028", "ns": "UBERON"}
+{"query": "cerebrospinal fluid chondrosarcoma-associated gene 2/3 protein (human) amount", "target": "OBA:2081847", "ns": "OBA"}
+{"query": "prevacuolar compartment to lysosome transport", "target": "GO:1902774", "ns": "GO"}
+{"query": "epididymis hypertrophy", "target": "UPHENO:0084496", "ns": "UPHENO"}
+{"query": "NPY receptor binding", "target": "GO:0031841", "ns": "GO"}
+{"query": "WW45", "target": "HGNC:17795", "ns": "HGNC"}
+{"query": "morphology of pulmonary vein", "target": "OBA:VT0002726", "ns": "OBA"}
+{"query": "monocyte cell differentiation", "target": "GO:0030224", "ns": "GO"}
+{"query": "KTI12", "target": "PR:000009594", "ns": "PR"}
+{"query": "posterior veins", "target": "UBERON:0035547", "ns": "UBERON"}
+{"query": "Hypoplasia of the colon", "target": "HP:0005210", "ns": "HP"}
+{"query": "blood TP53-binding protein 1 amount", "target": "OBA:2051803", "ns": "OBA"}
+{"query": "activation of camalexin anabolism", "target": "GO:1901183", "ns": "GO"}
+{"query": "Changed morphology of the material anatomical entity in the heart", "target": "UPHENO:0015277", "ns": "UPHENO"}
+{"query": "IPCS", "target": "UBERON:0002914", "ns": "UBERON"}
+{"query": "promoter clearance from RNA polymerase III promoter", "target": "GO:0001110", "ns": "GO"}
+{"query": "morphology of mammalian vulva", "target": "OBA:VT0003126", "ns": "OBA"}
+{"query": "(-)-(4R)-Isopiperitenone", "target": "CHEBI:15408", "ns": "CHEBI"}
+{"query": "hsa-mir-6888", "target": "HGNC:50071", "ns": "HGNC"}
+{"query": "Reduced number of distal limb integumentary appendage", "target": "UPHENO:0063934", "ns": "UPHENO"}
+{"query": "short tendon attached to interphalangeal joint of manual digit 1", "target": "UPHENO:0081918", "ns": "UPHENO"}
+{"query": "Fe-S transferase activity", "target": "GO:0036455", "ns": "GO"}
+{"query": "closed pelvic region element", "target": "UPHENO:0074243", "ns": "UPHENO"}
+{"query": "anterior tenaculum", "target": "UBERON:0010517", "ns": "UBERON"}
+{"query": "the ratio of amount of peptidyl-prolyl cis-trans isomerase FKBP5 (human) in blood to amount of tyrosine-protein phosphatase non-receptor type 1 (human) in blood", "target": "OBA:2055246", "ns": "OBA"}
+{"query": "morphology of deltopectoral crest", "target": "OBA:VT0004353", "ns": "OBA"}
+{"query": "3-hydroxy-3-methylglutarate-CoA lyase (human)", "target": "PR:P35914", "ns": "PR"}
+{"query": "hsa-mir-1268", "target": "HGNC:35336", "ns": "HGNC"}
+{"query": "wider renal duct", "target": "UPHENO:0006573", "ns": "UPHENO"}
+{"query": "blood adenine phosphoribosyltransferase (human) amount", "target": "OBA:2052241", "ns": "OBA"}
+{"query": "blood serum pyridoxal phosphate homeostasis protein PLPBP amount", "target": "OBA:2043037", "ns": "OBA"}
+{"query": "protein localisation in Mei2 nuclear dot", "target": "GO:1902549", "ns": "GO"}
+{"query": "D-ribulose 5-phosphate epimerase activity", "target": "GO:0004750", "ns": "GO"}
+{"query": "lumina layer of epithelium of lactiferous gland", "target": "UBERON:0011950", "ns": "UBERON"}
+{"query": "Meigel disease", "target": "MONDO:0008761", "ns": "MONDO"}
+{"query": "DRG RET neuron", "target": "CL:4033182", "ns": "CL"}
+{"query": "SEST3", "target": "HGNC:23060", "ns": "HGNC"}
+{"query": "Cone shaped upper lateral incisors", "target": "HP:0006342", "ns": "HP"}
+{"query": "cancer of muscle structure", "target": "MONDO:0005864", "ns": "MONDO"}
+{"query": "Class 1 unique tumour antigen of melanoma", "target": "MONDO:0007968", "ns": "MONDO"}
+{"query": "2-methyl-3-oxopropanoyl-CoA 2-epimerase activity", "target": "GO:0004493", "ns": "GO"}
+{"query": "FLJ21889", "target": "HGNC:17171", "ns": "HGNC"}
+{"query": "IHRP", "target": "PR:000009149", "ns": "PR"}
+{"query": "has number of of myelinating Schwann cell", "target": "OBA:VT0001107", "ns": "OBA"}
+{"query": "blood C-type lectin domain family 7 member A (human) amount", "target": "OBA:2052931", "ns": "OBA"}
+{"query": "GCP5", "target": "HGNC:18600", "ns": "HGNC"}
+{"query": "(2S)-2-amino-4-[(S)-methylsulfinyl]butanoic acid residue", "target": "CHEBI:44120", "ns": "CHEBI"}
+{"query": "Mbd4", "target": "PR:Q9Z2D7", "ns": "PR"}
+{"query": "process 2", "target": "UBERON:4200169", "ns": "UBERON"}
+{"query": "hypoplastic chordate pharynx", "target": "UPHENO:0081146", "ns": "UPHENO"}
+{"query": "E2", "target": "GO:0061652", "ns": "GO"}
+{"query": "HSC3", "target": "HGNC:24986", "ns": "HGNC"}
+{"query": "AVSD4", "target": "MONDO:0013747", "ns": "MONDO"}
+{"query": "CA1 part of stratum pyramidale hippocampi", "target": "UBERON:0014548", "ns": "UBERON"}
+{"query": "changed distal epiphysis of radius", "target": "UPHENO:0075862", "ns": "UPHENO"}
+{"query": "Pretibial epidermolysis bullosa", "target": "HP:0012221", "ns": "HP"}
+{"query": "DNA-directed RNA polymerase II subunit J-1", "target": "PR:000030902", "ns": "PR"}
+{"query": "CELIAC9", "target": "MONDO:0012778", "ns": "MONDO"}
+{"query": "cerebrospinal fluid cyclin-dependent kinase 4 inhibitor D (human) amount", "target": "OBA:2058171", "ns": "OBA"}
+{"query": "changed spinal nerve", "target": "UPHENO:0005209", "ns": "UPHENO"}
+{"query": "TF6", "target": "HGNC:11758", "ns": "HGNC"}
+{"query": "blood cobalamin binding intrinsic factor (human) amount", "target": "OBA:2052922", "ns": "OBA"}
+{"query": "penultimate vertebra", "target": "UBERON:2000557", "ns": "UBERON"}
+{"query": "Missing endochondral element in the forelimb", "target": "UPHENO:0026097", "ns": "UPHENO"}
+{"query": "MRVI1-AS1", "target": "HGNC:43434", "ns": "HGNC"}
+{"query": "cheek hypertrophy", "target": "UPHENO:0084532", "ns": "UPHENO"}
+{"query": "SNRPE", "target": "PR:000015346", "ns": "PR"}
+{"query": "inferior vagus X ganglion PVALB neuron", "target": "CL:4033151", "ns": "CL"}
+{"query": "TSLP", "target": "PR:000016730", "ns": "PR"}
+{"query": "KIAA0842", "target": "PR:000031600", "ns": "PR"}
+{"query": "fat pad of gonad", "target": "UBERON:0003428", "ns": "UBERON"}
+{"query": "the ratio of amount of CCN family member 2 (human) in blood to amount of monoglyceride lipase (human) in blood", "target": "OBA:2055227", "ns": "OBA"}
+{"query": "Spinal neurofibromas", "target": "HP:0009735", "ns": "HP"}
+{"query": "SMT3 suppressor of mif two 3 homolog 2 (S. cerevisiae) pseudogene 8", "target": "HGNC:39018", "ns": "HGNC"}
+{"query": "down regulation of activated T cell autonomous cell death", "target": "GO:0070240", "ns": "GO"}
+{"query": "3-hydroxyprolines", "target": "CHEBI:64368", "ns": "CHEBI"}
+{"query": "pale body", "target": "GO:0097412", "ns": "GO"}
+{"query": "Tim13a", "target": "PR:P62075", "ns": "PR"}
+{"query": "female urethra gland", "target": "UBERON:0010187", "ns": "UBERON"}
+{"query": "Missing anatomical structure in the trunk region of vertebral column", "target": "UPHENO:0027466", "ns": "UPHENO"}
+{"query": "Pcdh12", "target": "PR:O55134", "ns": "PR"}
+{"query": "cancer of spinal cord", "target": "MONDO:0003544", "ns": "MONDO"}
+{"query": "glucocorticoid receptor antagonists", "target": "CHEBI:82891", "ns": "CHEBI"}
+{"query": "EF-1-gamma (mouse)", "target": "PR:Q9D8N0", "ns": "PR"}
+{"query": "5-formimidoyltetrahydrofolate:glycine N-formimidoyltransferase activity", "target": "GO:0030408", "ns": "GO"}
+{"query": "wider bone of pectoral complex", "target": "UPHENO:0006244", "ns": "UPHENO"}
+{"query": "positive regulation of cyclodextrin catabolism", "target": "GO:2000959", "ns": "GO"}
+{"query": "down regulation of filopodium formation", "target": "GO:0051490", "ns": "GO"}
+{"query": "Partially dislocated innermost hinge joint of little finger", "target": "HP:0004230", "ns": "HP"}
+{"query": "ossa priapium", "target": "UBERON:0013673", "ns": "UBERON"}
+{"query": "A-152E5.2", "target": "PR:P78423", "ns": "PR"}
+{"query": "genioglossus", "target": "UBERON:0001571", "ns": "UBERON"}
+{"query": "(1->2)-beta-D-mannopyranan", "target": "CHEBI:59573", "ns": "CHEBI"}
+{"query": "MMP-18", "target": "PR:000010478", "ns": "PR"}
+{"query": "onset quality of blastocyst hatching", "target": "OBA:0003854", "ns": "OBA"}
+{"query": "CORD10", "target": "MONDO:0012464", "ns": "MONDO"}
+{"query": "the ratio of amount of tissue factor (human) in blood to amount of kallikrein-1 (human) in blood", "target": "OBA:2055415", "ns": "OBA"}
+{"query": "TGF-beta type I binding", "target": "GO:0034713", "ns": "GO"}
+{"query": "Hypoplastic earlobes", "target": "HP:0000385", "ns": "HP"}
+{"query": "C19orf59", "target": "PR:Q8IX19", "ns": "PR"}
+{"query": "anaerobic L-alanine catabolic process", "target": "GO:0019667", "ns": "GO"}
+{"query": "down regulation of antigen processing and presentation of peptide antigen via MHC class II", "target": "GO:0002587", "ns": "GO"}
+{"query": "Missing organ in the female reproductive system", "target": "UPHENO:0027006", "ns": "UPHENO"}
+{"query": "skinny bone foramen", "target": "UPHENO:0054627", "ns": "UPHENO"}
+{"query": "(2S,3R,4S,5S,6R)-2-{3-hydroxy-5-[2-(3-hydroxy-4-methoxyphenyl)ethenyl]phenoxy}-6-(hydroxymethyl)oxane-3,4,5-triol", "target": "CHEBI:92176", "ns": "CHEBI"}
+{"query": "pedal vesalian bone", "target": "UBERON:0010723", "ns": "UBERON"}
+{"query": "cuspis posterior (valva mitralis)", "target": "UBERON:0014855", "ns": "UBERON"}
+{"query": "FND1", "target": "MONDO:0016643", "ns": "MONDO"}
+{"query": "changed enteric ganglion", "target": "UPHENO:0003109", "ns": "UPHENO"}
+{"query": "activation of translational initiation", "target": "GO:0045948", "ns": "GO"}
+{"query": "Arl1", "target": "PR:P61211", "ns": "PR"}
+{"query": "E2F-5 (mouse)", "target": "PR:Q61502", "ns": "PR"}
+{"query": "the ratio of amount of interleukin-6 receptor subunit beta (human) in blood to amount of neuronal cell adhesion molecule (human) in blood", "target": "OBA:2054363", "ns": "OBA"}
+{"query": "KIAA0803", "target": "HGNC:379", "ns": "HGNC"}
+{"query": "3,3\\", "target": "CHEBI:1367", "ns": "CHEBI"}
+{"query": "maintenance of meristem cell identity", "target": "GO:0010074", "ns": "GO"}
+{"query": "KIAA0137", "target": "HGNC:11841", "ns": "HGNC"}
+{"query": "AEXS", "target": "MONDO:0007690", "ns": "MONDO"}
+{"query": "response to 4-(4-Hydroxyphenyl)-2-butanol trait", "target": "OBA:2040131", "ns": "OBA"}
+{"query": "PCDH-ALPHA3", "target": "HGNC:8669", "ns": "HGNC"}
+{"query": "glutamate signaling pathway", "target": "GO:0007215", "ns": "GO"}
+{"query": "blood serum interferon-induced protein with tetratricopeptide repeats 2 amount", "target": "OBA:2044313", "ns": "OBA"}
+{"query": "hAGO1", "target": "HGNC:3262", "ns": "HGNC"}
+{"query": "Abnormality of the subarachnoid space", "target": "HP:0012703", "ns": "HP"}
+{"query": "length of strand of hair", "target": "OBA:VT0000417", "ns": "OBA"}
+{"query": "L-arginine:glycine amidinotransferase activity", "target": "GO:0015068", "ns": "GO"}
+{"query": "hLY75/iso:[4/V34-2/V33-2]", "target": "PR:O60449", "ns": "PR"}
+{"query": "6,8,11,14-18:4", "target": "CHEBI:36040", "ns": "CHEBI"}
+{"query": "Congenital Hyperinsulinism", "target": "MONDO:0019010", "ns": "MONDO"}
+{"query": "neural metamere", "target": "UBERON:0004731", "ns": "UBERON"}
+{"query": "apical papilla", "target": "UBERON:8480031", "ns": "UBERON"}
+{"query": "abnormality of seminal vesicle weight", "target": "UPHENO:0010780", "ns": "UPHENO"}
+{"query": "genitourinary system diagnostic procedure", "target": "MAXO:0001401", "ns": "MAXO"}
+{"query": "thinned upper lip", "target": "UPHENO:0080841", "ns": "UPHENO"}
+{"query": "LPC 20:1", "target": "CHEBI:67057", "ns": "CHEBI"}
+{"query": "hyoid crest", "target": "UBERON:0007099", "ns": "UBERON"}
+{"query": "small regenerating anatomical structure", "target": "UPHENO:0069594", "ns": "UPHENO"}
+{"query": "HDoHE anion", "target": "CHEBI:131867", "ns": "CHEBI"}
+{"query": "Congenital ichthyosis", "target": "HP:0007431", "ns": "HP"}
+{"query": "down regulation of pronephric nephron tubule development", "target": "GO:1900207", "ns": "GO"}
+{"query": "ocimenes", "target": "CHEBI:87751", "ns": "CHEBI"}
+{"query": "MGC41816", "target": "HGNC:28640", "ns": "HGNC"}
+{"query": "hydroxypyrimidines", "target": "CHEBI:38340", "ns": "CHEBI"}
+{"query": "small distal phalanx of pedal digit 2", "target": "UPHENO:0069552", "ns": "UPHENO"}
+{"query": "changed caudal vein", "target": "UPHENO:0003152", "ns": "UPHENO"}
+{"query": "changed sloped shape of metaphysis of humerus", "target": "UPHENO:0041454", "ns": "UPHENO"}
+{"query": "quality of nasal bone", "target": "OBA:1000454", "ns": "OBA"}
+{"query": "cerebrospinal fluid vitrin (human) amount", "target": "OBA:2059416", "ns": "OBA"}
+{"query": "tetracyclic diterpenoids", "target": "CHEBI:52557", "ns": "CHEBI"}
+{"query": "Suberylglycine high in urine", "target": "HP:0034650", "ns": "HP"}
+{"query": "family with sequence similarity 41, member C", "target": "HGNC:27635", "ns": "HGNC"}
+{"query": "(+-)-cis-2,6-dimethyl-4-(2-methyl-3-(p-tert-pentylphenyl)propyl)morpholine", "target": "CHEBI:599440", "ns": "CHEBI"}
+{"query": "MGC16121", "target": "HGNC:28258", "ns": "HGNC"}
+{"query": "nucleophosmin 1 (nucleolar phosphoprotein B23, numatrin) pseudogene 50", "target": "HGNC:45229", "ns": "HGNC"}
+{"query": "Abnormality of enteric nervous system morphology", "target": "HP:0025028", "ns": "HP"}
+{"query": "Grade III preterm intraventricular haemorrhage", "target": "HP:0030750", "ns": "HP"}
+{"query": "hypoplastic prostate gland", "target": "UPHENO:0081177", "ns": "UPHENO"}
+{"query": "blood serum DnaJ homolog subfamily C member 5B amount", "target": "OBA:2044528", "ns": "OBA"}
+{"query": "excitation of vasomotor center by carotid body chemoreceptor signalling", "target": "GO:0003041", "ns": "GO"}
+{"query": "formation by organism of syncytium involving giant cell for nutrient acquisition from host", "target": "GO:0052096", "ns": "GO"}
+{"query": "fusion of anatomical entity and cricoid cartilage", "target": "UPHENO:0078083", "ns": "UPHENO"}
+{"query": "creatine metabolism", "target": "GO:0006600", "ns": "GO"}
+{"query": "Missing neurocranium in the cranium", "target": "UPHENO:0026256", "ns": "UPHENO"}
+{"query": "long bone bifurcation", "target": "UPHENO:0055811", "ns": "UPHENO"}
+{"query": "cerebrospinal fluid regenerating islet-derived protein 4 (human) amount", "target": "OBA:2080824", "ns": "OBA"}
+{"query": "human chorionic gonadotropin measurement", "target": "MAXO:0000784", "ns": "MAXO"}
+{"query": "malignant thymoma type AB", "target": "MONDO:0003976", "ns": "MONDO"}
+{"query": "(4Z,7Z,10R,11E,13E,15Z,17S,19Z)-10,17,22-trihydroxydocosa-4,7,11,13,15,19-hexaenoic acid", "target": "CHEBI:140243", "ns": "CHEBI"}
+{"query": "CAPZB", "target": "PR:000005032", "ns": "PR"}
+{"query": "AIPP1", "target": "PR:000029669", "ns": "PR"}
+{"query": "amount of menstruation", "target": "OBA:0002020", "ns": "OBA"}
+{"query": "ARF GAP GIT1 (mouse)", "target": "PR:Q68FF6", "ns": "PR"}
+{"query": "fissura sphenopetrosa", "target": "UBERON:0013455", "ns": "UBERON"}
+{"query": "Reduced number of musculature of face", "target": "UPHENO:0064762", "ns": "UPHENO"}
+{"query": "Pick1", "target": "PR:Q62083", "ns": "PR"}
+{"query": "DCAF11", "target": "PR:Q8TEB1", "ns": "PR"}
+{"query": "ELA3", "target": "HGNC:15944", "ns": "HGNC"}
+{"query": "PAN", "target": "GO:0022623", "ns": "GO"}
+{"query": "regulation of blood vessel diameter by renin-angiotensin", "target": "GO:0002034", "ns": "GO"}
+{"query": "hypolemmal cisternae", "target": "GO:1990039", "ns": "GO"}
+{"query": "IDDFSDA", "target": "MONDO:0044319", "ns": "MONDO"}
+{"query": "changed position of lamina", "target": "UPHENO:0054212", "ns": "UPHENO"}
+{"query": "blood serum glycine N-methyltransferase amount", "target": "OBA:2041755", "ns": "OBA"}
+{"query": "malar process", "target": "UBERON:0016477", "ns": "UBERON"}
+{"query": "activation of synergid differentiation", "target": "GO:0045699", "ns": "GO"}
+{"query": "Nuclear magnetic resonance imaging of the spinal cord", "target": "MAXO:0035014", "ns": "MAXO"}
+{"query": "11,12-didehydroacyl-CoA", "target": "CHEBI:52831", "ns": "CHEBI"}
+{"query": "the ratio of amount of tumor necrosis factor receptor superfamily member 11A (human) in blood to amount of tumor necrosis factor receptor superfamily member 1A (human) in blood", "target": "OBA:2053057", "ns": "OBA"}
+{"query": "missing cranial appendage", "target": "UPHENO:0008564", "ns": "UPHENO"}
+{"query": "PMm", "target": "UBERON:0002712", "ns": "UBERON"}
+{"query": "dorsal 5th branchial pouch", "target": "UBERON:0010029", "ns": "UBERON"}
+{"query": "changed central nervous system", "target": "UPHENO:0004521", "ns": "UPHENO"}
+{"query": "methyl 6-hydroxy-2,2-dimethyl-2H-benzo[h]chromene-5-carboxylate", "target": "CHEBI:141063", "ns": "CHEBI"}
+{"query": "has number of of oocyte", "target": "OBA:VT0005431", "ns": "OBA"}
+{"query": "meningioma (disease) of pineal body", "target": "MONDO:0004440", "ns": "MONDO"}
+{"query": "placental labyrinth vasculature dysgenesis", "target": "UPHENO:0047298", "ns": "UPHENO"}
+{"query": "blood serum scavenger receptor cysteine-rich domain-containing protein DMBT1 amount", "target": "OBA:2041320", "ns": "OBA"}
+{"query": "CLEC1", "target": "HGNC:24355", "ns": "HGNC"}
+{"query": "missing subdivision of head", "target": "UPHENO:0008689", "ns": "UPHENO"}
+{"query": "polycystic kidney disease 1 (autosomal dominant) pseudogene 4", "target": "HGNC:30068", "ns": "HGNC"}
+{"query": "olfactory receptor, family 2, subfamily G, member 6", "target": "HGNC:27019", "ns": "HGNC"}
+{"query": "(3beta,5beta,7beta)-3,7-dihydroxycholan-24-oic acid", "target": "CHEBI:43419", "ns": "CHEBI"}
+{"query": "volume of kidney", "target": "OBA:2050015", "ns": "OBA"}
+{"query": "(22E,24R)-5alpha,8alpha-epidioxyergosta-6,22-dien-3beta-ol", "target": "CHEBI:65858", "ns": "CHEBI"}
+{"query": "down regulation of mitotic nuclear envelope breakdown", "target": "GO:1905558", "ns": "GO"}
+{"query": "response to 1,4-dithiothreitol", "target": "GO:0072720", "ns": "GO"}
+{"query": "3\\-phosphoadenosine 5\\-{3-[(3R)-3-hydroxy-2,2-dimethyl-4-oxo-4-{[3-({2-[(tetracosanoyl)sulfanyl]ethyl}amino)-3-oxopropyl]amino}butyl] dihydrogen diphosphate}", "target": "CHEBI:52974", "ns": "CHEBI"}
+{"query": "Osteolytic defects of the phalanges of the thumb", "target": "HP:0009654", "ns": "HP"}
+{"query": "Reduced number of merocrine gland", "target": "UPHENO:0063868", "ns": "UPHENO"}
+{"query": "ABCD4", "target": "PR:000031253", "ns": "PR"}
+{"query": "down regulation of mitotic cytokinetic process", "target": "GO:1903437", "ns": "GO"}
+{"query": "CILD25", "target": "MONDO:0014203", "ns": "MONDO"}
+{"query": "strength of multicellular organism", "target": "OBA:0003941", "ns": "OBA"}
+{"query": "cerebrospinal fluid protocadherin alpha-7 (human) amount", "target": "OBA:2081664", "ns": "OBA"}
+{"query": "REG4/SigPep-", "target": "PR:000021255", "ns": "PR"}
+{"query": "IKBKG X-linked mendelian susceptibility to mycobacterial diseases", "target": "MONDO:0010386", "ns": "MONDO"}
+{"query": "morphology of photoreceptor connecting cilium", "target": "OBA:0006003", "ns": "OBA"}
+{"query": "(2S)-2-acetamido-3-(1H-indol-3-yl)propanoate", "target": "CHEBI:143877", "ns": "CHEBI"}
+{"query": "down regulation of cell cycle G1/S phase transition", "target": "GO:1902807", "ns": "GO"}
+{"query": "missing spermathecum", "target": "UPHENO:0009461", "ns": "UPHENO"}
+{"query": "host Golgi membrane", "target": "GO:0044178", "ns": "GO"}
+{"query": "the ratio of amount of cadherin-17 (human) in blood to amount of platelet endothelial cell adhesion molecule (human) in blood", "target": "OBA:2053001", "ns": "OBA"}
+{"query": "enterobacterial common antigens", "target": "CHEBI:73774", "ns": "CHEBI"}
+{"query": "Tumor of fatty tissue", "target": "HP:0200013", "ns": "HP"}
+{"query": "mitochondrially encoded cytochrome c oxidase III pseudogene 12", "target": "HGNC:52042", "ns": "HGNC"}
+{"query": "the ratio of amount of activin receptor type-1-like (human) in blood to amount of tumor necrosis factor receptor superfamily member 19 (human) in blood", "target": "OBA:2055779", "ns": "OBA"}
+{"query": "projection neuron differentiation", "target": "GO:0021859", "ns": "GO"}
+{"query": "FAM112B", "target": "PR:Q8WW33", "ns": "PR"}
+{"query": "LOC441376", "target": "HGNC:33842", "ns": "HGNC"}
+{"query": "DNPI", "target": "HGNC:16703", "ns": "HGNC"}
+{"query": "Low CSF albumin", "target": "HP:0025458", "ns": "HP"}
+{"query": "missing primary subdivision of skull", "target": "UPHENO:0010409", "ns": "UPHENO"}
+{"query": "Flt4 ligand (mouse)", "target": "PR:P97953", "ns": "PR"}
+{"query": "down regulation of viral transcription", "target": "GO:0032897", "ns": "GO"}
+{"query": "morphology of dermatome", "target": "OBA:VT0003940", "ns": "OBA"}
+{"query": "R33729_1", "target": "HGNC:16948", "ns": "HGNC"}
+{"query": "down regulation of cardiac conduction", "target": "GO:1903780", "ns": "GO"}
+{"query": "IFN-lambda-4 (human)", "target": "PR:K9M1U5", "ns": "PR"}
+{"query": "the ratio of amount of Friend leukemia integration 1 transcription factor (human) in blood to amount of mediator of RNA polymerase II transcription subunit 18 (human) in blood", "target": "OBA:2055252", "ns": "OBA"}
+{"query": "U72", "target": "HGNC:10234", "ns": "HGNC"}
+{"query": "purine base binding", "target": "GO:0002060", "ns": "GO"}
+{"query": "MGC104437", "target": "HGNC:27017", "ns": "HGNC"}
+{"query": "circumflex iliac vein", "target": "UBERON:0001360", "ns": "UBERON"}
+{"query": "terivalidin", "target": "CHEBI:135278", "ns": "CHEBI"}
+{"query": "SLC6A1 antisense RNA 1 (non-protein coding)", "target": "HGNC:40546", "ns": "HGNC"}
+{"query": "protein-DNA interferon-stimulated response element complex assembly", "target": "GO:0035362", "ns": "GO"}
+{"query": "carotene 7,8-desaturase activity", "target": "GO:0016719", "ns": "GO"}
+{"query": "calcified of aortic smooth muscle cell", "target": "OBA:2045269", "ns": "OBA"}
+{"query": "the ratio of amount of lymphocyte activation gene 3 protein (human) in blood to amount of vascular cell adhesion protein 1 (human) in blood", "target": "OBA:2054875", "ns": "OBA"}
+{"query": "endo-alpha-mannosidase activity", "target": "GO:0004569", "ns": "GO"}
+{"query": "S-alkyl thiosulfate", "target": "CHEBI:58619", "ns": "CHEBI"}
+{"query": "EDRF", "target": "HGNC:18075", "ns": "HGNC"}
+{"query": "5\\-PsiMPase, DXF68S1E, FAM16AX, GS1, HDHD1, HDHD1A, PUDP, haloacid dehalogenase-like hydrolase domain-containing protein 1, haloacid dehalogenase-like hydrolase domain-containing protein 1A, protein GS1, pseudouridine-5\\-monophosphatase", "target": "PR:000029535", "ns": "PR"}
+{"query": "CDC42/RAC effector kinase PAK-B", "target": "PR:000012242", "ns": "PR"}
+{"query": "regulation of CTLA-8 production", "target": "GO:0032660", "ns": "GO"}
+{"query": "Extra post-anal tail bud", "target": "UPHENO:0014742", "ns": "UPHENO"}
+{"query": "changed position of subintestinal vein", "target": "UPHENO:0053720", "ns": "UPHENO"}
+{"query": "KIRREL3/ClvPrd", "target": "PR:000020375", "ns": "PR"}
+{"query": "SPIN-2", "target": "HGNC:33147", "ns": "HGNC"}
+{"query": "HERV-W/FRD", "target": "HGNC:33823", "ns": "HGNC"}
+{"query": "Tbc1d5", "target": "PR:Q80XQ2", "ns": "PR"}
+{"query": "Double contour of glomerular basement membrane", "target": "HP:0020109", "ns": "HP"}
+{"query": "BFNS", "target": "MONDO:0016027", "ns": "MONDO"}
+{"query": "muscle organ myoglobin amount", "target": "OBA:VT1000764", "ns": "OBA"}
+{"query": "cow dung", "target": "UBERON:0001988", "ns": "UBERON"}
+{"query": "food additives", "target": "CHEBI:64047", "ns": "CHEBI"}
+{"query": "MCST", "target": "MONDO:0006339", "ns": "MONDO"}
+{"query": "down regulation of dopamine secretion", "target": "GO:0033602", "ns": "GO"}
+{"query": "morphology of quadrigeminal cistern", "target": "OBA:0004586", "ns": "OBA"}
+{"query": "GSD IX", "target": "MONDO:0700291", "ns": "MONDO"}
+{"query": "musculoskeletal system diagnostic sonography", "target": "MAXO:0010207", "ns": "MAXO"}
+{"query": "IDDM23", "target": "MONDO:0012961", "ns": "MONDO"}
+{"query": "(R)-2,3-butanediol dehydrogenase activity", "target": "GO:0000721", "ns": "GO"}
+{"query": "GC-2 (human)", "target": "PR:Q9H1K4", "ns": "PR"}
+{"query": "ESAM", "target": "PR:000007195", "ns": "PR"}
+{"query": "PIP5KIIB", "target": "HGNC:8998", "ns": "HGNC"}
+{"query": "silicon coordination compounds", "target": "CHEBI:37190", "ns": "CHEBI"}
+{"query": "ARSA", "target": "PR:000004376", "ns": "PR"}
+{"query": "ssDNA rolling hairpin viral DNA replication", "target": "GO:0039685", "ns": "GO"}
+{"query": "closed camera-type eye", "target": "UPHENO:0074244", "ns": "UPHENO"}
+{"query": "enlarged lobe of prostate", "target": "UPHENO:0001274", "ns": "UPHENO"}
+{"query": "DMRTC1-AS1", "target": "HGNC:44268", "ns": "HGNC"}
+{"query": "LSIRF", "target": "HGNC:6119", "ns": "HGNC"}
+{"query": "divalent inorganic cation transport", "target": "GO:0098662", "ns": "GO"}
+{"query": "Van De Berghe Dequeker syndrome", "target": "MONDO:0010750", "ns": "MONDO"}
+{"query": "blood serum protein tyrosine phosphatase type IVA 1 amount", "target": "OBA:2043097", "ns": "OBA"}
+{"query": "blood histone-lysine N-methyltransferase SETMAR (human) amount", "target": "OBA:2052748", "ns": "OBA"}
+{"query": "blood serum lithostathine-1-beta amount", "target": "OBA:2043231", "ns": "OBA"}
+{"query": "hsa-mir-3667", "target": "HGNC:38990", "ns": "HGNC"}
+{"query": "(CH3)3C-OH", "target": "CHEBI:45895", "ns": "CHEBI"}
+{"query": "positive regulation of lysosome membrane permeability", "target": "GO:0097214", "ns": "GO"}
+{"query": "MM", "target": "UBERON:0001939", "ns": "UBERON"}
+{"query": "position of raphe of scrotum", "target": "OBA:0002406", "ns": "OBA"}
+{"query": "Missing cranial nerve in the cranial nerve", "target": "UPHENO:0026964", "ns": "UPHENO"}
+{"query": "carbamimidamidoacetate", "target": "CHEBI:131444", "ns": "CHEBI"}
+{"query": "GABARAPL1", "target": "PR:000084702", "ns": "PR"}
+{"query": "U7.52", "target": "HGNC:34148", "ns": "HGNC"}
+{"query": "HSPC059", "target": "HGNC:25000", "ns": "HGNC"}
+{"query": "hereditary cystic kidney disease", "target": "MONDO:0019741", "ns": "MONDO"}
+{"query": "metanephros formation", "target": "GO:0072093", "ns": "GO"}
+{"query": "blood serum probable G-protein coupled receptor 101 amount", "target": "OBA:2040306", "ns": "OBA"}
+{"query": "RAD1", "target": "HGNC:3436", "ns": "HGNC"}
+{"query": "negative regulation of protein stability", "target": "GO:0031648", "ns": "GO"}
+{"query": "ROP prethreshold", "target": "HP:0500065", "ns": "HP"}
+{"query": "cerebrospinal fluid neurocan core protein (human) amount", "target": "OBA:2055987", "ns": "OBA"}
+{"query": "DXS1283E", "target": "HGNC:24887", "ns": "HGNC"}
+{"query": "changed split shape of face", "target": "UPHENO:0041242", "ns": "UPHENO"}
+{"query": "small epiphysis in distal phalanx of manual digit 5", "target": "UPHENO:0012358", "ns": "UPHENO"}
+{"query": "SHREW1", "target": "HGNC:30801", "ns": "HGNC"}
+{"query": "brachydactyly-distal symphalangism syndrome", "target": "MONDO:0007227", "ns": "MONDO"}
+{"query": "longer trabecula communis", "target": "UPHENO:0072521", "ns": "UPHENO"}
+{"query": "10-azaanthracene", "target": "CHEBI:36420", "ns": "CHEBI"}
+{"query": "2-(2-methoxy-2-oxo-1-phenylethyl)piperidinium", "target": "CHEBI:51856", "ns": "CHEBI"}
+{"query": "BPIFB1", "target": "PR:000009898", "ns": "PR"}
+{"query": "fusion of saccule of membranous labyrinth and anatomical entity", "target": "UPHENO:0078120", "ns": "UPHENO"}
+{"query": "down regulation of xanthone biosynthesis", "target": "GO:1900184", "ns": "GO"}
+{"query": "epibranchial ganglia", "target": "UBERON:0009127", "ns": "UBERON"}
+{"query": "qualitative or quantitative defects of alpha-actin", "target": "MONDO:0016193", "ns": "MONDO"}
+{"query": "FLJ38725", "target": "HGNC:26789", "ns": "HGNC"}
+{"query": "ARIA (mouse)", "target": "PR:Q3TZW0", "ns": "PR"}
+{"query": "hsa-mir-3938", "target": "HGNC:38972", "ns": "HGNC"}
+{"query": "estrous cycle process", "target": "GO:0022602", "ns": "GO"}
+{"query": "heparan sulfate alpha-D-glucosaminide 3-sulfate", "target": "CHEBI:70975", "ns": "CHEBI"}
+{"query": "triangular ligament", "target": "UBERON:0035444", "ns": "UBERON"}
+{"query": "cerebrospinal fluid GTPase IMAP family member GIMD1 (human) amount", "target": "OBA:2056999", "ns": "OBA"}
+{"query": "SLEB13", "target": "MONDO:0012884", "ns": "MONDO"}
+{"query": "Abnormal shape of cartilage", "target": "HP:0002763", "ns": "HP"}
+{"query": "activation of neutrophil mediated killing of fungus", "target": "GO:0070965", "ns": "GO"}
+{"query": "Multiple palm lines", "target": "HP:0006114", "ns": "HP"}
+{"query": "ethylbenzene dehydrogenase activity", "target": "GO:0018693", "ns": "GO"}

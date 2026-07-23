@@ -1,4 +1,5 @@
 duckdb
+numpy
 pyyaml
 ruff
 sentence-transformers
