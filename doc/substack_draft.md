@@ -489,10 +489,83 @@ corpus is embedded and a real question set exists)_
 
 ## 4. Retrieval at scale
 
-When brute-force DuckDB cosine gives way to an ANN index, and the 16GB in-RAM index
-ceiling.
+Before retrieval can be at scale, the vector store has to be built at scale, and
+building it is where the first real hardware cost showed up — not where it was
+expected.
 
-_(draft here)_
+### Building the vector store, and a lesson in where the cost isn't
+
+The plan was unremarkable: run each node's text through SapBERT, store the resulting
+768-dimension vector in a DuckDB table beside its id, and retrieve later with a single
+`array_cosine_similarity` query. The whole-corpus embedding had been costed in the
+which-model section at minutes, since SapBERT encodes a few hundred documents a second
+on the Mac's GPU.
+
+The first run took four hours to get halfway and was killed. The telling symptom was
+that the machine looked *idle* — a few percent CPU, the GPU barely warm, the output
+file crawling. That rules out the obvious suspect: if encoding were the bottleneck the
+GPU would be pinned. Something downstream was starving it.
+
+The something was the database insert. The first version bound each vector into DuckDB
+row by row — a Python list of 768 floats per document, parameter-bound one at a time.
+That path is roughly thirty times slower than the encoding that feeds it, so the GPU
+spent almost all its time waiting for the previous batch to finish inserting. The fix
+was to stop inserting row by row: encode a chunk, hand DuckDB the whole chunk as an
+Arrow columnar batch (a fixed-size-list column of vectors), and let it ingest the
+block in one call. Same vectors, same table — the encoding never changed — and a
+3,000-document smoke test then ran at the GPU's full ~430 documents a second, which
+would put the whole node corpus at about twelve minutes.
+
+That first lesson is the one this project is built to collect: the cost of scaling is
+not always where the model is. The expensive-looking part — running a 768-dimension
+transformer over three hundred thousand documents — was never the problem; a mundane
+data-marshalling choice was, by a factor of thirty. Profile the whole pipeline, not
+the GPU.
+
+But the twelve minutes never happened, and chasing why produced the second lesson —
+one it took a wrong diagnosis to reach. With the insert fixed, the full run flew to
+about a hundred thousand documents and then appeared to hang: the process sat in an
+uninterruptible-looking wait, the progress log frozen for minutes at a stretch. It
+looked exactly like a driver deadlock, and the first read — recorded in an earlier
+draft of this section — was that Metal-backed embedding was simply unstable on this
+machine. That read was wrong.
+
+The machine is a fanless MacBook Air. Watched with `powermetrics` rather than guessed
+at, the "hang" resolved into thermal throttling: under sustained load the SoC hit
+*Heavy* thermal pressure and the GPU was clocked down toward its floor and, worse,
+*parked* — forced idle in cooling cycles — so a chunk that took fifty seconds cool took
+four to eight minutes hot, and the log sat still long enough to look dead. It never was
+dead; left alone it crawled forward the whole time. The earlier "wedges" were premature
+kills of a live but throttled run.
+
+Two things sharpened this. First, `pmset` — the no-sudo thermal signal — reported
+nothing, while `powermetrics` showed Heavy pressure the whole time; the coarse tool
+missed it entirely. Second, and counterintuitively, throughput did not track the clock.
+A chunk could flash 1100 MHz and still be slow, because what governs throughput is the
+duty cycle — the fraction of time the GPU is actually executing versus parked to cool —
+not its peak clock. Thermal pressure is a laggy whole-SoC flag, and the clock is a
+bursty instantaneous one; neither reports the duty cycle that actually sets the rate.
+
+The fix was physical. The laptop had a protective case on its underside, insulating the
+aluminum chassis that *is* the heatsink on a fanless machine. Removing the case and
+aiming a small fan at the bare metal over the SoC pulled the SoC back under its thermal
+limit; the GPU boosted past 900 MHz for the first time and a chunk that had been taking
+four minutes took seventy-five seconds — a four-to-sevenfold swing from cooling alone,
+far more than the clock numbers suggest, because the duty cycle recovered along with the
+clock. The full node corpus finished on the GPU, throttled and hand-cooled, in roughly
+fifty minutes against the twelve it would take cool throughout.
+
+That is the genuine v3-ledger entry, and it is sharper than "the GPU is unreliable": on
+a fanless machine, sustained embedding is thermally bound, throughput is dominated by
+heat dissipation the chassis was never designed to sustain, and a one-time build depends
+on hand-managed cooling to finish in tolerable time. A machine with a fan — or a CUDA
+GPU in a container — removes that entire variable. The GPU here is not unstable; it is
+starved of cooling, and that starvation is a property of the hardware, not the software.
+
+### From brute force to an index
+
+_(brute-force DuckDB cosine over the full corpus, when it stops being fast enough, and
+the approximate-nearest-neighbor index that replaces it — still to measure)_
 
 ## 5. The v3 tripwire
 
