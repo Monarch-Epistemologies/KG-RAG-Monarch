@@ -1,6 +1,50 @@
 # Hand-tuned inputs for the subgraph-shape measurements in doc/substack_draft.md
 # section 1. These are knobs, not logic — change them here, not in bin/.
 
+# The corpus-defining cut. bin/extract_subgraph.py keeps an edge only when BOTH
+# endpoints sit in a namespace on this allowlist (with the non-human in_taxon_label
+# guard retained on top). Filtering by taxon label alone leaked ~145k nodes of
+# organism-specific phenotype and anatomy ontologies — zebrafish, xenopus, mouse,
+# fly, worm, yeast — because those are ontology classes with no taxon label. The
+# allowlist names what a human-relevant corpus should contain, so the long tail of
+# non-human ontologies is excluded by omission rather than by an ever-growing
+# blocklist. See doc/substack_draft.md section 1.
+namespace_allowlist:
+  # Human clinical, genomic and case data
+  - MONDO            # disease
+  - HP               # Human Phenotype Ontology
+  - HGNC             # human gene nomenclature
+  - CLINVAR          # human clinical variants
+  - CAID             # ClinGen allele identifiers
+  - phenopacket.store  # human clinical cases
+  - HsapDv           # Homo sapiens developmental stages
+  - CUREID           # rare-disease drug repurposing (human)
+  - MAXO             # Medical Action Ontology
+
+  # Species-neutral biology, applicable to human
+  - GO               # Gene Ontology (function, process, component)
+  - PR               # Protein Ontology
+  - CHEBI            # chemical entities
+  - UBERON           # cross-species anatomy
+  - CL               # Cell Ontology
+  - PATO             # phenotype and trait qualities
+  - SO               # Sequence Ontology
+  - OBA              # Ontology of Biological Attributes
+  - Reactome         # human pathways
+  - NBO              # Neuro Behavior Ontology
+  - FOODON           # food / dietary exposure
+  - CHR              # chromosome bands
+
+  # Neutral phenotype abstraction — deliberate borderline call. UPHENO is the
+  # unified cross-species phenotype layer; kept because it is species-neutral and
+  # HP maps into it, though its purpose is bridging to the non-human data we drop.
+  - UPHENO
+
+  # Upper-ontology scaffolding (tiny, relational, species-neutral)
+  - BFO
+  - RO
+  - BSPO
+
 # Disease name substrings, matched case-insensitively against the MONDO node's
 # `name` column exactly as KG-RAG-EDS's filter.sh did. Chosen by hand to span
 # rare monogenic, multi-subtype and common complex; a convenience sample, not a

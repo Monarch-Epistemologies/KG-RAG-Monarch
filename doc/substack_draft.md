@@ -4,6 +4,11 @@ Running record of *why* v2 is shaped the way it is. Written before the code.
 This is an outline — sections are the questions v2 has to answer, in roughly the
 order they bite. Prose to follow.
 
+Throughout: **v1** is KG-RAG-EDS, the hand-built single-disease teaching version;
+**v2** is this repo, KG-RAG-Monarch, scaling that pipeline toward the broader Monarch
+graph natively on the Mac; **v3** is the not-yet-built move to Docker + RunPod, entered
+only when a measured cost forces the work off this machine.
+
 ---
 
 ## 1. What "beyond EDS" means mechanically
@@ -278,41 +283,68 @@ v1's second sub-project — but not here.
 
 ### Paring back by relevance
 
-Applying cuts that can each be defended from v2's use cases — human phenotyping,
-cohort discovery, drug repurposing — with capacity given no vote until the end:
+The relevance boundary is "keep what a human question could use, drop the rest". The
+obvious way to draw it is by species: every node carries an `in_taxon_label`, so drop
+any edge whose endpoint is tagged as another organism. Doing that takes the graph from
+1,047,586 nodes to 442,307 and from 15.2M edges to 4,923,997, keeping all 29,866
+diseases. It looked like the boundary.
+
+It was leaky, and materializing it is what exposed the leak. A third of the surviving
+442,307 nodes were model-organism phenotype and anatomy ontologies — 43,522 zebrafish
+phenotype terms, 27,137 fly anatomy, 21,203 xenopus phenotype, 14,750 mouse phenotype,
+and a tail of worm, yeast and slime-mould ontologies, roughly 145,000 nodes in all.
+Meanwhile the Human Phenotype Ontology was 4.4% of the graph. The species filter had
+missed them for a precise reason: these are ontology *classes*, not organism
+instances, so they carry no taxon label, and a filter that keys on the label treats a
+zebrafish phenotype term exactly as it treats a MONDO disease. The intent was "human
+relevant"; the implementation was "not tagged as another organism"; the two are not
+the same set.
+
+The fix is a different kind of cut — by namespace rather than by taxon tag. An
+allowlist names the namespaces a human-relevant corpus should contain: the human
+clinical and genomic ones (MONDO, HP, HGNC, ClinVar, and human case data) and the
+species-neutral biology that applies to human (Gene Ontology, protein, ChEBI, UBERON
+anatomy, cell types, sequence and trait ontologies, Reactome pathways). An edge
+survives only if both endpoints are in an allowlisted namespace. Everything else — the
+whole long tail of organism-specific ontologies — is excluded by omission, so no
+ever-growing blocklist has to keep pace with them.
 
 | relevance cut | nodes | triples | diseases kept |
 |---|---|---|---|
 | whole graph (= closure) | 1,047,586 | 15,211,571 | 29,866 (100%) |
-| drop edges touching a non-human species | 442,307 | 4,923,997 | 29,866 (100%) |
-| + drop molecular infrastructure predicates | 398,627 | 1,845,318 | 29,866 (100%) |
-| + drop variant and genotype nodes | 381,237 | 1,800,380 | 29,866 (100%) |
+| drop non-human by taxon label (leaky) | 442,307 | 4,923,997 | 29,866 (100%) |
+| namespace allowlist (corrected) | 299,950 | 4,097,434 | 29,866 (100%) |
 
-Disease coverage never moves: all 29,866 survive every cut. The species cut alone
-removes two thirds of the graph and costs nothing a human-phenotyping question would
-have used.
+Disease coverage never moves: all 29,866 survive. The corrected cut is 299,950 nodes
+and 4,097,434 triples — a third of the nodes gone with barely a sixth of the edges,
+because those organism ontologies were dense in internal phenotype-hierarchy edges but
+sparse in links to the human disease layer.
 
-One constraint governs which of these cuts are legitimate, and it comes from what the
-subset is for. This graph has to outlast the current question — the point of the line
-is to compare retrieval methods, text embedding against graph traversal against
+One judgement inside the allowlist is worth naming, because it is exactly the kind of
+call that should not hide. UPHENO, the unified cross-species phenotype layer, is kept.
+It is species-neutral by construction and the Human Phenotype Ontology maps into it,
+so by the letter of the allowlist it belongs — yet its whole purpose is to bridge to
+the non-human phenotype data the cut removes. It is in for now, flagged as the first
+thing to reconsider if the phenotype layer turns out noisier than the human ontologies
+alone would be.
+
+A second constraint governs which cuts are legitimate at all, and it comes from what
+the subset is for. This graph has to outlast the current question — the point of the
+line is to compare retrieval methods, text embedding against graph traversal against
 network embedding, on the *same* substrate. A cut tuned to the method being measured
-would rig the comparison.
+would rig the comparison. The namespace cut passes that test: no method under
+comparison is trying to answer with zebrafish anatomy. A predicate cut would not —
+dropping `interacts_with` because a text retriever has no use for it would remove
+precisely the structure a network embedding needs for drug repurposing, deciding the
+experiment in advance. So the boundary is drawn by namespace and left there;
+predicates are all kept.
 
-By that test the cuts are not equal. Dropping non-human species is method-neutral:
-no method under comparison is trying to answer with zebrafish data. Dropping
-molecular infrastructure is not — `interacts_with` is precisely the structure a
-network embedding would exploit for drug repurposing, and removing it because a text
-retriever has no use for it decides the experiment in advance. Dropping variant and
-genotype nodes is the same kind of judgement, made because their text is largely
-identifiers, and it saves only 45k triples because most such nodes were non-human and
-already gone.
-
-That leaves the method-neutral boundary — human, everything else kept — at 442,307
-nodes and 4,923,997 triples. The worry was that this does not fit as a triple corpus,
-and measured against this machine the worry turns out to be smaller than it looked;
-section 2 works the numbers, but the short version is that neither runtime nor memory
-makes the human-only graph intractable. The boundary can stand on relevance, which is
-what the whole detour through closure was trying to buy.
+That leaves the method-neutral boundary at 299,950 nodes and 4,097,434 triples. The
+worry was that a corpus this size does not fit as a triple corpus, and measured
+against this machine the worry turns out to be smaller than it looked; section 2 works
+the numbers, but the short version is that neither runtime nor memory makes the
+human-relevant graph intractable. The boundary can stand on relevance, which is what
+the whole detour through closure was trying to buy.
 
 ## 2. What we embed — nodes vs. triples
 
@@ -337,23 +369,23 @@ them matter enough to decide the question.
 The first is the embedding run itself. Embedding into vectors is a single forward
 pass per document with no gradient, so the cost is linear in document count and the
 useful figure is documents per second on this machine. Measured on MiniLM over the
-human-only corpus from section 1: node text runs at about 620 documents per second
-and triple text at about 2,000. Triples are faster per document, not slower, because
-a triple is two names and a predicate — around 50 characters — while a node carries
-its synonyms and description, around 200. The counter-tenfold of triple count is
+human-relevant corpus from section 1: node text runs at about 620 documents per second
+and triple text at about 2,450. Triples are faster per document, not slower, because
+a triple is two names and a predicate — around 47 characters — while a node carries
+its synonyms and description, around 180. The counter-tenfold of triple count is
 partly repaid by shorter documents.
 
-The full numbers land nowhere near a wall. The human-only node corpus, 442,307
-documents, embeds in about twelve minutes; the human-only triple corpus, 4,923,997
-documents, in about forty. Even the whole 15.2M-edge graph as triples would be a
+The full numbers land nowhere near a wall. The human-relevant node corpus, 299,950
+documents, embeds in about eight minutes; the human-relevant triple corpus, 4,097,434
+documents, in under half an hour. Even the whole 15.2M-edge graph as triples would be a
 couple of hours. This is measured at 384 dimensions; a 768-dimension biomedical model
 in section 3 is slower per document and re-embeds every row from scratch, so the real
 figure to hold is not one run but one run per model compared — still an overnight job
 at the largest corpus, which is the patience v2 was built to spend.
 
 The second is memory, and this is where the first draft of this section was wrong. At
-384 dimensions and four bytes per float the human-only triple corpus is about 7.0 GiB
-of vectors, and the whole-graph triple corpus about 21.8 GiB. The instinct was that
+384 dimensions and four bytes per float the human-relevant triple corpus is about 5.9
+GiB of vectors, and the whole-graph triple corpus about 21.8 GiB. The instinct was that
 21.8 GiB against 16 GB of unified memory is a hard wall. It is not, because nothing in
 the retrieval path needs every full-precision vector resident at once. Storing them is
 a non-issue — DuckDB keeps them on disk. Building the approximate-nearest-neighbor
@@ -368,8 +400,8 @@ So the earlier conclusion — that triple embedding over a large graph is a capa
 wall and the clearest v3 tripwire — does not survive measurement. Memory is not the
 binding constraint at these sizes. If a tripwire lives here at all it is runtime under
 repeated re-embedding during model tuning, which is a patience question with a
-measured rate behind it, not a wall. That reopens the human-only triple corpus as a
-real option on this machine rather than a deferred one.
+measured rate behind it, not a wall. That reopens the human-relevant triple corpus as
+a real option on this machine rather than a deferred one.
 
 A third option is still worth naming: embed nodes, and reach facts by traversal from
 retrieved entities, which is what v1 already built in its second sub-project. It buys
