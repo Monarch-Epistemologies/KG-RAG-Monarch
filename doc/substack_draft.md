@@ -410,6 +410,18 @@ Whether it is a substitute for triple embedding or a weaker approximation is an
 evaluation question, cheap to answer at v1 scale against the existing gold set before
 committing to the larger build.
 
+One rule governs how these corpora are built, and it is worth stating because it
+looks like it violates the method-neutral cut but does not. A few nodes carry no
+text at all — bare chemical entries missing their name, case reports identified only
+by a UUID — and a textless node embeds to noise. Those nodes stay in the shared graph
+(`nodes.tsv`/`edges.tsv`), because graph-edge traversal and network embedding can use
+their structure; they are dropped only from the text corpora, which are the
+text-embedding method's own input. The method-neutral rule governs the subgraph cut,
+not how each method prepares its input from it — declining to feed a textless node to
+the one method that needs text removes nothing from the graph the other methods see.
+On the human-relevant subgraph this drops 74 nodes and 246 triples, small enough to
+leave the corpus sizes essentially unchanged.
+
 ## 3. Which embedding model
 
 The embedding model is the thing that turns each node's text into a vector, and

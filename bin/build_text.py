@@ -12,6 +12,16 @@ be made by measurement rather than argument.
                     name, the predicate with its biolink prefix and underscores
                     removed, and the object name: "Marfan syndrome has phenotype
                     Aortic dilatation"
+
+Textless nodes are dropped here, not from the subgraph. A handful of nodes (bare
+CHEBI chemicals missing their name, CUREID case reports identified only by a UUID)
+carry no name, synonym or description, so they embed to noise. They stay in
+nodes.tsv/edges.tsv — the shared, method-neutral graph, where graph-edge traversal
+and network embedding can still use their structure — but are excluded from these
+text corpora, which are the text-embedding method's own input. Declining to feed a
+textless node to the one method that needs text is not warping the shared graph.
+A triple is dropped when either endpoint has no name, since its text would be missing
+a side.
 """
 
 import duckdb
@@ -31,16 +41,24 @@ con = duckdb.connect()
 con.execute(f"CREATE VIEW nodes AS SELECT * FROM read_csv('{NODES}', {READ_OPTS})")
 con.execute(f"CREATE VIEW edges AS SELECT * FROM read_csv('{EDGES}', {READ_OPTS})")
 
+# Drop nodes whose concatenated text is empty (concat_ws returns '' when name,
+# synonym and description are all missing) — they cannot be embedded.
 con.execute(f"""
     COPY (
         SELECT id, category, concat_ws('. ', name, synonym, description) AS text
         FROM nodes
+        WHERE concat_ws('. ', name, synonym, description) <> ''
     ) TO '{OUT_NODE_TEXT}' (FORMAT csv, DELIMITER '\t', HEADER)
 """)
 n_nodes = con.execute("SELECT count(*) FROM nodes").fetchone()[0]
+n_node_docs = con.execute("""
+    SELECT count(*) FROM nodes
+    WHERE concat_ws('. ', name, synonym, description) <> ''
+""").fetchone()[0]
 
 # The readable predicate is a tuning-adjacent transform, but a mechanical one (strip
 # prefix, underscores to spaces), so it stays inline rather than in the config.
+# A triple needs both endpoint names; drop it if either is missing.
 con.execute(f"""
     COPY (
         SELECT
@@ -55,12 +73,14 @@ con.execute(f"""
         FROM edges e
         JOIN nodes s ON s.id = e.subject
         JOIN nodes o ON o.id = e.object
+        WHERE s.name <> '' AND o.name <> ''
     ) TO '{OUT_TRIPLE_TEXT}' (FORMAT csv, DELIMITER '\t', HEADER)
 """)
 n_triples = con.execute("""
     SELECT count(*) FROM edges e
     JOIN nodes s ON s.id = e.subject
     JOIN nodes o ON o.id = e.object
+    WHERE s.name <> '' AND o.name <> ''
 """).fetchone()[0]
 
 # Coverage and length, the two things that decide how much these corpora differ in
@@ -72,11 +92,13 @@ node_stats = con.execute("""
     FROM nodes
 """).fetchone()
 
+n_edges = con.execute("SELECT count(*) FROM edges").fetchone()[0]
 print(
-    f"node_text.tsv:   {n_nodes:,} docs, "
+    f"node_text.tsv:   {n_node_docs:,} docs "
+    f"({n_nodes - n_node_docs:,} textless nodes dropped), "
     f"{node_stats[0]:,} with a description, {node_stats[1]:.0f} chars avg"
 )
-print(f"triple_text.tsv: {n_triples:,} docs")
-if n_triples < con.execute("SELECT count(*) FROM edges").fetchone()[0]:
-    dropped = con.execute("SELECT count(*) FROM edges").fetchone()[0] - n_triples
-    print(f"  ({dropped:,} edges dropped: an endpoint missing from nodes.tsv)")
+print(
+    f"triple_text.tsv: {n_triples:,} docs "
+    f"({n_edges - n_triples:,} triples dropped: an endpoint has no name)"
+)

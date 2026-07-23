@@ -65,10 +65,41 @@ namespace but one and closes the gene/protein gap that a general model cannot. T
 other two biomedical models beat the baseline only modestly: the training objective,
 not being biomedical as such, is what separates them.
 
-**Pooling.** SapBERT and MedCPT are PubMedBERT-family encoders trained on the `[CLS]`
-token; `build_model()` gives them CLS pooling rather than the mean pooling
-sentence-transformers applies by default, so they are not understated. BioLORD and
-MiniLM are native sentence-transformers and bring their own pooling.
+### Pooling: reading one vector out of a model
+
+This matters enough to be explicit, because getting it wrong silently understates a
+model and would corrupt the comparison above.
+
+A model does not emit one vector for a whole text. It splits the text into tokens
+(word-pieces) and emits one vector *per token*. But retrieval needs exactly one vector
+per node's text — one thing to compare by cosine. So the per-token vectors have to be
+squashed down to a single text vector, and there are two ways to do it:
+
+- **CLS pooling.** These models prepend a special token, `[CLS]` (short for
+  "classification"), at the front of every input. It is not a real word, so it is free
+  to be trained as a summary slot, and through attention it can absorb information from
+  every other token. CLS pooling just reads the vector sitting on that slot — the model
+  has already done the squashing for you.
+- **Mean pooling.** Ignore the summary slot and take the average of the text's
+  per-token vectors yourself.
+
+Neither is universally correct. Each pooling is only good if the model was *trained*
+with it: a model trained to fill its `[CLS]` slot has a strong CLS vector and a
+mediocre average, and vice versa. Read a model the way it was not trained and its
+vectors are blurred — it will look worse than it is, for a reason that has nothing to
+do with the model's actual quality.
+
+So pooling is **not** a variable in the comparison — there is no CLS-vs-mean bake-off.
+Each model has one correct pooling, and the comparison uses only that:
+
+| model | family | pooling |
+|---|---|---|
+| MiniLM, BioLORD | native sentence-transformers | mean (built in) |
+| SapBERT, MedCPT | PubMedBERT-family | CLS |
+
+`bin/embed_models.py` `build_model()` encodes this rule so no model is ever read the
+wrong way by accident, and a test asserts it applied CLS where required — which is what
+makes the results above trustworthy rather than an artifact of mis-pooling.
 
 **Caveat on MedCPT.** MedCPT is an asymmetric query-and-document retriever; this test
 runs its query encoder on both sides, which is not its intended use, so its number is

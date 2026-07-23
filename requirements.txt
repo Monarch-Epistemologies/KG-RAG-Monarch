@@ -1,5 +1,6 @@
 duckdb
 numpy
 pyyaml
+pytest
 ruff
 sentence-transformers
