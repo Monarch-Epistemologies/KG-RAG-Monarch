@@ -562,6 +562,49 @@ on hand-managed cooling to finish in tolerable time. A machine with a fan — or
 GPU in a container — removes that entire variable. The GPU here is not unstable; it is
 starved of cooling, and that starvation is a property of the hardware, not the software.
 
+### What retrieval actually returns
+
+With the corpus embedded, the payoff question is finally answerable: does
+text-embedding retrieval surface the facts a real question needs? To measure it rather
+than eyeball it, the graph supplies its own answer key. Sample a disease, template a
+question about it — its symptoms, its causative gene, what treats it — and derive the
+answer set by reading the edges: the phenotypes, the gene, the drugs it actually links
+to. That is 180 questions across the three use-case types, each with a graph-true
+answer, and no answer hand-labeled.
+
+Scoring node-text retrieval against them — embed the question, take the twenty nearest
+nodes, measure how many of the answer entities are among them — gives a two-part result
+that is sharper than a single number:
+
+| question type | answer recall | anchor recall |
+|---|---|---|
+| a disease's phenotypes | 0.02 | 0.97 |
+| its causative gene | 0.05 | 0.92 |
+| its treatments | 0.00 | 0.97 |
+| overall | **0.02** | **0.95** |
+
+The two columns say opposite things, and both matter. *Anchor recall* — does the top-k
+contain the disease the question is about — is 0.95: node-text retrieval is an
+excellent entity-linker, almost always finding the disease named in the question.
+*Answer recall* — does it contain that disease's phenotypes, gene, or drugs — is 0.02:
+it almost never surfaces the neighbours that actually answer the question. The reason
+is structural, not a model weakness: the node document for "Scoliosis" is its name and
+synonyms, and none of that is similar to the phrase "symptoms of Marfan syndrome". The
+question and the answer live in different regions of the vector space because they
+share no words.
+
+So the measured verdict on node-text embedding is that it answers "what *is* this
+disease" and not "what are this disease's neighbours" — entity lookup, not the
+traversal question the use cases actually pose. That is not a dead end; it is a precise
+statement of what the other two architectures are for. Graph-edge traversal starts by
+finding the anchor and then walks the edges — and node-text retrieval already hands it
+that anchor 95% of the time, which is exactly the front door it needs. Triple-text
+embedding attacks the other side: make "Marfan syndrome has phenotype Scoliosis" a
+document in its own right, and the fact becomes directly retrievable, because *that*
+text does share words with the question. The 0.02 node baseline is the number
+triple-text retrieval has to beat, and the nodes-vs-triples fork from section 2 now has
+its first hard data point rather than an argument.
+
 ### From brute force to an index
 
 _(brute-force DuckDB cosine over the full corpus, when it stops being fast enough, and
