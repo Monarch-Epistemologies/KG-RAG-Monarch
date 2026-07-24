@@ -140,14 +140,16 @@ MONDO terms with at least one edge in this dump, and these were chosen by hand t
 span shapes that seemed likely to differ. What follows holds for them; the
 distribution over all 29,866 is a separate question.
 
-One hop and two hops bracket the budget rather than both sitting under it. At one hop
-a single disease family yields a few thousand triples — 410 for type 2 diabetes, 5,991
-for Noonan — which is too small to exercise anything. At two hops the same families
-yield between 431,531 and 1,768,143, and amyotrophic lateral sclerosis alone exceeds
-the working budget from section 2. Taken together the eight overlap heavily and still
-come to 2,745,052 induced triples at two hops, against 21,477 at one hop. There is no
-hop radius that lands a handful of diseases in the middle of the budget: the step from
-one to two hops is a factor of a hundred.
+Hop radius is too coarse a dial to size the corpus to a workable budget — the patience
+band section 2 measures, the range a corpus can sit in and still re-embed in reasonable
+time per model. At one hop a single disease family yields a few thousand triples — 410
+for type 2 diabetes, 5,991 for Noonan — too small to exercise anything. At two hops the
+same families jump a hundredfold, to between 431,531 and 1,768,143 each; amyotrophic
+lateral sclerosis alone reaches 1.77M triples from a single disease. Taken together the
+eight overlap heavily and still come to 2,745,052 induced triples, against 21,477 at one
+hop. The comfortable size sits somewhere inside that hundredfold gap, and holding the
+seeds to a handful, hop radius has no setting that reaches it — the step from one hop to
+two skips straight over it.
 
 That is the opposite of what the incident counts suggested, and the error was mine —
 I measured reach and reasoned about content. The incident column is kept in the table
@@ -225,7 +227,8 @@ not corpus size. Read as reach, the shape is clear: the median disease touches f
 neighbours, 99.4% stay under 100,000 two-hop edge ends, and the largest in all of
 MONDO is 202,295. Read as a corpus budget they would be badly misleading — the
 eight-disease table shows induced counts running four to seven times higher, which
-puts several single diseases over the ceiling rather than a tenth of the way to it.
+puts a well-studied single disease at a sizable fraction of the whole band rather than a
+tenth of the way to it.
 Recomputing the full distribution as induced counts is the obvious follow-up and has
 not been done.
 
@@ -245,8 +248,8 @@ of runtime measurement will answer.
 
 ### Measured: closure, and the subset that fits
 
-If a handful of diseases is too small at one hop and over budget at two, the next
-instinct is to stop choosing a radius and take the closure — everything reachable
+If a handful of diseases is too small at one hop and a hundredfold larger at two, the
+next instinct is to stop choosing a radius and take the closure — everything reachable
 from the seeds. Growing the EDS neighbourhood hop by hop until it stops growing takes
 four seconds:
 
@@ -278,7 +281,7 @@ all 29,868 diseases, one hop:  89,051 nodes   1,094,548 induced triples
 That is the first subset that fits without a seed choice to defend. It inherits none
 of the name-match artefacts, and at roughly 1.1M triples over 89k nodes it is dense
 enough to give retrieval something to work with. But it is still a boundary drawn
-where the machine runs out, which the next two subsections take apart. It is made of 29,868 diseases,
+by size rather than by the question, which the next two subsections take apart. It is made of 29,868 diseases,
 17,259 variants, 11,557 phenotypes, 9,573 cases, 8,741 genotypes and 6,207 genes,
 joined mostly by `has_phenotype`, `subclass_of`, `causes` and the treatment
 predicates.
@@ -444,6 +447,15 @@ binding constraint at these sizes. If a tripwire lives here at all it is runtime
 repeated re-embedding during model tuning, which is a patience question with a
 measured rate behind it, not a wall. That reopens the human-relevant triple corpus as
 a real option on this machine rather than a deferred one.
+
+That patience question is the working budget the sizing in section 1 measures against:
+a corpus is in budget if it re-embeds overnight for each model compared, and out of it
+once the re-runs stop being an overnight wait. By that measure the 4.1M-triple
+human-relevant corpus is comfortably inside — under half an hour at 384 dimensions, an
+overnight job at a 768-dimension model across a field of candidates — and only the whole
+15.2M-edge graph, re-embedded across many models, falls out. It is a soft band with a
+measured rate behind it, not a memory ceiling, which is why section 1's boundary can be
+argued on relevance without ever pressing against it.
 
 A third option is still worth naming: embed nodes, and reach facts by traversal from
 retrieved entities, which is what v1 already built in its second sub-project. It buys
