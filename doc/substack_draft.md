@@ -1,13 +1,55 @@
 # KG-RAG-Monarch — design notebook (substack draft)
 
-Running record of *why* v2 is shaped the way it is. Written before the code.
-This is an outline — sections are the questions v2 has to answer, in roughly the
-order they bite. Prose to follow.
+KG-RAG-Monarch is the second version in a line of experiments in retrieval-augmented
+generation over a biomedical knowledge graph, and this is its design notebook — a running
+record of why the system is shaped the way it is, written alongside the code and driven at
+each step by a measured number rather than an assumption. The line began with **v1**,
+KG-RAG-EDS, which took a single disease — Ehlers-Danlos syndrome — and built the whole
+pipeline around it by hand: pull that disease's neighbourhood out of the Monarch graph,
+embed the node text into vectors, retrieve by similarity, walk the edges to the connected
+facts, and hand those to a language model. One disease is small enough to hold in your
+head, so every step could be built slowly and inspected; the point was intuition, not
+scale. What v1 produced was a pipeline shape proven on a subgraph of a few hundred nodes.
 
-Throughout: **v1** is KG-RAG-EDS, the hand-built single-disease teaching version;
-**v2** is this repo, KG-RAG-Monarch, scaling that pipeline toward the broader Monarch
-graph natively on the Mac; **v3** is the not-yet-built move to Docker + RunPod, entered
-only when a measured cost forces the work off this machine.
+**v2** — this repository, KG-RAG-Monarch — takes that shape off the single disease and
+asks what breaks as it scales toward the whole Monarch graph, running natively on a laptop
+rather than a datacenter. The machine is a fanless 16 GB M3 MacBook Air, and it sets the
+two limits this notebook keeps colliding with. Sixteen gigabytes of unified memory bounds
+what can be held resident at once — batch sizes, and any vector index we would like to
+keep in RAM. The absence of a fan means sustained computation is bounded not by the chip's
+clock but by how fast the aluminium can shed heat. Neither limit was assumed; both were
+found by running the work and watching where it stalled — a twelve-gigabyte vector corpus
+that will not fit in memory, and a GPU that throttles to a crawl a minute into a long
+embedding run.
+
+v2 is also more than one system. Where v1 ran a single retrieval method, v2 uses the
+scaled graph as a shared substrate for comparing three different ways of answering a
+question from it — three epistemologies, in that each treats a different thing as the unit
+of knowledge. **Text-embedding retrieval** embeds the text of the graph's nodes, or of its
+triples, into vectors and retrieves by similarity to the question; it is the method v1
+used, and section 2 splits it into its node and triple variants. **Graph-edge traversal**
+ignores content similarity: it links the question to an anchor node and walks the edges to
+the connected facts, so the graph's structure does the retrieving (section 5). **Network
+embedding** — not yet built — embeds each node from its position in the graph, its pattern
+of connections, so that structurally similar nodes land near each other even when their
+names share no words. Because the three are meant to be compared on equal footing, the
+substrate they share has to stay neutral between them — a constraint the graph boundary
+below has to respect.
+
+The graph had to be bounded before any of that could begin. The full Monarch dump is far
+larger than one laptop should try to embed, so v2 works on a subset — 299,950 nodes and
+4,097,434 edges — and section 1 is the argument for exactly that boundary. It is
+deliberately not "as much as will fit": capacity-first design was rejected. The cut is
+drawn by relevance instead, using direct measurements of the graph's shape — how large
+each disease's neighbourhood actually is, where the hubs sit, what the giant connected
+component contains — to keep the slice relevant to human disease and drop the non-human
+organism-ontology remainder, while keeping every kind of edge so the cut does not secretly
+favour one retrieval method over another.
+
+**v3**, not yet built, is the move off the Mac entirely — the same work in a Docker
+container on a datacenter CUDA GPU — and it is the last resort, entered only when a
+measured cost proves the laptop cannot do a step patiently. As section 6 records, the
+measurement that would trigger it also turned up an intermediate rung worth taking first.
 
 ---
 
