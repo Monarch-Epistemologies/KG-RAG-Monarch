@@ -484,8 +484,9 @@ size and it is slower per document. On the built corpus that is minutes, not a w
 the throughput measured earlier holds, and the one real recurring cost is that every
 model compared means embedding the corpus again from scratch.
 
-_(retrieval-quality-in-context, as opposed to this proxy, still to measure once the
-corpus is embedded and a real question set exists)_
+Retrieval quality in context — whether this model, over a given corpus, actually
+answers realistic questions rather than just matching synonyms — is measured in
+section 4 against a graph-derived question set, once both corpora exist.
 
 ## 4. Retrieval at scale
 
@@ -601,14 +602,56 @@ finding the anchor and then walks the edges — and node-text retrieval already 
 that anchor 95% of the time, which is exactly the front door it needs. Triple-text
 embedding attacks the other side: make "Marfan syndrome has phenotype Scoliosis" a
 document in its own right, and the fact becomes directly retrievable, because *that*
-text does share words with the question. The 0.02 node baseline is the number
-triple-text retrieval has to beat, and the nodes-vs-triples fork from section 2 now has
-its first hard data point rather than an argument.
+text does share words with the question.
+
+And it does. Embedding the ~4M-triple corpus and scoring the same 180 questions the same
+way gives the other half of the table:
+
+| question type | node recall | triple recall |
+|---|---|---|
+| a disease's phenotypes | 0.02 | 0.49 |
+| its causative gene | 0.05 | 0.70 |
+| its treatments | 0.00 | 0.52 |
+| overall | **0.02** | **0.57** |
+
+Triple-text retrieval clears the node baseline by more than twenty-fold — 0.57 answer
+recall against 0.02 — and its anchor recall is essentially perfect (0.99). This is the
+nodes-vs-triples fork from section 2 settled with a number rather than an argument: for
+the traversal-shaped questions the use cases actually pose, the unit you embed has to be
+the fact, not the entity. The tenfold-larger corpus and its thermal cost buy a
+twentyfold jump in the thing that matters. The two are not substitutes; node embedding
+is a good entity-linker and a poor fact-retriever, and the reverse is roughly true of
+triples — which is the empirical case for eventually running both channels together.
 
 ### From brute force to an index
 
-_(brute-force DuckDB cosine over the full corpus, when it stops being fast enough, and
-the approximate-nearest-neighbor index that replaces it — still to measure)_
+Scoring exposed a second wall, this one about retrieval speed rather than quality.
+Cosine over the node corpus is trivial: 300k vectors are ~0.9 GB, they fit in memory,
+and all 180 questions score in one numpy matrix product in under a second. The triple
+corpus does not fit — ~4M vectors are ~12 GB against 16 GB of RAM — and the first,
+naive way of scoring it was to let DuckDB rank the table per question with an
+`ORDER BY array_cosine_similarity ... LIMIT 20`. That is one full scan of the 12 GB
+table per question, and because the table does not fit in the page cache, each of the
+180 scans re-reads most of it from disk. The run was killed after eighteen minutes, I/O
+bound at two percent CPU, nowhere near done — about two terabytes of reads for a
+180-question eval.
+
+The fix was to stop scanning per question. Stream the table once, and score every
+question against each batch as it goes by, keeping a running top-k per question in a
+heap. One pass over the 12 GB instead of 180, and the same eval finished in about five
+minutes. That is a 180-to-1 reduction in I/O from a change that touches only how the
+loop is nested — the same shape of lesson as the insert bottleneck earlier: at this
+scale the cost lives in the data movement, not the arithmetic.
+
+But five minutes for 180 questions is still a linear scan of the whole corpus per
+query-batch, and it only looks acceptable because the eval is a one-time batch. A live
+system answering one question at a time cannot re-read 12 GB per query. That is the
+measured point at which brute-force cosine gives out and an approximate-nearest-neighbor
+index earns its place: an index trades a one-time build and some recall for sub-linear
+lookups, turning a 12 GB scan into a few hundred megabytes of resident index and a
+millisecond query. Building that index, and measuring the recall it costs, is the next
+open thread — and it is also where the 16 GB memory ceiling from the v3 ledger bites,
+since the index wants to be resident.
 
 ## 5. The v3 tripwire
 

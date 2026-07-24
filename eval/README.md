@@ -23,22 +23,28 @@ node.
 reports recall of the answer entities, plus anchor recall (did it at least find the
 disease the question names).
 
-**Result on the node corpus (SapBERT, k=20).**
+**Result (SapBERT, k=20), node vs triple corpus.** Answer recall / anchor recall:
 
-| type | recall@k | anchor@k |
+| type | node | triple |
 |---|---|---|
-| phenotype | 0.021 | 0.967 |
-| gene | 0.050 | 0.917 |
-| treatment | 0.000 | 0.967 |
-| overall | **0.024** | **0.950** |
+| phenotype | 0.02 / 0.97 | 0.49 / 1.00 |
+| gene | 0.05 / 0.92 | 0.70 / 1.00 |
+| treatment | 0.00 / 0.97 | 0.52 / 0.98 |
+| overall | **0.02 / 0.95** | **0.57 / 0.99** |
 
 Node-text retrieval finds the disease the question is about 95% of the time but almost
 never surfaces its phenotypes, genes or treatments — because a phenotype node's text
 ("Scoliosis") is not similar to "symptoms of X". So text-embedding over nodes answers
-"what is X" (entity lookup), not "what are X's neighbours" (the actual question). The
-0.024 baseline is what triple-text retrieval — where the fact "X has_phenotype
-Scoliosis" is itself a retrievable document — must beat, and the 0.95 anchor recall is
-the entity-linking front door graph-edge traversal relies on.
+"what is X" (entity lookup), not "what are X's neighbours" (the actual question).
+Triple-text retrieval, where the fact "X has_phenotype Scoliosis" is itself a
+document, clears that baseline by more than 20x (0.57 vs 0.02). The nodes-vs-triples
+fork is settled: for these questions the unit embedded must be the fact, not the entity.
+
+Scoring the triple corpus is also where brute-force cosine gives out: the ~12 GB of
+triple vectors do not fit in RAM, so `surfaced_triple` streams the table once and keeps
+a running top-k per question (one scan for all 180) rather than an `ORDER BY` scan per
+question (180 scans, killed after 18 min, I/O bound). See the notebook's "from brute
+force to an index" for why a live system needs an ANN index past this point.
 
 ## Synonym retrieval — picking the embedding model
 
