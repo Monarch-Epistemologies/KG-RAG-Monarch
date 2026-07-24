@@ -1,0 +1,42 @@
+# Predicate descriptions for the v2 graph-edge crawler (bin/classify_predicate.py).
+#
+# TUNING KNOBS — edited here as data, not buried in code. Ported from
+# KG-RAG-EDS/config/project_2_predicates.yaml.
+#
+# MODEL: MiniLM, NOT SapBERT — decided by calibration (--calibrate), against the
+# intuition that the crawler should share one model everywhere. SapBERT is a
+# term-to-term synonymy model; a question SENTENCE is out of its distribution, so it
+# packs every disease-related description into a narrow cosine band and cannot tell
+# the true predicate from the distractors (phenotype/treatment top-1 only 0.63/0.72).
+# MiniLM is a sentence model and separates them cleanly (top-1 1.00/1.00, wide
+# margins). This step is independent of the anchor step — only the anchor must share
+# SapBERT's space with the node vectors — so the classifier is free to use the model
+# that wins HERE. Different retrieval steps want different embedders.
+#
+# SELECTION: a relative margin, not an absolute cutoff. Keep the top predicate plus
+# any within `margin` of it. That returns exactly one predicate when there is a clear
+# winner (phenotype) and the tied cluster when there is not (gene's two predicates
+# plus a near distractor). margin=0.05 measured: phenotype/treatment recall 1.00,
+# gene 0.95, set sizes 1.0/1.9/2.4. See bin/classify_predicate.py --calibrate.
+#
+# DESCRIPTIONS are TERM LISTS (the words an answer of that predicate carries), which
+# calibrated well under MiniLM. The first five predicates are the ones the quality
+# gold exercises (config/eval_questions.yaml); the rest are distractors a disease
+# question could plausibly be confused with, present so the ranking has to discriminate.
+
+embed_model: all-MiniLM-L6-v2
+margin: 0.05  # keep predicates within this cosine of the top-ranked one
+
+predicates:
+  # --- exercised by the gold ---
+  "biolink:has_phenotype": symptoms, clinical features, signs, phenotypes, manifestations
+  "biolink:gene_associated_with_condition": gene, causative gene, disease gene, genetic association
+  "biolink:causes": causes, causative variant, pathogenic mutation, disease-causing
+  "biolink:treats": treatment, drug, therapy, medication, treats
+  "biolink:treats_or_applied_or_studied_to_treat": treatment, drug studied, therapy, medication used to treat
+  # --- distractors ---
+  "biolink:has_mode_of_inheritance": inheritance, autosomal dominant, recessive, X-linked, inheritance pattern
+  "biolink:subclass_of": type, subtype, form, kind, category of disease
+  "biolink:affects": affects, influences, modifies, impact on
+  "biolink:interacts_with": molecular interaction, binds, protein interaction
+  "biolink:expressed_in": expressed in tissue, gene expression, anatomical expression
