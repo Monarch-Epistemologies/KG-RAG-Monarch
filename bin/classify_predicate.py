@@ -49,11 +49,16 @@ def classify(question, model, pred_ids, pred_emb):
     return sorted(zip(pred_ids, sims.tolist()), key=lambda r: r[1], reverse=True)
 
 
-def picked_predicates(question, model, pred_ids, pred_emb, margin):
-    """The top predicate plus any within `margin` cosine of it, highest first."""
-    ranked = classify(question, model, pred_ids, pred_emb)
+def select_within_margin(ranked, margin):
+    """From ranked [(id, score)] (descending), keep the top plus any within `margin`
+    cosine of it. Pure selection rule, split out so it is testable without a model."""
     top = ranked[0][1]
     return [p for p, s in ranked if s >= top - margin]
+
+
+def picked_predicates(question, model, pred_ids, pred_emb, margin):
+    """The top predicate plus any within `margin` cosine of it, highest first."""
+    return select_within_margin(classify(question, model, pred_ids, pred_emb), margin)
 
 
 def _load_model_and_preds(device):
