@@ -164,28 +164,36 @@ hop. The comfortable size sits somewhere inside that hundredfold gap, and holdin
 seeds to a handful, hop radius has no setting that reaches it — the step from one hop to
 two skips straight over it.
 
-That is the opposite of what the incident counts suggested, and the error was mine —
-I measured reach and reasoned about content. The incident column is kept in the table
-because the hub and predicate-cut measurements below were computed on it.
+The number that sizes a two-hop corpus is the induced triple count, and it runs several
+times the incident one — for Ehlers-Danlos, 978,579 induced triples against 269,705
+incident edges, and for some diseases the gap is wider still. That gap is the correction.
+My instinct was to read corpus size off the incident numbers, the edges followed outward
+to reach the frontier; but incident edges measure how far a set reaches, not what it
+contains, and a corpus is what it contains — every triple with both endpoints kept. Judged
+by reach the two-hop corpus looked affordable; measured as content it is several times
+larger. The incident column stays in the table only because the hub and predicate-cut
+measurements below were computed on it.
 
-The hub mechanism is real, but the clean fix I expected is not. The highest-degree
-node in each one-hop frontier is an inheritance-mode term for six of the eight —
-"Autosomal recessive inheritance", degree 8,080, in five of them — and that suggested
-a short exclusion list of semantically empty hubs. Measured, dropping every
-`has_mode_of_inheritance` edge takes the union's two-hop corpus from 529,380 to
-514,484, a three percent saving. The reason is visible one level down the hub list:
-only two of the top twenty frontier hubs are inheritance terms. The rest are generic
-but genuine phenotypes — Global developmental delay at 7,276, Seizure at 6,094,
-Intellectual disability at 5,953, Scoliosis at 3,952 — and highly connected genes
-such as PRKN at 6,787, KRAS at 4,813 and VCP at 3,233. Those attach through
-`has_phenotype` and `interacts_with`, the same predicates that carry the signal, so
-no predicate-level cut removes the fan-out without removing content. Excluding
-`interacts_with` as well takes the union to 446,762, a sixteen percent saving, and
-that one costs real protein-interaction data rather than noise.
+The hub mechanism is real, but the clean fix I expected — dropping a short list of
+semantically empty hub nodes to collapse the fan-out — does not survive measurement. The
+highest-degree node in each one-hop frontier is an inheritance-mode term for six of the
+eight ("Autosomal recessive inheritance", node degree 8,080, in five of them), exactly the
+kind of contentless hub such a list would target. But dropping every
+`has_mode_of_inheritance` edge takes the union's two-hop incident count from 529,380 to
+514,484 edges, a three percent saving. The reason is visible one level down the hub list:
+only two of the top twenty frontier hubs are inheritance terms. The rest are generic but
+genuine phenotypes — Global developmental delay at degree 7,276, Seizure at 6,094,
+Intellectual disability at 5,953, Scoliosis at 3,952 — and highly connected genes such as
+PRKN at 6,787, KRAS at 4,813 and VCP at 3,233. Those attach through `has_phenotype` and
+`interacts_with`, the same predicates that carry the signal, so no predicate-level cut
+removes the fan-out without also removing content. Excluding `interacts_with` takes the
+union to 446,762, a sixteen percent saving, but that one costs real protein-interaction
+data rather than noise.
 
-Those savings are measured on incident counts, so read them as proportions rather
-than as corpus sizes. The proportions are what the argument rests on, and they say
-hub surgery is not a size lever worth reaching for first.
+Those percentages are computed on incident edges — the reach count — not on the induced
+triples that make up the corpus, so read them as proportions, not as corpus sizes. The
+proportions are what the argument rests on, and they say hub surgery is not a size lever
+worth reaching for first.
 
 The frequency data underneath makes the same point from the other side. Across all
 29,868 diseases, 11,589 distinct phenotypes are in use and the median one annotates
