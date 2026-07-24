@@ -205,11 +205,14 @@ embedding retrieval has no such mechanism: a near-universal phenotype contribute
 a disease's vector as much as a discriminative one does. That is a real reason such
 terms might hurt, and it is answerable against v1's gold set rather than by argument.
 
-Seed count is a weak predictor of subgraph size. EDS matches 57 seeds and Marfan 5,
-a factor of eleven, but their one-hop node counts are 832 and 329, a factor of 2.5.
-Rett matches four seeds and still reaches 232 nodes. Subtypes of the same disease
-share most of their phenotype and gene neighbours, so multiplying seeds buys much
-less corpus than it appears to — which weakens the first of the three moves above.
+Seed count is a weak predictor of subgraph size. EDS matches 57 seeds and Marfan syndrome
+5, a factor of eleven, but their one-hop node counts are 832 and 329, a factor of 2.5.
+Rett syndrome matches four seeds and still reaches 232 nodes. Subtypes of the same disease
+share most of their phenotype and gene neighbours, so multiplying seeds buys much less
+corpus than it appears to. That undercuts the first of the three candidate moves this
+section opened with — growing the corpus by adding more disease seeds — whose whole appeal
+was that corpus size would scale predictably with the number of seeds. If subtypes overlap
+this heavily, it does not.
 
 One row needs a caveat before anyone leans on it. Type 2 diabetes coming out
 smallest does not mean the graph knows little about it. The seed selector matches a
