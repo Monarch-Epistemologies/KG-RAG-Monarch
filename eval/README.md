@@ -4,6 +4,42 @@ The shared gold format and its reasoning live in
 [`KG-RAG-EDS/eval/README.md`](../../KG-RAG-EDS/eval/README.md). This file covers the
 instruments specific to this repo, which run against the extracted subgraph (`data/`).
 
+## Quality in context — does retrieval surface the facts a question needs?
+
+`bin/eval_build_gold.py` (build the gold) and `bin/eval_score.py` (score against it).
+Where synonym retrieval picks the *model*, this measures whether the chosen model,
+over a given corpus, actually answers realistic questions.
+
+**The gold.** `config/eval_questions.yaml` defines three question types — a disease's
+phenotypes, its causative genes, its recorded treatments (the line's use cases, minus
+the inference step; see the config's note on why treatment lookup is not repurposing).
+For each, `eval_build_gold.py` samples diseases carrying the relevant predicate,
+templates a question, and derives the answer set straight from the graph (the graph is
+its own answer key). 180 cases -> `eval/gold_monarch.jsonl`. These are
+**traversal-shaped**: the answer is a disease's graph neighbours, not a text-similar
+node.
+
+**The score.** `eval_score.py` embeds each question, takes the top-k nearest nodes, and
+reports recall of the answer entities, plus anchor recall (did it at least find the
+disease the question names).
+
+**Result on the node corpus (SapBERT, k=20).**
+
+| type | recall@k | anchor@k |
+|---|---|---|
+| phenotype | 0.021 | 0.967 |
+| gene | 0.050 | 0.917 |
+| treatment | 0.000 | 0.967 |
+| overall | **0.024** | **0.950** |
+
+Node-text retrieval finds the disease the question is about 95% of the time but almost
+never surfaces its phenotypes, genes or treatments — because a phenotype node's text
+("Scoliosis") is not similar to "symptoms of X". So text-embedding over nodes answers
+"what is X" (entity lookup), not "what are X's neighbours" (the actual question). The
+0.024 baseline is what triple-text retrieval — where the fact "X has_phenotype
+Scoliosis" is itself a retrievable document — must beat, and the 0.95 anchor recall is
+the entity-linking front door graph-edge traversal relies on.
+
 ## Synonym retrieval — picking the embedding model
 
 `bin/eval_synonym_retrieval.py`. This measures how good a given embedding model is at
