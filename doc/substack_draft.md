@@ -653,7 +653,99 @@ millisecond query. Building that index, and measuring the recall it costs, is th
 open thread — and it is also where the 16 GB memory ceiling from the v3 ledger bites,
 since the index wants to be resident.
 
-## 5. The v3 tripwire
+## 5. Graph-edge traversal — the second retrieval method
+
+Sections 1 through 4 measured one epistemology end to end: embed text into vectors and
+retrieve by nearest-neighbour. Its verdict was two-sided — a good entity-linker (0.95
+anchor recall) and, over nodes, a poor fact-retriever (0.02 answer recall) — and the
+diagnosis pointed straight at the second method. If the question and its answer share
+no words, stop asking a vector to bridge them. Find the node the question is *about*,
+then *walk the graph* to its neighbours. The answer is not retrieved by similarity at
+all; it is reached by an edge. And the thing that makes this viable is a by-product of
+the first method: node-text embedding already hands us the starting node 95% of the
+time. That anchor recall is the front door the crawler was waiting for.
+
+The crawler is four steps, ported from v1's hand-built single-disease version and
+re-fitted to the v2 substrate one file at a time:
+
+- **anchor** — embed the question with SapBERT, take the nearest nodes. This is the
+  0.95-recall entity-linker from section 4, reused unchanged; it must use SapBERT
+  because it compares the question against the SapBERT node vectors.
+- **predicate-pick** — decide which *relation* the question is asking about (symptoms?
+  causative gene? treatment?) by embedding a short description of each predicate and
+  ranking them against the question.
+- **disambiguate** — the nearest node is often not the right one; pick the true anchor
+  from the candidate pool using the graph itself.
+- **traverse** — from the chosen anchor, follow the picked predicate's edges one hop and
+  read off the neighbours. Pure SQL, no embedding at all.
+
+Three of these are mechanical ports. The predicate step is where the substrate pushed
+back, and it produced the section's first real finding.
+
+### One pipeline, two different embedding models
+
+The intuition carried over from v1 was that the crawler should use one embedding model
+everywhere — the same SapBERT that won section 3 and built the node vectors. Calibration
+killed that intuition. SapBERT is trained on concept term-to-term synonymy: it is
+excellent at placing "heart attack" next to "myocardial infarction", which is exactly
+why it won the entity-linking job. But a *question* — "What are the symptoms of Marfan
+syndrome?" — is a sentence, and sentences are out of SapBERT's training distribution. Fed
+the ten predicate descriptions and a question, SapBERT packs them all into a narrow
+cosine band and cannot tell the right relation from the wrong ones: asked for symptoms
+or for treatments, its top-ranked predicate is correct only 63% and 72% of the time.
+
+MiniLM — the general-purpose sentence model that was the *floor* for entity linking in
+section 3 — gets the same two at 100%, with wide margins between the true predicate and
+the nearest distractor. The model that lost one job wins the other, because the two jobs
+are different tasks: term-to-term proximity versus sentence-to-description proximity. And
+the two steps are independent — the predicate classifier compares a question to
+descriptions in its own private vector space and never touches the node vectors — so
+there is no cost to letting each step use the model that wins it. The assembled crawler
+runs SapBERT to find the entity and MiniLM to find the relation. "Pick one embedding
+model" turns out to be the wrong frame; the right question is one model per step.
+
+The same calibration retired v1's other predicate knob. v1 kept every predicate above a
+fixed cosine cutoff; but a cutoff tuned for one model's cosine scale is meaningless on
+another's, and the right set is really "the top predicate plus anything nearly tied with
+it." So selection became a *relative* margin — keep predicates within 0.05 of the top
+score — which returns exactly one predicate when there is a clear winner (a symptoms
+question) and the tied cluster when there genuinely are two (genes are reached by two
+predicates, treatments by two). Measured on the gold questions, that rule keeps the true
+predicate 100% of the time for symptoms and treatments and 95% for genes, at fewer than
+two-and-a-half predicates picked on average.
+
+### The graph fixes what the embedding got wrong
+
+Anchor recall is 0.95, not 1.0, and the misses are instructive. Ask "What are the
+symptoms of cystic fibrosis?" and the single nearest node by embedding is *cystic
+fibrosis, non-human animal* — a real MONDO node whose name is almost identical to the
+one we want. Similarity alone cannot break that tie; the two names are neighbours in the
+vector space by construction. The graph can. Among the top candidates, the real human
+disease node carries 68 `has_phenotype` edges and its near-namesake carries a handful,
+because a well-studied human disease is a hub and an animal-model stub is a leaf. So
+disambiguation ignores the embedding rank and picks the candidate with the most edges of
+the *picked* predicate — the relation from the previous step constrains which node is the
+right hub — and the real cystic fibrosis, sitting at embedding rank 3, wins. This is the
+crawler's whole thesis in miniature: the moment the words give out, the structure takes
+over.
+
+### Traversal sidesteps the wall section 4 hit
+
+There is a quieter payoff. Section 4 ended at a scaling wall: the triple-vector corpus is
+12 GB, it does not fit in memory, and a live system cannot brute-force cosine over it per
+query — hence the open thread of building an approximate-nearest-neighbour index. The
+traversal step never meets that wall. It embeds nothing at query time; the one hop is an
+indexed lookup over the edge table, a few hundred microseconds, and the only vectors it
+touches are the ~300k node vectors the anchor step already handles comfortably. The two
+methods pay their costs in different places — text-embedding retrieval pays at index-build
+and query-time similarity search; traversal pays at graph-load and shifts the hard part
+onto entity-linking accuracy instead.
+
+_(what remains: assemble the four steps into one question-to-facts path and score it on
+the same 180-question gold, to put the third number next to node 0.02 and triple 0.57.
+The score is what turns this section from an architecture into a result.)_
+
+## 6. The v3 tripwire
 
 The original framing had two rungs: v2 runs native on the Mac until some measured cost
 makes it impractical, at which point v3 ships the work to a CUDA GPU in a container on
