@@ -774,9 +774,9 @@ the third column:
 | question type | node-text | triple-text | graph traversal |
 |---|---|---|---|
 | a disease's phenotypes | 0.02 | 0.49 | **0.89** |
-| its causative gene | 0.05 | 0.70 | 0.58 |
+| its causative gene | 0.05 | 0.70 | 0.60 |
 | its treatments | 0.00 | 0.52 | **0.88** |
-| overall | 0.02 | 0.57 | **0.78** |
+| overall | 0.02 | 0.57 | **0.79** |
 
 Graph traversal wins overall, and by the widest margin exactly where text embedding
 struggled most — the traversal-shaped questions this gold is made of. For a disease's
@@ -787,12 +787,29 @@ a front-door failure, an anchor mispicked or a predicate missed, not a retrieval
 crawler's ceiling is its entity-linking accuracy (0.79 anchor accuracy overall), which is
 why the number to improve next is the anchor, not the traversal.
 
-Genes are the visible weak spot: 0.58 recall against triple-text's 0.70, the one cell
-where embedding still wins. The cause is in the same two front-door steps — gene anchor
-accuracy is 0.63, well below the ~0.87 of the other two types — and it is worth a later
-look at whether the gene question ("what gene is associated with X") pulls the gene node
-above the disease in the anchor, or whether its two predicates confuse the pick. The
-measurement has named where the crawler is weak without yet fixing it.
+Genes are the visible weak spot: 0.60 recall against triple-text's 0.70, the one cell
+where embedding still wins, and gene anchor accuracy (0.65) sits well below the ~0.87 of
+the other two types. Bucketing the failures says why, and the answer is mostly not a bug
+to fix. Two thirds of the misses are a *near-synonym* problem: ask "what gene is
+associated with Meier-Gorlin syndrome?" and the graph does not hold one Meier-Gorlin node
+but several subtypes — MG1, MG2, and so on — each caused by a different gene. The question
+names the family generically, the gold sampled one specific subtype, and the embedding
+ranks a *sibling* subtype first; disambiguation cannot break the tie, because the sibling
+is also a disease and also has a causative-gene edge. This is genuine underspecification,
+not a pipeline error — the crawler returns a Meier-Gorlin gene, just not the one this gold
+row happened to fix on — and only 2 of those 13 siblings even share the gold's gene, so
+the phrasing really is ambiguous. The rest of the misses split between anchor-recall
+gaps (the right disease not in the candidate pool at all, four cases) and a genuine bug
+that *was* fixable: the predicate classifier was mis-firing on `expressed_in` for gene
+questions, because that predicate's hand-written description contained the words "gene
+expression" and the word "gene" pulled it toward "what gene…". Striking "gene" from that
+one description recovered the affected cases. The lesson repeats section 3's: a term-list
+description is data to be debugged, and one stray shared word silently mis-routes a whole
+question type.
+
+So the honest reading of the gene column is that its ceiling is entity-linking ambiguity
+between disease subtypes, which a sharper anchor or a subtype-aware gold would move but a
+better *walk* would not.
 
 The larger point is the one the whole line was built to make. Three architectures, one
 substrate, one answer key: embedding entities is a good entity-linker and a poor

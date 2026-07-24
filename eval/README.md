@@ -30,14 +30,20 @@ returns every neighbour along the picked predicates):
 | type | node | triple | traversal |
 |---|---|---|---|
 | phenotype | 0.02 | 0.49 | **0.89** |
-| gene | 0.05 | 0.70 | 0.58 |
+| gene | 0.05 | 0.70 | 0.60 |
 | treatment | 0.00 | 0.52 | **0.88** |
-| overall | **0.02** | **0.57** | **0.78** |
+| overall | **0.02** | **0.57** | **0.79** |
 
 Traversal (bin/crawl.py: anchor -> predicate-pick -> disambiguate -> traverse) wins
 overall. Its ceiling is entity-linking, not the walk: the gold answers are exactly the
 edges it follows, so every point lost is an anchor mispick or predicate miss (overall
-anchor accuracy 0.79). Genes are its weak type (0.58, gene anchor accuracy 0.63).
+anchor accuracy 0.79). Genes are its weak type (0.60, anchor accuracy 0.65); the miss
+breakdown (of 60): ~14 near-synonym subtype mispicks (the question names a disease family
+generically, the graph splits it into subtypes with different genes, and a sibling
+outranks the gold — mostly irreducible ambiguity, only 2/13 siblings share the gold gene),
+4 anchor-recall gaps, 3 residual predicate-misses. A fixed classifier bug lived here too:
+`expressed_in`'s description contained "gene expression", so the word "gene" mis-routed
+"what gene is associated with X" onto expressed_in.
 
 The crawler's one non-obvious lesson: v1's disambiguation (pick the candidate with the
 most edges of the picked predicate) does active harm at Monarch scale — a common phenotype

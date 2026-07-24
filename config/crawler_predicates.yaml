@@ -39,4 +39,4 @@ predicates:
   "biolink:subclass_of": type, subtype, form, kind, category of disease
   "biolink:affects": affects, influences, modifies, impact on
   "biolink:interacts_with": molecular interaction, binds, protein interaction
-  "biolink:expressed_in": expressed in tissue, gene expression, anatomical expression
+  "biolink:expressed_in": expressed in tissue, anatomical site of expression, tissue localization
