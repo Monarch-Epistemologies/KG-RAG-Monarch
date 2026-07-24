@@ -714,20 +714,45 @@ predicates, treatments by two). Measured on the gold questions, that rule keeps 
 predicate 100% of the time for symptoms and treatments and 95% for genes, at fewer than
 two-and-a-half predicates picked on average.
 
-### The graph fixes what the embedding got wrong
+### The disambiguation that had to be rebuilt
 
-Anchor recall is 0.95, not 1.0, and the misses are instructive. Ask "What are the
-symptoms of cystic fibrosis?" and the single nearest node by embedding is *cystic
-fibrosis, non-human animal* — a real MONDO node whose name is almost identical to the
-one we want. Similarity alone cannot break that tie; the two names are neighbours in the
-vector space by construction. The graph can. Among the top candidates, the real human
-disease node carries 68 `has_phenotype` edges and its near-namesake carries a handful,
-because a well-studied human disease is a hub and an animal-model stub is a leaf. So
-disambiguation ignores the embedding rank and picks the candidate with the most edges of
-the *picked* predicate — the relation from the previous step constrains which node is the
-right hub — and the real cystic fibrosis, sitting at embedding rank 3, wins. This is the
-crawler's whole thesis in miniature: the moment the words give out, the structure takes
-over.
+Assembling the four steps and scoring them exposed the section's sharpest lesson: a
+heuristic ported straight from v1 that, at scale, did not merely underperform but did
+active harm. v1's disambiguation picked, among the anchor candidates, the one with the
+most edges of the picked predicate — in a single-disease graph the disease is the unique
+hub and a leaf phenotype has a handful of edges, so counting finds the disease. Ported
+unchanged, that rule scored 0.37 answer recall, *worse* than triple-text embedding, and
+the breakdown said why: phenotype anchor accuracy was 0.05. It was picking the wrong node
+nineteen times in twenty.
+
+The inversion is structural. At Monarch scale `has_phenotype` is one of the densest
+relations in the graph, and its density is not on the disease side. A common symptom —
+"Middle age onset", or "Celiac disease" appearing as a phenotypic term — is the *object*
+of hundreds of has_phenotype edges, one from every disease that presents it. So "the
+candidate with the most has_phenotype edges" is not the disease asked about; it is the
+most common phenotype in the neighbourhood. Max-count, which found the hub in v1, now
+finds the densest leaf. And it does so while discarding a correct answer: SapBERT — the
+strong entity-linker v1 never had — already ranks the right disease *first* among the
+candidates in most of these cases. The heuristic was overruling a front door that was
+already right.
+
+The finding generalises past the one bug: a heuristic is worth only as much as the
+weakness it compensates for. v1 needed aggressive disambiguation because its MiniLM anchor
+was a weak linker that often ranked a phenotype above the disease; v2's anchor is strong,
+so the same aggression becomes subtraction. The fix is to trust the anchor and constrain
+it only where it genuinely fails: walk the candidates in embedding-rank order and take the
+first that is a disease *and* carries at least one edge of the picked predicate.
+
+Both tests do necessary work, and cystic fibrosis shows each. Asked for its symptoms, the
+nearest node by embedding is *cystic fibrosis, non-human animal*; the next disease
+candidate is *breast fibrocystic disease* — near-namesakes that similarity cannot
+separate. The disease-category test is not enough here: all three are MONDO diseases. What
+separates them is the has-edge test — the animal stub and the fibrocystic near-miss carry
+*zero* human has_phenotype edges, while the real cystic fibrosis, sitting at embedding
+rank 3, carries 68. The rule walks past the empty candidates and stops at the first
+disease the graph actually holds phenotypes for. No counting, no hub — just the first
+plausible disease that has the facts. That single change lifted overall recall from 0.37
+to 0.78.
 
 ### Traversal sidesteps the wall section 4 hit
 
@@ -741,9 +766,41 @@ methods pay their costs in different places — text-embedding retrieval pays at
 and query-time similarity search; traversal pays at graph-load and shifts the hard part
 onto entity-linking accuracy instead.
 
-_(what remains: assemble the four steps into one question-to-facts path and score it on
-the same 180-question gold, to put the third number next to node 0.02 and triple 0.57.
-The score is what turns this section from an architecture into a result.)_
+### The result: three methods, one gold
+
+Scored on the same 180 questions as the two text-embedding methods, the crawler produces
+the third column:
+
+| question type | node-text | triple-text | graph traversal |
+|---|---|---|---|
+| a disease's phenotypes | 0.02 | 0.49 | **0.89** |
+| its causative gene | 0.05 | 0.70 | 0.58 |
+| its treatments | 0.00 | 0.52 | **0.88** |
+| overall | 0.02 | 0.57 | **0.78** |
+
+Graph traversal wins overall, and by the widest margin exactly where text embedding
+struggled most — the traversal-shaped questions this gold is made of. For a disease's
+phenotypes and its treatments it clears both embedding methods decisively; the fact that
+it does *not* reach 1.0 is the honest part. The walk itself is exact by construction — the
+gold answers are precisely the endpoints of the edges it follows — so every point lost is
+a front-door failure, an anchor mispicked or a predicate missed, not a retrieval miss. The
+crawler's ceiling is its entity-linking accuracy (0.79 anchor accuracy overall), which is
+why the number to improve next is the anchor, not the traversal.
+
+Genes are the visible weak spot: 0.58 recall against triple-text's 0.70, the one cell
+where embedding still wins. The cause is in the same two front-door steps — gene anchor
+accuracy is 0.63, well below the ~0.87 of the other two types — and it is worth a later
+look at whether the gene question ("what gene is associated with X") pulls the gene node
+above the disease in the anchor, or whether its two predicates confuse the pick. The
+measurement has named where the crawler is weak without yet fixing it.
+
+The larger point is the one the whole line was built to make. Three architectures, one
+substrate, one answer key: embedding entities is a good entity-linker and a poor
+fact-retriever; embedding facts recovers most of the ground; walking the graph, once its
+front door is trusted rather than second-guessed, beats both on the questions that ask for
+a disease's neighbours. None of that was arguable from first principles — each number came
+from the same gold, and the ranking is the evidence for eventually running the methods
+together rather than choosing one.
 
 ## 6. The v3 tripwire
 

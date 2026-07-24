@@ -23,14 +23,28 @@ node.
 reports recall of the answer entities, plus anchor recall (did it at least find the
 disease the question names).
 
-**Result (SapBERT, k=20), node vs triple corpus.** Answer recall / anchor recall:
+**Result (k=20), three retrieval methods on the same gold.** Answer recall (node/triple
+via `eval_score.py`; graph-edge traversal via `eval_crawl.py`, which has no top-k — a walk
+returns every neighbour along the picked predicates):
 
-| type | node | triple |
-|---|---|---|
-| phenotype | 0.02 / 0.97 | 0.49 / 1.00 |
-| gene | 0.05 / 0.92 | 0.70 / 1.00 |
-| treatment | 0.00 / 0.97 | 0.52 / 0.98 |
-| overall | **0.02 / 0.95** | **0.57 / 0.99** |
+| type | node | triple | traversal |
+|---|---|---|---|
+| phenotype | 0.02 | 0.49 | **0.89** |
+| gene | 0.05 | 0.70 | 0.58 |
+| treatment | 0.00 | 0.52 | **0.88** |
+| overall | **0.02** | **0.57** | **0.78** |
+
+Traversal (bin/crawl.py: anchor -> predicate-pick -> disambiguate -> traverse) wins
+overall. Its ceiling is entity-linking, not the walk: the gold answers are exactly the
+edges it follows, so every point lost is an anchor mispick or predicate miss (overall
+anchor accuracy 0.79). Genes are its weak type (0.58, gene anchor accuracy 0.63).
+
+The crawler's one non-obvious lesson: v1's disambiguation (pick the candidate with the
+most edges of the picked predicate) does active harm at Monarch scale — a common phenotype
+is the object of hundreds of has_phenotype edges, so max-count picks the densest leaf, not
+the disease, and overrules a SapBERT anchor that was already right (naive port scored 0.37
+overall). The fix is minimal: take the first embedding-ranked candidate that is a disease
+and carries >=1 edge of a picked predicate. See doc/substack_draft.md section 5.
 
 Node-text retrieval finds the disease the question is about 95% of the time but almost
 never surfaces its phenotypes, genes or treatments — because a phenotype node's text

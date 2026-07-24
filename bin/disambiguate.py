@@ -2,21 +2,29 @@
 """Disambiguate the anchor using the picked predicate(s) (build seq: crawler, step 3).
 
 The glue between the two front-door steps. Anchor recall (anchor.py) returns the nodes
-nearest the question by embedding, but nearest-by-meaning is often a symptom or a gene,
-not the disease we want to traverse from. The fix is graph-native and deliberately
-simple: among the candidates, pick the one with the MOST edges of the picked
-predicate(s) — the disease is a hub (a disease has hundreds of has_phenotype edges)
-while a leaf phenotype has a handful, so counting swamps the leaves. The predicate set
-constrains the anchor.
+nearest the question by embedding; this step commits to one of them as the node to
+traverse from.
 
-Ported from KG-RAG-EDS/bin/project_2_disambiguate.py. The v2 reality this exposes: the
-two steps use two models in two databases. Candidates come from SapBERT vectors in
-embeddings.duckdb (anchor.py); predicates come from MiniLM (classify_predicate.py); the
-edge counts run over the indexed graph.duckdb. Three moving parts, one anchor.
+v1 picked the candidate with the MOST edges of the picked predicate — the disease was
+the unique hub in a single-disease graph, so counting swamped the leaf phenotypes. That
+rule INVERTS at Monarch scale and was measured doing active harm (phenotype anchor
+accuracy 0.05): with 29k diseases and dense shared predicates, a common phenotype node
+is itself the object of hundreds of has_phenotype edges, so max-count picks "Celiac
+disease" (an HP term, object of 290 edges) over the disease actually asked about. And it
+was unnecessary — SapBERT, the far stronger entity-linker that v1 lacked, already ranks
+the right disease first in most cases; max-count then throws that correct anchor away.
 
-It is a heuristic: it assumes the anchor is well-connected, and the right disease still
-has to be IN the candidate pool — a recall miss defeats any method — so anchor runs
-with a generous k.
+So v2 trusts the anchor and constrains it minimally: walk the candidates in embedding
+rank order and take the FIRST that is a disease (anchor_category) AND carries at least
+one edge of a picked predicate. The category test drops phenotype/gene mis-hits; the
+has-edge test breaks the near-synonym tie the embedding cannot (e.g. the real cystic
+fibrosis over "cystic fibrosis, non-human animal", which has no human phenotype edges).
+No max-count. Measured lift: overall answer recall ~0.37 -> ~0.78. See eval_crawl.py.
+
+Ported from KG-RAG-EDS/bin/project_2_disambiguate.py. The v2 reality it exposes: two
+steps, two models, two databases. Candidates come from SapBERT vectors in
+embeddings.duckdb (anchor.py); predicates from MiniLM (classify_predicate.py); the edge
+existence check runs over the indexed graph.duckdb.
 
 Run with a question as args, or no args for the test set.
 """
@@ -42,6 +50,10 @@ TEST_QUESTIONS = [
 ]
 
 
+# The disease-anchored use cases resolve to MONDO nodes; the anchor must be one.
+ANCHOR_PREFIX = "MONDO:"
+
+
 def edge_count_of(gcon, node_id, predicates):
     """How many edges have node_id on either side with one of these predicates."""
     return gcon.execute(
@@ -54,18 +66,28 @@ def edge_count_of(gcon, node_id, predicates):
     ).fetchone()[0]
 
 
-def disambiguate(gcon, candidates, predicates):
-    """Pick the candidate most connected via the picked predicates (the hub).
+def disambiguate(gcon, candidates, predicates, anchor_prefix=ANCHOR_PREFIX):
+    """Take the first candidate, in embedding-rank order, that is an anchor-namespace
+    node AND carries at least one edge of a picked predicate.
 
-    Ties break toward the better embedding rank (strict >, first wins).
-    Returns (rank, (id, category, text, sim), count) or (None, None, 0).
+    Category drops phenotype/gene mis-hits; the has-edge test breaks the near-synonym
+    tie the embedding cannot. Fall back to the top anchor-namespace candidate (predicate
+    pick may have missed), then to the top candidate overall.
+    Returns (rank, (id, category, text, sim), count) or (None, None, 0) if no candidates.
     """
-    best = (None, None, 0)
+    if not candidates:
+        return (None, None, 0)
+    first_in_ns = None
     for rank, cand in enumerate(candidates):
+        if not cand[0].startswith(anchor_prefix):
+            continue
+        if first_in_ns is None:
+            first_in_ns = (rank, cand)
         count = edge_count_of(gcon, cand[0], predicates)
-        if count > best[2]:
-            best = (rank, cand, count)
-    return best
+        if count >= 1:
+            return (rank, cand, count)
+    rank, cand = first_in_ns if first_in_ns else (0, candidates[0])
+    return (rank, cand, edge_count_of(gcon, cand[0], predicates))
 
 
 def main():
