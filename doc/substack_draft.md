@@ -104,10 +104,23 @@ to what we embed rather than how much of the graph we keep.
 
 ### Measured: eight diseases
 
-The hop-expansion prediction above was wrong, and it is worth leaving in place so
-the correction has something to correct. Running v1's exact mechanics — MONDO name
-substring for the seeds, then expansion by edges — over eight diseases chosen to
-span rare monogenic, multi-subtype and common complex.
+The hop-expansion prediction above was wrong, and it is worth leaving in place so the
+correction has something to correct. That prediction was that a second hop could blow the
+frontier up unpredictably — "anywhere between tens of thousands of nodes and a large
+fraction of the whole graph." It does not. Measured across all eight diseases below, the
+two-hop node frontier is modest and remarkably consistent: tens of thousands of nodes every
+time (14,709 to 33,440), a couple of percent of the graph, never a large fraction of it.
+What the prediction got wrong was reasoning about the wrong quantity — the node frontier
+rather than the edges induced on it, which is what actually sizes a corpus and which does
+balloon, for the reason the next paragraphs make precise.
+
+The measurement runs v1's exact mechanics — a MONDO name substring to pick the seed
+diseases, then expansion outward by edges — over eight diseases chosen by hand to span
+three shapes a disease takes in this graph: rare **monogenic** disorders, caused by a
+single gene (cystic fibrosis, Marfan, Rett); **multi-subtype** syndromes that fan out into
+many named forms (Ehlers-Danlos, Noonan); and **common or complex** diseases driven by many
+contributing factors rather than one gene (type 2 diabetes, Parkinson disease, amyotrophic
+lateral sclerosis).
 
 Before the numbers, one distinction that matters more than it sounds. An edge is
 **incident** to a node set if at least one endpoint is inside it; **induced** if both
