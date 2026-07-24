@@ -307,8 +307,8 @@ all 29,868 diseases, one hop:  89,051 nodes   1,094,548 induced triples
 
 That is the first subset that fits without a seed choice to defend. It inherits none
 of the name-match artefacts, and at roughly 1.1M triples over 89k nodes it is dense
-enough to give retrieval something to work with. But it is still a boundary drawn
-by size rather than by the question, which the next two subsections take apart. It is made of 29,868 diseases,
+enough to give retrieval something to work with. But this every-disease-one-hop subset is still drawn by size rather than by the
+question, which the next two subsections take apart. It is made of 29,868 diseases,
 17,259 variants, 11,557 phenotypes, 9,573 cases, 8,741 genotypes and 6,207 genes,
 joined mostly by `has_phenotype`, `subclass_of`, `causes` and the treatment
 predicates.
