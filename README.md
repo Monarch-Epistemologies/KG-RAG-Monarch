@@ -32,7 +32,28 @@ v2 is shaped the way it is. Written first, before the code.
 
 ## Build sequence
 
-_(to be defined — see the design notebook)_
+The design notebook ([`doc/substack_draft.md`](./doc/substack_draft.md)) argues *why*
+the subgraph is shaped the way it is; this is *what* runs, in order. Steps read v1's
+pinned KGX dump (`../KG-RAG-EDS/data/`) and write derived artifacts into this repo's
+gitignored `data/`. Everything runs natively on the Mac; see the notebook for the v3
+tripwire that would end that.
+
+Setup: `python3 -m venv venv && venv/bin/pip install -r requirements.txt`.
+
+1. **Extract the subgraph** — `bin/extract_subgraph.py`. Filters the full dump to the
+   human-only relevance cut (442,307 nodes, 4,923,997 edges — the method-neutral
+   boundary from notebook §1) into `data/nodes.tsv` and `data/edges.tsv`. The dump is
+   never edited; this is a regenerable copy, and the run asserts the expected counts.
+2. **Build the text corpora** — one document per node (name + synonyms + description)
+   and one per triple (subject name + readable predicate + object name). The two are
+   the units the nodes-vs-triples fork (notebook §2) chooses between.
+3. **Embed** — run each corpus through a sentence-embedding model into vectors in
+   DuckDB, and retrieve by cosine. Which model (notebook §3) and nodes-vs-triples are
+   decided here against the shared gold set (`eval/`).
+
+Measurement scripts behind the notebook's numbers live alongside these as
+`bin/shape_*.py` (config in `config/shape_probe.yaml`); they only measure, and write
+nothing.
 
 ## Related
 

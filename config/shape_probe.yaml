@@ -1,0 +1,126 @@
+# Hand-tuned inputs for the subgraph-shape measurements in doc/substack_draft.md
+# section 1. These are knobs, not logic — change them here, not in bin/.
+
+# The corpus-defining cut. bin/extract_subgraph.py keeps an edge only when BOTH
+# endpoints sit in a namespace on this allowlist (with the non-human in_taxon_label
+# guard retained on top). Filtering by taxon label alone leaked ~145k nodes of
+# organism-specific phenotype and anatomy ontologies — zebrafish, xenopus, mouse,
+# fly, worm, yeast — because those are ontology classes with no taxon label. The
+# allowlist names what a human-relevant corpus should contain, so the long tail of
+# non-human ontologies is excluded by omission rather than by an ever-growing
+# blocklist. See doc/substack_draft.md section 1.
+namespace_allowlist:
+  # Human clinical, genomic and case data
+  - MONDO            # disease
+  - HP               # Human Phenotype Ontology
+  - HGNC             # human gene nomenclature
+  - CLINVAR          # human clinical variants
+  - CAID             # ClinGen allele identifiers
+  - phenopacket.store  # human clinical cases
+  - HsapDv           # Homo sapiens developmental stages
+  - CUREID           # rare-disease drug repurposing (human)
+  - MAXO             # Medical Action Ontology
+
+  # Species-neutral biology, applicable to human
+  - GO               # Gene Ontology (function, process, component)
+  - PR               # Protein Ontology
+  - CHEBI            # chemical entities
+  - UBERON           # cross-species anatomy
+  - CL               # Cell Ontology
+  - PATO             # phenotype and trait qualities
+  - SO               # Sequence Ontology
+  - OBA              # Ontology of Biological Attributes
+  - Reactome         # human pathways
+  - NBO              # Neuro Behavior Ontology
+  - FOODON           # food / dietary exposure
+  - CHR              # chromosome bands
+
+  # Neutral phenotype abstraction — deliberate borderline call. UPHENO is the
+  # unified cross-species phenotype layer; kept because it is species-neutral and
+  # HP maps into it, though its purpose is bridging to the non-human data we drop.
+  - UPHENO
+
+  # Upper-ontology scaffolding (tiny, relational, species-neutral)
+  - BFO
+  - RO
+  - BSPO
+
+# Disease name substrings, matched case-insensitively against the MONDO node's
+# `name` column exactly as KG-RAG-EDS's filter.sh did. Chosen by hand to span
+# rare monogenic, multi-subtype and common complex; a convenience sample, not a
+# survey. The distribution over all MONDO terms is measured separately.
+diseases:
+  - ehlers-danlos syndrome
+  - marfan syndrome
+  - cystic fibrosis
+  - noonan syndrome
+  - rett syndrome
+  - amyotrophic lateral sclerosis
+  - parkinson disease
+  - type 2 diabetes mellitus
+
+# Predicate exclusions tested against the hub fan-out that drives hop-2 growth.
+# Each entry is one measured scenario, applied cumulatively in shape_hubs.py.
+predicate_cuts:
+  - label: none (baseline)
+    drop: []
+  - label: drop has_mode_of_inheritance
+    drop:
+      - biolink:has_mode_of_inheritance
+  - label: drop inheritance + interacts_with
+    drop:
+      - biolink:has_mode_of_inheritance
+      - biolink:interacts_with
+
+# How many top-degree frontier nodes shape_hubs.py lists before measuring cuts.
+hub_list_size: 20
+
+# Relevance-first pare-back, applied cumulatively by shape_relevance.py. The order
+# is the argument: each step has to be defensible from v2's use cases (human
+# phenotyping, cohort discovery, drug repurposing) without appealing to what fits in
+# memory. Capacity only gets a vote once these have been applied.
+relevance_cuts:
+  - label: whole graph (= closure)
+    drop_nonhuman: false
+    drop_predicates: []
+
+  - label: drop edges touching a non-human species
+    drop_nonhuman: true
+    drop_predicates: []
+
+  # Molecular infrastructure: real biology, but it is the substrate under the
+  # disease layer rather than something a phenotyping or repurposing question
+  # traverses. Orthology is included because its purpose is cross-species transfer.
+  - label: + drop molecular infrastructure predicates
+    drop_nonhuman: true
+    drop_predicates:
+      - biolink:interacts_with
+      - biolink:expressed_in
+      - biolink:orthologous_to
+      - biolink:enables
+      - biolink:actively_involved_in
+      - biolink:located_in
+      - biolink:participates_in
+      - biolink:is_active_in
+      - biolink:has_part
+      - biolink:part_of
+
+  # Sequence-level detail: a variant or genotype node's text is largely an
+  # identifier, so it carries little for a text-embedding retriever even though the
+  # structure is sound.
+  - label: + drop variant and genotype nodes
+    drop_nonhuman: true
+    drop_categories:
+      - biolink:SequenceVariant
+      - biolink:Genotype
+    drop_predicates:
+      - biolink:interacts_with
+      - biolink:expressed_in
+      - biolink:orthologous_to
+      - biolink:enables
+      - biolink:actively_involved_in
+      - biolink:located_in
+      - biolink:participates_in
+      - biolink:is_active_in
+      - biolink:has_part
+      - biolink:part_of

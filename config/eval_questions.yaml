@@ -1,0 +1,42 @@
+# Question templates for the quality-in-context gold (bin/eval_build_gold.py).
+#
+# Each type samples diseases that carry the given predicate(s) and derives the answer
+# set straight from the graph — the graph is its own answer key, so a case never
+# carries a hand-labeled answer (same principle as the shared gold format in
+# KG-RAG-EDS/eval/README.md). The templates are hand-written, question-facing phrasing.
+#
+# direction: out = the disease is the edge subject, answers are the objects
+#            in  = the disease is the edge object, answers are the subjects
+# subject_ns / object_ns: restrict answers to a namespace (e.g. genes are HGNC), since
+# a predicate like `causes` links diseases from more than one namespace.
+#
+# All three test retrieval of facts already in the graph — a disease's known
+# phenotypes, its recorded causative genes, its recorded treatments. That is what a
+# retrieval method should do; it is not yet inference. Drug repurposing (an existing
+# drug for a new, unrecorded indication) is a downstream task that builds on treatment
+# retrieval but requires reasoning over shared targets/mechanisms, not a stored edge.
+
+seed: 13
+per_type: 60
+
+types:
+  - name: phenotype
+    template: "What are the symptoms of {disease}?"
+    direction: out
+    predicates: [biolink:has_phenotype]
+    answer_ns: HP
+    min_answers: 5
+
+  - name: gene
+    template: "What gene is associated with {disease}?"
+    direction: in
+    predicates: [biolink:gene_associated_with_condition, biolink:causes]
+    answer_ns: HGNC
+    min_answers: 1
+
+  - name: treatment
+    template: "What is used to treat {disease}?"
+    direction: in
+    predicates: [biolink:treats, biolink:treats_or_applied_or_studied_to_treat]
+    answer_ns: CHEBI
+    min_answers: 1

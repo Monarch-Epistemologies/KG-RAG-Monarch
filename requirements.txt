@@ -1,0 +1,8 @@
+duckdb
+numpy
+pyarrow
+pyyaml
+pytest
+ruff
+sentence-transformers
+torch
