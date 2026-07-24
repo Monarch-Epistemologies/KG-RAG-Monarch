@@ -236,14 +236,17 @@ double-counts any edge with both ends in the frontier. On a random sample of twe
 diseases the exact count and the bound agreed to within a tenth of a percent, so the
 distribution can be read at face value.
 
-|  | h1 nodes | h2 edges |
+Rows are percentiles across the 29,866 diseases — half sit at or below the 50th, only the
+rarest giants reach the 99.9th and max.
+
+| percentile | h1 nodes | h2 edges |
 |---|---|---|
-| p50 | 4 | 420 |
-| p75 | 16 | 9,823 |
-| p90 | 38 | 32,092 |
-| p95 | 56 | 50,214 |
-| p99 | 114 | 88,608 |
-| p99.9 | 278 | 140,775 |
+| 50th (median) | 4 | 420 |
+| 75th | 16 | 9,823 |
+| 90th | 38 | 32,092 |
+| 95th | 56 | 50,214 |
+| 99th | 114 | 88,608 |
+| 99.9th | 278 | 140,775 |
 | max | 2,683 | 202,295 |
 
 These are incident counts, and by the argument above that means they measure reach,
