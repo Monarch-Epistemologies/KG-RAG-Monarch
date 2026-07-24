@@ -70,10 +70,16 @@ con.execute(f"""
     WHERE name IS NOT NULL AND name <> ''
 """)
 
-# Gallery: a fixed random sample of node names to retrieve against. The query targets
-# are unioned in afterwards so every gold answer is reachable.
+# Gallery: a fixed pseudo-random sample of node names to retrieve against. The query
+# targets are unioned in afterwards so every gold answer is reachable.
+#
+# Deterministic sampling via ORDER BY hash(id || SEED) LIMIT n, NOT USING SAMPLE
+# (reservoir): DuckDB's parallel reservoir sample is not byte-identical across
+# connections under multithreading (issue #1), which would score each model on a
+# different sample and invalidate the comparison. hash-ordering is stable regardless of
+# thread count — the same fix eval_build_gold.py uses.
 gallery = con.execute(
-    f"SELECT id, name FROM nodes USING SAMPLE {GALLERY_SIZE} ROWS (reservoir, {SEED})"
+    f"SELECT id, name FROM nodes ORDER BY hash(id || '{SEED}') LIMIT {GALLERY_SIZE}"
 ).fetchall()
 
 # Queries: sample nodes that carry a synonym, hold one out. A synonym equal to the
@@ -82,7 +88,7 @@ gallery = con.execute(
 candidates = con.execute(f"""
     SELECT id, ns, name, synonym FROM nodes
     WHERE synonym IS NOT NULL AND synonym <> ''
-    USING SAMPLE {N_QUERIES * 3} ROWS (reservoir, {SEED})
+    ORDER BY hash(id || '{SEED}') LIMIT {N_QUERIES * 3}
 """).fetchall()
 
 queries = []  # (query_text, target_id, namespace)

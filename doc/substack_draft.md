@@ -451,25 +451,27 @@ higher is better.
 
 | namespace | MiniLM (general) | BioLORD | MedCPT | SapBERT |
 |---|---|---|---|---|
-| overall | 0.545 | 0.580 | 0.611 | **0.736** |
-| HGNC (genes) | 0.19 | 0.22 | 0.26 | **0.47** |
-| PR (proteins) | 0.14 | 0.16 | 0.32 | **0.46** |
-| MONDO (disease) | 0.41 | 0.48 | 0.46 | **0.68** |
-| CHEBI (chemicals) | 0.42 | 0.47 | 0.45 | **0.62** |
-| HP (phenotype) | 0.67 | 0.84 | 0.75 | **0.89** |
-| GO (gene function) | 0.70 | 0.79 | 0.79 | **0.87** |
-| UBERON (anatomy) | 0.70 | 0.76 | 0.74 | **0.85** |
-| OBA (attributes) | 0.86 | 0.89 | 0.91 | **0.97** |
-| UPHENO (cross-species phenotype) | **0.92** | 0.80 | 0.89 | 0.91 |
+| overall | 0.542 | 0.560 | 0.592 | **0.716** |
+| HGNC (genes) | 0.19 | 0.19 | 0.23 | **0.39** |
+| PR (proteins) | 0.09 | 0.14 | 0.26 | **0.42** |
+| MONDO (disease) | 0.45 | 0.47 | 0.48 | **0.70** |
+| CHEBI (chemicals) | 0.46 | 0.49 | 0.48 | **0.64** |
+| HP (phenotype) | 0.76 | 0.88 | 0.79 | **0.93** |
+| GO (gene function) | 0.73 | 0.80 | 0.80 | **0.92** |
+| UBERON (anatomy) | 0.66 | 0.67 | 0.70 | **0.77** |
+| OBA (attributes) | 0.91 | 0.92 | 0.93 | **0.98** |
+| UPHENO (cross-species phenotype) | 0.93 | 0.80 | 0.91 | **0.93** |
 
 The general model is the floor and it fails in a specific place: gene and protein
 symbols, where a synonym is an alias like `PARK2` with no meaning on its surface to
 match. That is precisely where domain training should help, and it does. SapBERT —
 the one model trained directly on concept synonymy, from the UMLS medical vocabulary —
-lifts genes from 0.19 to 0.47 and proteins from 0.14 to 0.46, and wins every namespace
-but one without giving anything back on the descriptive vocabulary the general model
-already handled. The other two biomedical models beat the baseline only modestly; the
-training objective, not the fact of being biomedical, is what separates them.
+lifts genes from 0.19 to 0.39 and proteins from 0.09 to 0.42, and takes the top score in
+every namespace without giving anything back on the descriptive vocabulary the general
+model already handled — even UPHENO, the cross-species phenotype vocabulary, where the
+general model had held a slight edge, now comes out a virtual tie. The other two
+biomedical models beat the baseline only modestly; the training objective, not the fact
+of being biomedical, is what separates them.
 
 One honest caveat sits under the MedCPT column. MedCPT is built as an asymmetric
 query-and-document retriever, and this test runs its query encoder on both sides, which

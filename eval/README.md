@@ -109,23 +109,28 @@ namespace:
 
 | namespace | MiniLM | BioLORD | MedCPT | SapBERT |
 |---|---|---|---|---|
-| overall | 0.545 | 0.580 | 0.611 | **0.736** |
-| HGNC (genes) | 0.19 | 0.22 | 0.26 | **0.47** |
-| PR (proteins) | 0.14 | 0.16 | 0.32 | **0.46** |
-| MONDO (disease) | 0.41 | 0.48 | 0.46 | **0.68** |
-| CHEBI (chemicals) | 0.42 | 0.47 | 0.45 | **0.62** |
-| HP (phenotype) | 0.67 | 0.84 | 0.75 | **0.89** |
-| GO (gene function) | 0.70 | 0.79 | 0.79 | **0.87** |
-| UBERON (anatomy) | 0.70 | 0.76 | 0.74 | **0.85** |
-| OBA (attributes) | 0.86 | 0.89 | 0.91 | **0.97** |
-| UPHENO | **0.92** | 0.80 | 0.89 | 0.91 |
+| overall | 0.542 | 0.560 | 0.592 | **0.716** |
+| HGNC (genes) | 0.19 | 0.19 | 0.23 | **0.39** |
+| PR (proteins) | 0.09 | 0.14 | 0.26 | **0.42** |
+| MONDO (disease) | 0.45 | 0.47 | 0.48 | **0.70** |
+| CHEBI (chemicals) | 0.46 | 0.49 | 0.48 | **0.64** |
+| HP (phenotype) | 0.76 | 0.88 | 0.79 | **0.93** |
+| GO (gene function) | 0.73 | 0.80 | 0.80 | **0.92** |
+| UBERON (anatomy) | 0.66 | 0.67 | 0.70 | **0.77** |
+| OBA (attributes) | 0.91 | 0.92 | 0.93 | **0.98** |
+| UPHENO | 0.93 | 0.80 | 0.91 | **0.93** |
 
 MiniLM is a general-purpose model and the floor; it fails on gene and protein symbols,
 where a synonym is an alias like `PARK2` with no meaning on its surface. SapBERT —
-trained directly on concept synonymy from the UMLS medical vocabulary — wins every
-namespace but one and closes the gene/protein gap that a general model cannot. The
-other two biomedical models beat the baseline only modestly: the training objective,
-not being biomedical as such, is what separates them.
+trained directly on concept synonymy from the UMLS medical vocabulary — takes the top
+score in every namespace (UPHENO now a virtual tie with the general model) and closes
+the gene/protein gap that a general model cannot. The other two biomedical models beat
+the baseline only modestly: the training objective, not being biomedical as such, is
+what separates them.
+
+(These numbers are the deterministic hash-ordered sample; see issue #1. The reservoir
+sample they replaced gave slightly higher magnitudes — SapBERT 0.736 overall — but the
+identical ranking.)
 
 ### Pooling: reading one vector out of a model
 
