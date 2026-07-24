@@ -348,10 +348,17 @@ gene interaction and orthology edges. Three hops out you are reading zebrafish
 expression data. The completeness is real but it is completeness with respect to what
 Monarch merged, not with respect to the disease.
 
-There is also no operation in a text-embedding pipeline that uses a closure. Retrieval
-embeds the query into a vector and takes the nearest documents; the graph decides
-only which documents exist. Reachability would matter for multi-hop graph reasoning —
-v1's second sub-project — but not here.
+And no method's operation needs the corpus to be a closure — including the one that
+traverses. The boundary is a one-time, method-neutral decision about which documents
+exist; it is not the retrieval any method runs at query time. Text-embedding retrieval
+embeds the query and takes the nearest documents, never traversing at all. Graph-edge
+traversal, the crawler built in v2, does traverse, and reachability is its whole
+mechanism — but it walks edges within whatever corpus is kept, reaching a disease's
+neighbours through the edges that are present; it does not need the corpus to have been
+carved by reachability in the first place. So closure is the wrong tool for drawing the
+boundary even though a method traverses: query-time traversal decides what to visit among
+the documents that exist, while the boundary decides which exist, and defining the second
+by closure carves nothing — the closure of any single disease is the entire component.
 
 ### Paring back by relevance
 
