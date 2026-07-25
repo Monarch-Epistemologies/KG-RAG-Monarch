@@ -23,16 +23,18 @@ node.
 reports recall of the answer entities, plus anchor recall (did it at least find the
 disease the question names).
 
-**Result (k=20), three retrieval methods on the same gold.** Answer recall (node/triple
+**Result (k=20), four retrieval methods on the same gold.** Answer recall (node/triple
 via `eval_score.py`; graph-edge traversal via `eval_crawl.py`, which has no top-k — a walk
-returns every neighbour along the picked predicates):
+returns every neighbour along the picked predicates; network embedding via
+`eval_network.py`, a nearest-neighbour lookup capped at k like node/triple). Network has
+two columns: `uniform` walks (plain node2vec) and `typed` metapath walks:
 
-| type | node | triple | traversal |
-|---|---|---|---|
-| phenotype | 0.02 | 0.49 | **0.89** |
-| gene | 0.05 | 0.70 | 0.60 |
-| treatment | 0.00 | 0.52 | **0.88** |
-| overall | **0.02** | **0.57** | **0.79** |
+| type | node | triple | traversal | net-uniform | net-typed |
+|---|---|---|---|---|---|
+| phenotype | 0.02 | 0.49 | **0.89** | 0.11 | 0.21 |
+| gene | 0.05 | 0.70 | 0.60 | 0.38 | 0.68 |
+| treatment | 0.00 | 0.52 | **0.88** | 0.16 | 0.30 |
+| overall | **0.02** | **0.57** | **0.79** | 0.21 | 0.40 |
 
 Traversal (bin/crawl.py: anchor -> predicate-pick -> disambiguate -> traverse) wins
 overall. Its ceiling is entity-linking, not the walk: the gold answers are exactly the
@@ -65,6 +67,41 @@ triple vectors do not fit in RAM, so `surfaced_triple` streams the table once an
 a running top-k per question (one scan for all 180) rather than an `ORDER BY` scan per
 question (180 scans, killed after 18 min, I/O bound). See the notebook's "from brute
 force to an index" for why a live system needs an ANN index past this point.
+
+**Network embedding — the fourth method.** `bin/embed_network.py` builds it (random walks
+over the graph -> skip-gram, i.e. node2vec; runs under `venv313` because gensim has no
+Python-3.14 wheel) and `bin/eval_network.py` scores it: a SapBERT anchor, then a single
+nearest-neighbour lookup in the structural space — no predicate classifier, no
+disambiguation. It embeds a node by its position in the graph, not its text or its exact
+edges, so it is a lossy compression of adjacency and trails exact traversal on this
+exact-neighbour gold. Two build schemes (`--scheme`): `uniform` walks embed every node;
+`metapath` walks follow disease-phenotype/gene/drug category cycles
+(`config/network_embed.yaml`) and roughly double recall (0.21 -> 0.40 overall), embedding
+only the answer-space node types. The standout cell is genes: typed network embedding
+(0.68) beats the crawler's traversal (0.60), because it returns a neighbourhood rather than
+committing to one anchor, so it is forgiven the subtype ambiguity traversal is punished for.
+A knob sweep (`bin/sweep_network.py`) shows more/longer walks add ~5 points and larger
+vectors hurt, so 0.40 is a floor, not a tuned peak.
+
+**Link prediction — the soft-retrieval test.** The gold above scores only edges that exist,
+which the structural embedding cannot win. `bin/build_link_gold.py` builds the test the
+embedding is actually for: sample 400 disease-neighbour edges (200 gene, 200 phenotype),
+remove them, retrain on the held-out graph (`data/graph_lp.duckdb` ->
+`data/network_lp.duckdb`), and `bin/eval_link_prediction.py` asks whether the disease still
+ranks the target it was never trained to connect to. A hit is genuine prediction, not
+recall of a memorised edge:
+
+| held-out edge | hit@20 | hit@100 | hit@250 |
+|---|---|---|---|
+| disease -> gene | 0.22 | 0.39 | **0.51** |
+| disease -> phenotype | 0.02 | 0.06 | 0.09 |
+| overall | 0.12 | 0.22 | 0.30 |
+
+Genes predict far better than phenotypes — the same inversion as the crawler, and for the
+same reason: a gene is a specific, low-degree node whose structural fingerprint survives
+the loss of one edge; a phenotype is a generic hub. Across all three measurements the
+structural embedding is a gene method that also sees phenotypes. See
+doc/substack_draft.md section 6.
 
 ## Synonym retrieval — picking the embedding model
 
