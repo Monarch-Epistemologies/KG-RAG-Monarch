@@ -1,0 +1,30 @@
+# Network-embedding (node2vec) build knobs — read by bin/embed_network.py.
+#
+# The structural embedding embeds a node by its POSITION in the graph, not its text:
+# many random walks over the edges become the "sentences", and skip-gram (word2vec)
+# learns a vector per node from which nodes co-occur along those walks. These are the
+# only tuning knobs the build exposes; they are data, not logic, so they live here.
+#
+# NOTE: the p/q return/in-out bias that distinguishes node2vec proper from uniform
+# (DeepWalk) walks is deferred until a hub-safe biased sampler exists; when it lands it
+# gets its own p/q keys here. Absent knobs are absent behaviour, on purpose.
+
+dim: 128            # vector size per node
+walk_length: 40     # steps per walk
+num_walks: 10       # walks started from each node
+window: 5           # skip-gram context radius along a walk
+epochs: 5           # training passes over the walk corpus
+min_count: 1        # keep every node; each starts num_walks walks, so none is rare
+workers: 7          # M3 has 8 cores; leave one. NOTE: >1 makes training non-deterministic
+seed: 7             # seeds the walk RNG (matches the eval seed); see workers caveat
+
+# Walk scheme (override at the CLI with --scheme):
+#   uniform  — every step a uniform random neighbour; all nodes embedded (DeepWalk).
+#   metapath — walks follow the category cycles below, so a disease is co-located with
+#              its phenotypes/genes/drugs specifically, not blended with all node types.
+#              Only nodes of these categories are embedded (which is the answer space).
+walk_scheme: uniform
+metapaths:          # symmetric category cycles; each starts walks at its first category
+  - [biolink:Disease, biolink:PhenotypicFeature]
+  - [biolink:Disease, biolink:Gene]
+  - [biolink:Disease, biolink:ChemicalEntity]

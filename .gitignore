@@ -1,5 +1,6 @@
 data/
 venv/
+venv313/
 __pycache__/
 .ruff_cache/
 *.swp
