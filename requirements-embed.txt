@@ -1,0 +1,6 @@
+duckdb==1.5.5
+gensim==4.4.0
+numpy==2.5.1
+pyarrow==25.0.0
+PyYAML==6.0.3
+scipy==1.18.0

@@ -30,9 +30,9 @@ triples, into vectors and retrieves by similarity to the question; it is the met
 used, and section 2 splits it into its node and triple variants. **Graph-edge traversal**
 ignores content similarity: it links the question to an anchor node and walks the edges to
 the connected facts, so the graph's structure does the retrieving (section 5). **Network
-embedding** — not yet built — embeds each node from its position in the graph, its pattern
-of connections, so that structurally similar nodes land near each other even when their
-names share no words. Because the three are meant to be compared on equal footing, the
+embedding** embeds each node from its position in the graph, its pattern of connections, so
+that structurally similar nodes land near each other even when their names share no words
+(section 6). Because the three are meant to be compared on equal footing, the
 substrate they share has to stay neutral between them — a constraint the graph boundary
 below has to respect.
 
@@ -48,7 +48,7 @@ favour one retrieval method over another.
 
 **v3**, not yet built, is the move off the Mac entirely — the same work in a Docker
 container on a datacenter CUDA GPU — and it is the last resort, entered only when a
-measured cost proves the laptop cannot do a step patiently. As section 6 records, the
+measured cost proves the laptop cannot do a step patiently. As section 7 records, the
 measurement that would trigger it also turned up an intermediate rung worth taking first.
 
 ---
@@ -907,9 +907,201 @@ fact-retriever; embedding facts recovers most of the ground; walking the graph, 
 front door is trusted rather than second-guessed, beats both on the questions that ask for
 a disease's neighbours. None of that was arguable from first principles — each number came
 from the same gold, and the ranking is the evidence for eventually running the methods
-together rather than choosing one.
+together rather than choosing one. One column is still missing: a structural embedding,
+which retrieves by a node's position in the graph rather than by its content or its exact
+adjacency. The next section builds it and adds the fourth column.
 
-## 6. The v3 tripwire
+## 6. Network embedding — the third epistemology
+
+Text embedding asks what a node says; traversal asks what it is connected to. Network
+embedding asks a third question — where does the node sit in the graph? — and answers it
+with a vector learned from the node's neighbourhood rather than its name or its literal
+edges. Two nodes come out near each other when they occupy similar structural positions,
+even if no text and no shared edge links them. It is the third of the intro's three
+epistemologies, and the fourth scored column.
+
+### Building it: random walks become sentences
+
+The standard recipe is node2vec, and it is a neat reuse of the machinery from section 3.
+Take many random walks over the graph; treat each walk — a sequence of node IDs — as if it
+were a sentence, and the nodes as its words; then train the same skip-gram model that
+learns word vectors from text, but here it learns a node vector from which nodes co-occur
+along walks. Structural proximity plays the role that word proximity plays in a sentence.
+The walks are the only new idea; the embedding step is word2vec unchanged.
+
+This first pass uses unbiased walks: at each step the next node is a uniform random
+neighbour. That is node2vec's simplest setting (its two bias knobs both set to 1, which
+reduces it to the earlier DeepWalk method) and it is the honest place to start — a first
+number before adding the return/inward-outward bias that a hub-heavy graph would need a
+careful sampler to apply safely. The knobs that were used are all in a config file:
+128-dimensional vectors, 10 walks from each node, 40 steps per walk. That produced
+2,999,500 walks over all 299,950 nodes, and training the skip-gram on them took about
+fifteen minutes on the M3, entirely on CPU — no thermal drama, the corpus streamed from
+disk so it never sat in memory.
+
+Two build notes worth keeping, because both cost real time. First, gensim — the word2vec
+library — has no prebuilt package for the project's Python 3.14 and will not compile
+against it, so the build runs under a second, dedicated Python 3.13 environment and hands
+its vectors to the rest of the pipeline through a database file; the two interpreters never
+share a process. Second, that gensim prints a stream of internal errors under the current
+numpy, which looks alarming until you check: the output vectors are finite, and on a
+planted two-cluster test graph the within-cluster similarity comes out at 0.998 against
+0.118 across clusters. The noise is cosmetic; the math is correct. Both were verified rather
+than assumed.
+
+### The minimal pipeline, on purpose
+
+Network embedding's whole appeal is a simpler front door than the crawler's. So the eval
+gives it exactly that and no more: the SapBERT anchor from section 5, reused unchanged to
+map a question to its disease node, and then a single nearest-neighbour lookup in the
+structural space — the disease node's closest neighbours are returned as the answer. There
+is no predicate classifier and no edge-count disambiguation; the structural vector is asked
+to do, in one cosine lookup, what the crawler did with a classifier and a SQL walk. That
+isolates what the structural space alone buys, at the cost that its anchor accuracy is a
+little lower than the crawler's (0.71 versus 0.79) precisely because it drops the
+disambiguation step.
+
+One structural difference from the other methods matters for reading the numbers. SQL
+traversal returns every true neighbour, so its recall is uncapped. A nearest-neighbour
+lookup returns a ranked list and has to be cut at some budget N, exactly like the
+text-embedding methods' top-k. Recall therefore depends on N, so it is reported at three
+budgets — N = 20 to match the k = 20 the node- and triple-text columns used, plus 100 and
+250 to show the curve.
+
+### The result: the fourth column, and an inversion
+
+| question type | node-text | triple-text | graph traversal | network (N=20) |
+|---|---|---|---|---|
+| a disease's phenotypes | 0.02 | 0.49 | **0.89** | 0.11 |
+| its causative gene | 0.05 | 0.70 | 0.60 | 0.38 |
+| its treatments | 0.00 | 0.52 | **0.88** | 0.16 |
+| overall | 0.02 | 0.57 | **0.79** | 0.21 |
+
+At a matched budget the structural embedding lands where the prediction put it: above
+node-text, which barely retrieves facts at all, and well below both fact-text and
+traversal. That was expected — a structural embedding is a lossy compression of the
+graph's adjacency, and this gold is scored on exact adjacency, the endpoints of real edges.
+Raising the budget confirms the shape rather than closing the gap: overall recall goes 0.21
+at N=20, 0.38 at N=100, 0.52 at N=250. Even at twelve times the budget it sits under
+traversal's uncapped 0.79, and that residual is the compression cost, not a shortage of
+slots.
+
+The interesting result is not the ranking but the inversion. Network embedding is
+strongest on genes (0.38) and weakest on phenotypes (0.11) — the mirror image of the
+crawler, which was strongest on phenotypes (0.89) and weakest on genes (0.60). The reason
+is degree. A disease has exactly one causative gene: a specific, low-degree neighbour that
+co-occurs with the disease in walk after walk, so the structural space pins it tightly. But
+a disease has tens to 140 phenotypes, and many of them are hub phenotypes attached to
+thousands of diseases — their structural position is generic, central, close to no single
+disease in particular, so they never rank near the one that asked. The many common
+neighbours dissolve into the background exactly where the crawler's exact walk enumerated
+them perfectly; the one rare neighbour that the crawler had to disambiguate its way to is
+the one the structural space finds most easily. The two methods are strong on opposite
+kinds of edge.
+
+### Typing the walks recovers half the gap
+
+The uniform walk has an obvious weakness on a graph like this: it wanders through every
+kind of node. A walk leaving a disease is as likely to step to a protein or a biological
+process as to a phenotype, so the disease's vector is pulled toward node types no question
+ever asks about, and its phenotypes and genes have to compete with that noise. The fix is
+metapath2vec, the heterogeneous-graph version of the same recipe: instead of stepping to
+any neighbour, the walk follows a fixed category cycle. A disease-phenotype walk alternates
+disease, phenotype, disease, phenotype; a disease-gene walk alternates disease and gene; a
+disease-drug walk alternates disease and drug. All three schemes' walks go into one corpus,
+so a disease ends up co-located with its phenotypes and its genes and its drugs
+specifically, and with nothing else. Only nodes of those four categories get embedded at
+all — which turns out to be a feature, because that is exactly the answer space, so the
+nearest-neighbour lookup has no irrelevant node types to rank at all.
+
+Typing the walks roughly doubles recall at every question type, at a matched budget:
+
+| question type | network, uniform walks | network, typed walks |
+|---|---|---|
+| a disease's phenotypes | 0.11 | 0.21 |
+| its causative gene | 0.38 | **0.68** |
+| its treatments | 0.16 | 0.30 |
+| overall | 0.21 | 0.40 |
+
+Two details make the result trustworthy. The anchor accuracy is unchanged at 0.71 — the
+anchor step was not touched — so the entire gain comes from the retrieval space, not from
+linking questions to nodes any better. And the typed build embeds only 50,878 nodes (17% of
+the graph) and trains in forty seconds against the uniform run's fifteen minutes: cutting
+the walks down to the disease-centred metapaths removes most of the corpus and all of the
+irrelevant node types at once, which is why it is both faster and sharper.
+
+The single most striking cell is the gene column. Typed network embedding reaches 0.68 on
+genes — above the crawler's exact traversal (0.60) and all but level with triple-text
+retrieval (0.70). A lossy structural embedding beating an exact graph walk sounds
+paradoxical until you recall why traversal was weak on genes: the near-synonym subtype
+problem, where the crawler commits to one anchor and the gold fixed on a sibling subtype.
+The structural embedding never commits; it returns a neighbourhood, so a sibling's gene and
+the gold's gene can both appear in it, and the budget forgives the ambiguity the crawler
+was punished for. The trade is the reverse of section 5's: exact where it can be, fuzzy
+where fuzziness helps.
+
+What typing does not fix is the phenotype gap. At 0.21 it is double the uniform number but
+still far under traversal's 0.89, for the same reason as before — a disease has too many
+phenotypes to fit in twenty slots, and the common ones are structurally generic. Typing
+sharpens which twenty come back; it cannot make twenty be a hundred and forty.
+
+A short sweep of the build knobs confirms the reported column is a conservative setting,
+not a tuned peak. Doubling the walks per node, or doubling their length, each lifts overall
+recall about five points — more sampling of each disease's neighbourhood, straightforwardly.
+Doubling the vector size to 256 slightly hurts, the extra dimensions adding noise over a
+vocabulary of only fifty thousand nodes. So there is headroom above 0.40 for the cost of a
+longer build, and the numbers here are the floor of the typed method, not a fragile maximum.
+
+### What this gold does not reward
+
+The honest caveat is that these numbers are the floor of what network embedding is for,
+not its ceiling. Its distinctive value is soft retrieval — returning a node that is
+structurally similar to the anchor but has no edge to it, a candidate for a missing or
+undiscovered relationship. That is the ingredient a drug-repurposing question would need,
+and it is precisely what section 1's relevance-based cut was made to preserve. But this gold
+asks only for edges that already exist, so it cannot see that value at all; it scores the
+structural embedding on the one task — reproducing known adjacency — where an exact walk
+will always beat it. Measuring the soft-retrieval case needs a different answer key.
+
+### The soft-retrieval test: held-out link prediction
+
+The right answer key is one the model has not seen. So the test removes edges and asks the
+embedding to put them back: sample 400 disease-neighbour edges (200 genes, 200 phenotypes),
+delete them from the graph, retrain the embedding on that reduced graph, and only then ask
+— for each removed edge — whether the disease's structural neighbourhood still ranks the
+target it was never trained to connect to. Because the edge was absent from every walk, a
+hit is genuine prediction, not recall of a memorised adjacency. This is the one measurement
+here that is not confounded by the exact-adjacency bias of the main gold, and it needed its
+own build: the whole embedding retrained on the held-out graph.
+
+| held-out edge | hit@20 | hit@100 | hit@250 |
+|---|---|---|---|
+| disease → its gene | 0.22 | 0.39 | **0.51** |
+| disease → a phenotype | 0.02 | 0.06 | 0.09 |
+| overall | 0.12 | 0.22 | 0.30 |
+
+The headline is that it works at all: for genes, more than half the time (0.51 at the
+widest budget) the embedding ranks a causative gene it was never shown among the disease's
+top-250 structural neighbours. That is link prediction — the model inferring a relationship
+from position alone — and it is the capability the whole third method was added for, the one
+neither text embedding nor traversal has.
+
+And the same inversion appears a third time. Genes predict far better than phenotypes (0.51
+versus 0.09), for the reason that has held throughout: a gene is a specific, low-degree node
+whose structural fingerprint survives the loss of one edge, so the disease still sits near
+it through every other path they share; a phenotype is a generic hub whose position says
+little about which particular disease should point to it. Across all three measurements —
+the question gold, the typed rebuild, and now held-out link prediction — the structural
+embedding is a gene method that happens to also see phenotypes, the exact mirror of the
+crawler.
+
+What the third method establishes, then, is the trade the intro promised to make legible:
+three epistemologies on one substrate, each strong on a different shape of question, none
+dominant. Text embedding is the entity-linker, traversal is the exact enumerator of known
+neighbours, and the structural embedding is the one that can guess an edge that is not
+there. That is the evidence for eventually combining them rather than crowning one.
+
+## 7. The v3 tripwire
 
 The original framing had two rungs: v2 runs native on the Mac until some measured cost
 makes it impractical, at which point v3 ships the work to a CUDA GPU in a container on
