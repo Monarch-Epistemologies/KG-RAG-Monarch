@@ -60,11 +60,11 @@ nothing.
 - **Line context (Monarch-Epistemologies).** The positioning that spans the whole
   KG-RAG line lives in the org
   [`.github` repo](https://github.com/Monarch-Epistemologies/.github):
-  [retrieval_epistemologies](https://github.com/Monarch-Epistemologies/.github/blob/main/docs/retrieval_epistemologies.md)
+  [retrieval_epistemologies](https://monarch-epistemologies.github.io/retrieval_epistemologies/)
   — the modes of knowing behind each retrieval architecture; v2 sits in the
   text-embedding mode, at scale.
-  [use_cases](https://github.com/Monarch-Epistemologies/.github/blob/main/docs/use_cases.md) and
-  [related_work_phenomics_assistant](https://github.com/Monarch-Epistemologies/.github/blob/main/docs/related_work_phenomics_assistant.md)
+  [use_cases](https://monarch-epistemologies.github.io/use_cases/) and
+  [related_work_phenomics_assistant](https://monarch-epistemologies.github.io/related_work_phenomics_assistant/)
   round out the line-level docs.
 - **v1:** [KG-RAG-EDS](https://github.com/Monarch-Epistemologies/KG-RAG-EDS) — the
   hand-built teaching version this scales from.
