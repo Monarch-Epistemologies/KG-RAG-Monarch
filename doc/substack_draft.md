@@ -640,11 +640,20 @@ bursty instantaneous one; neither reports the duty cycle that actually sets the 
 The fix was physical. The laptop had a protective case on its underside, insulating the
 aluminum chassis that *is* the heatsink on a fanless machine. Removing the case and
 aiming a small fan at the bare metal over the SoC pulled the SoC back under its thermal
-limit; the GPU boosted past 900 MHz for the first time and a chunk that had been taking
-four minutes took seventy-five seconds — a four-to-sevenfold swing from cooling alone,
-far more than the clock numbers suggest, because the duty cycle recovered along with the
-clock. The full node corpus finished on the GPU, throttled and hand-cooled, in roughly
-fifty minutes against the twelve it would take cool throughout.
+limit; the GPU boosted past 900 MHz for the first time and the deep stalls stopped. What
+cooling bought was steadiness rather than speed — the run settled at roughly 100
+documents a second and held there instead of sagging into multi-minute pauses. The full
+node corpus finished on the GPU, throttled and hand-cooled, in roughly fifty minutes
+against the twelve it would take cool throughout.
+
+An earlier draft of this section read a single chunk going from four minutes to
+seventy-five seconds as a "four-to-sevenfold swing from cooling alone." That was one bad
+chunk against one good chunk, not a rate, and it does not survive the sustained numbers
+in section 7: the cooling experiments moved the throttled rate around inside a band of
+roughly 60–150 documents a second and never restored the cool ~400. A genuine 4–7x would
+have meant near-full recovery, and the fifty-minute finish (~100/sec over the whole run)
+says plainly that it did not happen. Cooling held the throttled rate steady; it did not
+lift it.
 
 That is the genuine v3-ledger entry, and it is sharper than "the GPU is unreliable": on
 a fanless machine, sustained embedding is thermally bound, throughput is dominated by
@@ -1119,7 +1128,7 @@ together and multiply. A run of cooling experiments — case off, laptop vertica
 clamshell stand, a fan aimed dead at the bare aluminum over the SoC — moved the
 throttled rate around within a band of roughly 60 to 150 documents a second but never
 restored the cool ~400. External cooling nudges the ceiling; it cannot lift a fanless
-chassis past the rate at which it sheds heat. For the 300k node corpus that is ~45
+chassis past the rate at which it sheds heat. For the 300k node corpus that is ~50
 minutes instead of ~12; for the ~4M triple corpus it is the difference between an
 afternoon and most of a day.
 
